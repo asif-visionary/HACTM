@@ -174,8 +174,8 @@ The result is a continuous security feedback loop rather than a one-time detecti
                                         │
                                         ▼
                          ┌──────────────────────────────┐
-                         │ GLOBAL ADAPTIVE ORCHESTRATOR  │
-                         │ Context • Time • Graph • Risk │
+                         │ GLOBAL ADAPTIVE ORCHESTRATOR │
+                         │ Context • Time • Graph • Risk│
                          └──────────────┬───────────────┘
                                         │
                                         ▼
@@ -206,90 +206,95 @@ The result is a continuous security feedback loop rather than a one-time detecti
                                         └──────────────────↺
                                              NEW EVIDENCE
 🔄 Complete End-to-End HACTM Flow
+<div align="center">
+
 ┌────────────────────────────────────────────────────────────────────┐
-│                         REAL-WORLD ACTIVITY                       │
-│ Users • Devices • Applications • Network • Email • Transactions  │
+│                         REAL-WORLD ACTIVITY                        │
+│ Users • Devices • Applications • Network • Email • Transactions    │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 1. MULTI-DOMAIN DATA SOURCES                                     │
-│ Collect security information from different security domains      │
+│ 1. MULTI-DOMAIN DATA SOURCES                                       │
+│ Collect security information from different security domains       │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 2. DATA INGESTION & PREPROCESSING                                │
-│ Collect → Normalize → Validate → Resolve → Extract → Enrich       │
+│ 2. DATA INGESTION & PREPROCESSING                                  │
+│ Collect → Normalize → Validate → Resolve → Extract → Enrich        │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 3. SPECIALIZED SECURITY AGENTS                                   │
-│ Network | Phishing | UBA | Identity | Transaction | AI | TI      │
+│ 3. SPECIALIZED SECURITY AGENTS                                     │
+│ Network | Phishing | UBA | Identity | Transaction | AI | TI        │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 4. SECURITY EVIDENCE & LOCAL FUSION                              │
-│ Convert findings into common evidence and correlate locally       │
+│ 4. SECURITY EVIDENCE & LOCAL FUSION                                │
+│ Convert findings into common evidence and correlate locally        │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 5. EVIDENCE MEMORY                                                │
-│ Current + Recent + Historical + Cross-Session Evidence           │
+│ 5. EVIDENCE MEMORY                                                 │
+│ Current + Recent + Historical + Cross-Session Evidence             │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 6. RELIABILITY & UNCERTAINTY                                     │
-│ Evaluate evidence trustworthiness and prediction uncertainty     │
+│ 6. RELIABILITY & UNCERTAINTY                                       │
+│ Evaluate evidence trustworthiness and prediction uncertainty       │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 7. REGIONAL ORCHESTRATION                                        │
-│ Combine and reason over evidence within local environments        │
+│ 7. REGIONAL ORCHESTRATION                                          │
+│ Combine and reason over evidence within local environments         │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 8. GLOBAL ADAPTIVE ORCHESTRATION                                 │
-│ Context + History + Time + Graph + Risk + Agent Selection         │
+│ 8. GLOBAL ADAPTIVE ORCHESTRATION                                   │
+│ Context + History + Time + Graph + Risk + Agent Selection          │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 9. CYBER RISK ASSESSMENT                                         │
-│ Generate unified contextual cyber risk                            │
+│ 9. CYBER RISK ASSESSMENT                                           │
+│ Generate unified contextual cyber risk                             │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 10. ADAPTIVE POLICY                                               │
-│ ALLOW | MONITOR | VERIFY | QUARANTINE | BLOCK                   │
+│ 10. ADAPTIVE POLICY                                                │
+│ ALLOW | MONITOR | VERIFY | QUARANTINE | BLOCK                      │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 11. ADAPTIVE MICRO-SEGMENTATION                                  │
+│ 11. ADAPTIVE MICRO-SEGMENTATION                                    │
 │ Apply restrictions to users, workloads, networks or assets         │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│ 12. TELEMETRY & FEEDBACK                                         │
-│ Observe enforcement → Measure → Generate evidence → Reassess      │
+│ 12. TELEMETRY & FEEDBACK                                           │
+│ Observe enforcement → Measure → Generate evidence → Reassess       │
 └───────────────────────────────────┬────────────────────────────────┘
                                     │
                                     └───────────────────────────────↺
+</div>
 📚 Layer-by-Layer Architecture
 1️⃣ Layer 1 — Multi-Domain Data Sources
 Purpose
 HACTM starts by collecting information from different security domains.
 
 Data Sources
+<div align="center">
+
                          SECURITY DATA
                               │
         ┌─────────────────────┼─────────────────────┐
@@ -305,6 +310,7 @@ Data Sources
                               │
                               ▼
                     THREAT INTELLIGENCE
+</div>
 Network
 Possible sources:
 
@@ -376,6 +382,9 @@ Support for heterogeneous security information
 Raw data cannot directly enter the orchestration system.
 
 HACTM first converts it into a common structure.
+<div align="center">
+
+
 
                          RAW DATA
                             │
@@ -409,6 +418,8 @@ HACTM first converts it into a common structure.
                             │
                             ▼
                 PREPROCESSED SECURITY DATA
+
+</div>
 Entity Resolution
 HACTM can associate events with:
 
@@ -433,6 +444,8 @@ Raw Security Data
 Clean + Structured + Enriched Security Data
 3️⃣ Layer 3 — Specialized Security Agents
 This layer performs domain-specific analysis.
+<div align="center">
+
 
                          SECURITY DATA
                                │
@@ -447,9 +460,12 @@ This layer performs domain-specific analysis.
              └─────────────────┼─────────────────┘
                                ▼
                      SECURITY FINDINGS
+
+</div>
 🌐 Network Security Agent
 Purpose
 Detect suspicious network activity.
+<div align="center">
 
 Analysis
 Network Traffic
@@ -463,6 +479,8 @@ Anomaly Detection
 Behavior Analysis
        ↓
 Network Finding
+
+</div>
 Can detect
 Network anomalies
 Intrusion
@@ -484,6 +502,8 @@ HACTM is model-agnostic. These are possible implementations, not a claim that on
 Purpose
 Analyze emails and URLs for phishing-related threats.
 
+<div align="center">
+
 Email
   ↓
 NLP
@@ -497,6 +517,9 @@ URL Analysis
 Sender / Attachment Analysis
   ↓
 Phishing Evidence
+
+</div>
+
 Can analyze
 Email content
 URLs
