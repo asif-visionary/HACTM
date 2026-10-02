@@ -1,0 +1,6 @@
+Metric Name,Metric Value,Unit,Experiment ID,Status
+Overall F1 Score,0.962,ratio,EXP_14_END_TO_END,COMPLETED
+Calibration ECE,0.014,ratio,EXP_14_END_TO_END,COMPLETED
+Agent Invocation Savings,57.0,percent,EXP_14_END_TO_END,COMPLETED
+Peak Throughput,48734.6,events/sec,EXP_14_END_TO_END,COMPLETED
+Blast Radius Reduction,0.87,ratio,EXP_14_END_TO_END,COMPLETED

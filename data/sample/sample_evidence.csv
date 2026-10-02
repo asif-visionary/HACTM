@@ -1,0 +1,16 @@
+event_id,agent_id,entity_id,event_type,timestamp,risk_score,confidence,uncertainty,source,dataset,ip,email,user,evidence,security_tags
+EVT-SYN-001,AGENT-NET-01,IP:192.168.1.105,NETWORK,2026-10-01T10:15:30Z,0.85,0.92,0.12,CIC-IDS2017,SYNTHETIC_EVAL,192.168.1.105,,,"{""bytes_out"": 1048576, ""dest_port"": 4444, ""protocol"": ""TCP""}",exfiltration,outbound
+EVT-SYN-002,AGENT-AUTH-01,USER:svc_backup,AUTHENTICATION,2026-10-01T10:18:00Z,0.25,0.99,0.02,ActiveDirectory,SYNTHETIC_EVAL,,svc_backup@internal.corp,svc_backup,"{""auth_method"": ""Kerberos"", ""result"": ""SUCCESS""}",routine_cron
+EVT-SYN-003,AGENT-EMAIL-01,EMAIL:external_actor@suspicious-domain.xyz,EMAIL,2026-10-01T10:22:15Z,0.94,0.88,0.15,SpamAssassin,SYNTHETIC_EVAL,,,external_actor@suspicious-domain.xyz,,"{""subject"": ""URGENT: Verify Payment Credentials"", ""has_attachment"": true}",spear_phishing
+EVT-SYN-004,AGENT-UBA-01,USER:analyst_jane,UBA,2026-10-01T10:25:00Z,0.45,0.78,0.22,Splunk_UBA,SYNTHETIC_EVAL,,,analyst_jane,"{""anomaly"": ""Off-hours access"", ""baseline_deviation"": 2.4}",off_hours
+EVT-SYN-005,AGENT-TX-01,DEVICE:POS_TERM_9021,TRANSACTION,2026-10-01T10:30:12Z,0.72,0.85,0.18,CoreBanking,SYNTHETIC_EVAL,,,,"{""amount"": 49999.00, ""currency"": ""USD"", ""velocity_anomaly"": true}",high_value
+EVT-SYN-006,AGENT-NET-02,IP:2001:0db8:85a3:0000:0000:8a2e:0370:7334,NETWORK,2026-10-01T10:35:45Z,0.15,0.95,0.05,Bro_Zeek,SYNTHETIC_EVAL,2001:0db8:85a3:0000:0000:8a2e:0370:7334,,,,"{""dns_query"": ""time.nist.gov"", ""status"": ""OK""}",ipv6,ntp
+EVT-SYN-007,AGENT-NET-01,IP:10.0.0.52,NETWORK,2026-10-01T10:40:00Z,0.61,0.80,0.20,CIC-IDS2017,SYNTHETIC_EVAL,10.0.0.52,,,,"{""flags"": ""SYN-FIN"", ""scan_type"": ""XMAS""}",port_scan
+EVT-SYN-008,AGENT-AUTH-01,USER:admin_root,AUTHENTICATION,2026-10-01T10:45:22Z,0.88,0.94,0.08,LinuxSyslog,SYNTHETIC_EVAL,,,admin_root,"{""failures_count"": 12, ""target_service"": ""sshd""}",brute_force
+EVT-SYN-009,AGENT-EMAIL-01,EMAIL:newsletter@tech-digest.org,EMAIL,2026-10-01T10:50:00Z,0.05,0.98,0.02,SpamAssassin,SYNTHETIC_EVAL,,,newsletter@tech-digest.org,,"{""dmarc"": ""PASS"", ""dkim"": ""PASS""}",newsletter,benign
+EVT-SYN-010,AGENT-NET-01,IP:192.168.1.105,NETWORK,2026-10-01T10:55:10Z,0.50,0.82,0.18,Suricata,SYNTHETIC_EVAL,192.168.1.105,,,,"{""signature"": ""ET MALWARE Suspicious User-Agent""}",c2_beacon
+EVT-SYN-001,AGENT-NET-01,IP:192.168.1.105,NETWORK,2026-10-01T10:15:30Z,0.85,0.92,0.12,CIC-IDS2017,SYNTHETIC_EVAL,192.168.1.105,,,,"{""bytes_out"": 1048576}",duplicate_row
+EVT-SYN-ERR-01,AGENT-NET-01,IP:10.0.0.99,NETWORK,2026-10-01T11:00:00Z,1.45,0.90,0.10,CIC-IDS2017,SYNTHETIC_EVAL,10.0.0.99,,,,"{""error"": ""risk_score_too_high""}",invalid_risk
+EVT-SYN-ERR-02,AGENT-NET-01,IP:10.0.0.100,NETWORK,NOT_A_VALID_DATE_TIME,-0.20,0.90,0.10,CIC-IDS2017,SYNTHETIC_EVAL,10.0.0.100,,,,"{""error"": ""malformed_timestamp""}",bad_timestamp
+EVT-SYN-011,AGENT-UBA-01,USER:intern_bob,UBA,2026-10-01T11:05:00Z,0.30,0.85,0.15,Splunk_UBA,SYNTHETIC_EVAL,None,None,intern_bob,"{""action"": ""large_download"", ""size_mb"": 150}",download,null_fields
+EVT-SYN-012,AGENT-TX-01,ACCOUNT:ACC-774910,TRANSACTION,2026-10-01T11:10:00Z,0.12,0.96,0.04,CoreBanking,SYNTHETIC_EVAL,,,,"{""action"": ""atm_withdrawal"", ""atm_id"": ""ATM_PARK_AVE""}",standard_tx

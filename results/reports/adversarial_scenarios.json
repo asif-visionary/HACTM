@@ -1,0 +1,107 @@
+[
+  {
+    "scenario_id": 1,
+    "name": "1. Highly confident but unreliable detector",
+    "status": "PASSED",
+    "description": "Unreliable detector (90% FP) correctly assigned low reliability score.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 2,
+    "name": "2. Reliable detector with low-confidence output",
+    "status": "PASSED",
+    "description": "Scenario 2 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 3,
+    "name": "3. Two detectors strongly disagreeing",
+    "status": "PASSED",
+    "description": "Strong disagreement correctly produced high disagreement signal.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 4,
+    "name": "4. One detector experiencing data drift",
+    "status": "PASSED",
+    "description": "Significant packet rate distribution shift correctly identified as DRIFT.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 5,
+    "name": "5. New detector with insufficient history",
+    "status": "PASSED",
+    "description": "Detector with 2 samples correctly flagged as INSUFFICIENT_DATA.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 6,
+    "name": "6. Historical detector performance degradation",
+    "status": "PASSED",
+    "description": "Scenario 6 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 7,
+    "name": "7. Missing agent evidence",
+    "status": "PASSED",
+    "description": "Absence of phishing-agent correctly flagged coverage gap.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 8,
+    "name": "8. Duplicate evidence from multiple detectors",
+    "status": "PASSED",
+    "description": "Scenario 8 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 9,
+    "name": "9. High-quality evidence from low-reliability detector",
+    "status": "PASSED",
+    "description": "Scenario 9 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 10,
+    "name": "10. Low-quality evidence from highly reliable detector",
+    "status": "PASSED",
+    "description": "Scenario 10 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 11,
+    "name": "11. Model version change",
+    "status": "PASSED",
+    "description": "Scenario 11 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 12,
+    "name": "12. Dataset shift",
+    "status": "PASSED",
+    "description": "Scenario 12 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 13,
+    "name": "13. Sudden false-positive spike",
+    "status": "PASSED",
+    "description": "Scenario 13 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 14,
+    "name": "14. Sudden false-negative spike",
+    "status": "PASSED",
+    "description": "Scenario 14 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  },
+  {
+    "scenario_id": 15,
+    "name": "15. Calibration degradation",
+    "status": "PASSED",
+    "description": "Scenario 15 passed evaluation checks.",
+    "timestamp": "2026-10-02T12:20:49.029482+00:00"
+  }
+]

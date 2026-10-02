@@ -1,0 +1,24 @@
+{
+  "model_id": "model_net_baseline_v1",
+  "model_version": "1.0.0",
+  "algorithm": "isolation_forest",
+  "parameters": {
+    "contamination": 0.05
+  },
+  "feature_schema_version": "1.0.0",
+  "features": [
+    "duration",
+    "flow_bytes",
+    "flow_packets",
+    "bytes_per_second",
+    "packets_per_second",
+    "forward_ratio"
+  ],
+  "training_dataset": "network_train",
+  "training_timestamp": "2026-10-01T19:26:14.953536Z",
+  "training_samples": 500,
+  "artifact_path": "C:\\Users\\Mohamed Asif\\OneDrive\\Desktop\\HACTM\\backend\\src\\models\\network\\model_net_baseline_v1.joblib",
+  "random_seed": 42,
+  "status": "CANDIDATE",
+  "evaluation_summary": null
+}

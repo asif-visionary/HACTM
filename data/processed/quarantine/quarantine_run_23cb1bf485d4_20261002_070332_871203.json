@@ -1,0 +1,8 @@
+{
+  "quarantined_at": "2026-10-02T07:03:32.871203+00:00",
+  "run_id": "run_23cb1bf485d4",
+  "source_name": "sample_evidence.jsonl",
+  "row_number": 5,
+  "error_reason": "JSON decode error: Expecting property name enclosed in double quotes: line 1 column 66 (char 65)",
+  "original_record": "{\"event_id\": \"EVT-JNL-MALFORMED-01\", \"agent_id\": \"AGENT-NET-01\", BROKEN_JSON_STRING_WITHOUT_QUOTES"
+}

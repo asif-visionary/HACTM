@@ -1,0 +1,20 @@
+{
+  "dataset_name": "LLM_Agent_Failure_Benchmark",
+  "source_url": "https://www.kaggle.com/datasets/sunil123kumar/ai-agent-failure-benchmark-dataset",
+  "source_type": "kaggle",
+  "download_timestamp": "2026-10-02T11:31:38Z",
+  "version": "1.0.0",
+  "commit_or_release": "main",
+  "file_count": 1,
+  "files": [
+    {
+      "relative_path": "benchmark_1500.csv",
+      "size_bytes": 1126823,
+      "sha256": "9f87154addada408f50d9f0d81db0dfa22ea0e63a1026136f95f48fbc435b6c6"
+    }
+  ],
+  "license_or_usage_notes": "Open Database License (ODbL)",
+  "citation": "AI Agent Failure Benchmark Dataset, Kaggle, 2026.",
+  "preprocessing_version": "1.0.0",
+  "status": "downloaded"
+}

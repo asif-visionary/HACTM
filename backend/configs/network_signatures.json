@@ -1,0 +1,103 @@
+[
+  {
+    "signature_id": "SIG-NET-001",
+    "name": "Suspicious Unencrypted Telnet Activity",
+    "description": "Observed connection attempt to legacy unencrypted Telnet port 23",
+    "category": "Insecure Protocol Exposure",
+    "severity": "HIGH",
+    "risk_score": 0.75,
+    "confidence": 0.95,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "eq", "value": 23},
+        {"field": "protocol", "operator": "eq", "value": "TCP"}
+      ]
+    }
+  },
+  {
+    "signature_id": "SIG-NET-002",
+    "name": "Known Malicious C2 / Metasploit Port Activity",
+    "description": "Connection to ports commonly associated with default C2 handlers (4444, 5555, 6667, 31337)",
+    "category": "Command and Control",
+    "severity": "CRITICAL",
+    "risk_score": 0.88,
+    "confidence": 0.92,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "in", "value": [4444, 5555, 6667, 31337]}
+      ]
+    }
+  },
+  {
+    "signature_id": "SIG-NET-003",
+    "name": "Abnormal High-Volume DNS Flow (Suspected Tunneling)",
+    "description": "DNS flow exceeding 50,000 bytes indicating possible data exfiltration or tunneling",
+    "category": "Data Exfiltration",
+    "severity": "HIGH",
+    "risk_score": 0.82,
+    "confidence": 0.86,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "eq", "value": 53},
+        {"field": "flow_bytes", "operator": "gt", "value": 50000}
+      ]
+    }
+  },
+  {
+    "signature_id": "SIG-NET-004",
+    "name": "External Inbound Database Exposure Attempt",
+    "description": "Public source accessing sensitive internal database port (3306, 5432, 1433, 27017)",
+    "category": "Unauthorized Exposure",
+    "severity": "HIGH",
+    "risk_score": 0.80,
+    "confidence": 0.90,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "in", "value": [1433, 1521, 3306, 5432, 27017]},
+        {"field": "src_ip_classification", "operator": "eq", "value": "PUBLIC"}
+      ]
+    }
+  },
+  {
+    "signature_id": "SIG-NET-005",
+    "name": "External SMB Access Attempt (WannaCry Vector)",
+    "description": "Public inbound traffic targeting SMB port 445",
+    "category": "Exploit Vector",
+    "severity": "CRITICAL",
+    "risk_score": 0.90,
+    "confidence": 0.96,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "eq", "value": 445},
+        {"field": "src_ip_classification", "operator": "eq", "value": "PUBLIC"}
+      ]
+    }
+  },
+  {
+    "signature_id": "SIG-NET-006",
+    "name": "High-Rate SSH Connection Burst",
+    "description": "SSH traffic exhibiting anomalous packet rates greater than 50 pkts/s",
+    "category": "Brute Force",
+    "severity": "MEDIUM",
+    "risk_score": 0.65,
+    "confidence": 0.85,
+    "version": "1.0.0",
+    "enabled": true,
+    "conditions": {
+      "all": [
+        {"field": "dst_port", "operator": "eq", "value": 22},
+        {"field": "packet_rate", "operator": "gt", "value": 50}
+      ]
+    }
+  }
+]

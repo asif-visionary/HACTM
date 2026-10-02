@@ -1,0 +1,23 @@
+identity:
+  agent_id: "identity-authentication-agent"
+  version: "1.0.0"
+  model_version: "identity_rules_v1.0"
+
+  brute_force:
+    max_failures_window_seconds: 300
+    failure_count_threshold: 5
+
+  impossible_travel:
+    enabled: true
+    max_velocity_kmh: 900.0  # Max realistic plane speed km/h
+
+  account_takeover:
+    new_device_weight: 0.30
+    failed_attempts_weight: 0.35
+    mfa_failure_weight: 0.35
+
+  weights:
+    brute_force: 0.40
+    impossible_travel: 0.45
+    account_takeover: 0.50
+    mfa_anomaly: 0.30

@@ -1,0 +1,27 @@
+{
+  "quarantined_at": "2026-10-02T11:21:30.068623+00:00",
+  "run_id": "run_120a9f1feeb5",
+  "source_name": "sample_evidence.csv",
+  "row_number": 10,
+  "error_reason": "Schema validation error: 1 validation error for SecurityEvidence\nsecurity_tags\n  Input should be a valid list [type=list_type, input_value={'dmarc': 'PASS', 'dkim': 'PASS'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/list_type",
+  "original_record": {
+    "event_id": "EVT-SYN-009",
+    "agent_id": "AGENT-EMAIL-01",
+    "entity_id": "EMAIL:newsletter@tech-digest.org",
+    "event_type": "EMAIL",
+    "timestamp": "2026-10-01T10:50:00Z",
+    "risk_score": "0.05",
+    "confidence": "0.98",
+    "uncertainty": "0.02",
+    "source": "SpamAssassin",
+    "dataset": "SYNTHETIC_EVAL",
+    "ip": "",
+    "email": "",
+    "user": "newsletter@tech-digest.org",
+    "evidence": "",
+    "security_tags": {
+      "dmarc": "PASS",
+      "dkim": "PASS"
+    }
+  }
+}

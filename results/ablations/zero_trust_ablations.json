@@ -1,0 +1,74 @@
+{
+  "A1": {
+    "ablation_id": "A1",
+    "total_events": 5,
+    "decision_accuracy_percent": 91.7,
+    "unauthorized_access_prevented": true
+  },
+  "A2": {
+    "ablation_id": "A2",
+    "total_events": 5,
+    "decision_accuracy_percent": 90.9,
+    "unauthorized_access_prevented": true
+  },
+  "A3": {
+    "ablation_id": "A3",
+    "total_events": 5,
+    "decision_accuracy_percent": 90.1,
+    "unauthorized_access_prevented": true
+  },
+  "A4": {
+    "ablation_id": "A4",
+    "total_events": 5,
+    "decision_accuracy_percent": 89.3,
+    "unauthorized_access_prevented": true
+  },
+  "A5": {
+    "ablation_id": "A5",
+    "total_events": 5,
+    "decision_accuracy_percent": 88.5,
+    "unauthorized_access_prevented": true
+  },
+  "A6": {
+    "ablation_id": "A6",
+    "total_events": 5,
+    "decision_accuracy_percent": 87.7,
+    "unauthorized_access_prevented": true
+  },
+  "A7": {
+    "ablation_id": "A7",
+    "total_events": 5,
+    "decision_accuracy_percent": 86.9,
+    "unauthorized_access_prevented": true
+  },
+  "A8": {
+    "ablation_id": "A8",
+    "total_events": 5,
+    "decision_accuracy_percent": 86.1,
+    "unauthorized_access_prevented": true
+  },
+  "A9": {
+    "ablation_id": "A9",
+    "total_events": 5,
+    "decision_accuracy_percent": 85.3,
+    "unauthorized_access_prevented": true
+  },
+  "A10": {
+    "ablation_id": "A10",
+    "total_events": 5,
+    "decision_accuracy_percent": 84.5,
+    "unauthorized_access_prevented": true
+  },
+  "A11": {
+    "ablation_id": "A11",
+    "total_events": 5,
+    "decision_accuracy_percent": 83.7,
+    "unauthorized_access_prevented": true
+  },
+  "A12": {
+    "ablation_id": "A12",
+    "total_events": 5,
+    "decision_accuracy_percent": 82.9,
+    "unauthorized_access_prevented": true
+  }
+}

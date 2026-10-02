@@ -1,0 +1,74 @@
+{
+  "BASELINE_A": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0,
+    "fnr": 0.0,
+    "brier_score": 0.112,
+    "tp": 100,
+    "fp": 0,
+    "tn": 200,
+    "fn": 0
+  },
+  "BASELINE_B": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "fpr": 0.5,
+    "fnr": 0.0,
+    "brier_score": 0.1714,
+    "tp": 100,
+    "fp": 100,
+    "tn": 100,
+    "fn": 0
+  },
+  "BASELINE_C": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "fpr": 0.5,
+    "fnr": 0.0,
+    "brier_score": 0.1714,
+    "tp": 100,
+    "fp": 100,
+    "tn": 100,
+    "fn": 0
+  },
+  "BASELINE_D": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "fpr": 0.5,
+    "fnr": 0.0,
+    "brier_score": 0.1714,
+    "tp": 100,
+    "fp": 100,
+    "tn": 100,
+    "fn": 0
+  },
+  "BASELINE_E": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "fpr": 0.5,
+    "fnr": 0.0,
+    "brier_score": 0.175,
+    "tp": 100,
+    "fp": 100,
+    "tn": 100,
+    "fn": 0
+  },
+  "BASELINE_F": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "fpr": 0.5,
+    "fnr": 0.0,
+    "brier_score": 0.1636,
+    "tp": 100,
+    "fp": 100,
+    "tn": 100,
+    "fn": 0
+  }
+}

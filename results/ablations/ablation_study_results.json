@@ -1,0 +1,50 @@
+{
+  "A1": {
+    "ablation_code": "A1",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A2": {
+    "ablation_code": "A2",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A3": {
+    "ablation_code": "A3",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A4": {
+    "ablation_code": "A4",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A5": {
+    "ablation_code": "A5",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A6": {
+    "ablation_code": "A6",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A7": {
+    "ablation_code": "A7",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "A8": {
+    "ablation_code": "A8",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  }
+}

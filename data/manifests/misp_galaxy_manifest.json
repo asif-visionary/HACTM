@@ -1,0 +1,2545 @@
+{
+  "dataset_name": "MISP_Galaxy",
+  "source_url": "https://github.com/MISP/misp-galaxy",
+  "source_type": "github",
+  "download_timestamp": "2026-10-02T11:31:34Z",
+  "version": "latest",
+  "commit_or_release": "0801b056d922f72605adb309c87ac2c562799edd",
+  "file_count": 506,
+  "files": [
+    {
+      "relative_path": "repo\\.gitchangelog.rc",
+      "size_bytes": 10281,
+      "sha256": "a5d001e752a213242fe74954097e2137e2331ff72b432fa712f6a762de39edf1"
+    },
+    {
+      "relative_path": "repo\\.gitignore",
+      "size_bytes": 47,
+      "sha256": "4cc023a212e0cfe5ad604304f0065f8f01664b6b6b4123e0d975dbb1b4130a6e"
+    },
+    {
+      "relative_path": "repo\\.travis.yml",
+      "size_bytes": 692,
+      "sha256": "a78a6f6bcbe0d4a8a2060b2495d3c75aa89f1565cad92fd4b97f76e9014d70b2"
+    },
+    {
+      "relative_path": "repo\\CONTRIBUTE.md",
+      "size_bytes": 2620,
+      "sha256": "ca10e71a74558daba2cce86afc9e377edc5fd4338684e684044fafc0200f1ebb"
+    },
+    {
+      "relative_path": "repo\\jq_all_the_things.sh",
+      "size_bytes": 1263,
+      "sha256": "81370372c618e1420344f1c978cc117f186d2dc5f20517145cbf1205643f5838"
+    },
+    {
+      "relative_path": "repo\\LICENSE.md",
+      "size_bytes": 1819,
+      "sha256": "ad71e0bc8ec340bd17328ee1582eb217df6e6a91af2fdd52775b21d14ff62167"
+    },
+    {
+      "relative_path": "repo\\README.md",
+      "size_bytes": 55516,
+      "sha256": "249970500dac7ad8d0b5a8cd8fda8711e5ec759989a50e3a8ea25827e207253f"
+    },
+    {
+      "relative_path": "repo\\schema_clusters.json",
+      "size_bytes": 4193,
+      "sha256": "b65367cd8109ca57afd6da4a92779223bc72b7b1880df2faae0839681fadde55"
+    },
+    {
+      "relative_path": "repo\\schema_galaxies.json",
+      "size_bytes": 762,
+      "sha256": "f8a2035c64c3653ef74d6cf5d834f93614b623c23de614a8fdfe5fb79f9a5d65"
+    },
+    {
+      "relative_path": "repo\\schema_misp.json",
+      "size_bytes": 703,
+      "sha256": "e64083dcdc5d3a2f38354484e010b2997c3001179f31bd632e481a7d27ed6cd8"
+    },
+    {
+      "relative_path": "repo\\schema_vocabularies.json",
+      "size_bytes": 1188,
+      "sha256": "3ba69ede5ac2eb48b752c9c87630da877423010982ba565fc95845365c824bde"
+    },
+    {
+      "relative_path": "repo\\validate_all.sh",
+      "size_bytes": 1839,
+      "sha256": "68abf41fec612ca23daab936c5059a339220b3d8f45daec7c19751982b211ae7"
+    },
+    {
+      "relative_path": "repo\\.git\\config",
+      "size_bytes": 304,
+      "sha256": "21dba9c73f28e762dee3d77b2476e3ceded55b0c53e0847dad04cd798e6e1b33"
+    },
+    {
+      "relative_path": "repo\\.git\\description",
+      "size_bytes": 73,
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee"
+    },
+    {
+      "relative_path": "repo\\.git\\HEAD",
+      "size_bytes": 21,
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80"
+    },
+    {
+      "relative_path": "repo\\.git\\index",
+      "size_bytes": 52260,
+      "sha256": "10ff9f12f252c606c9eb3ea7fde32f9a39c2a1cb29afae1a5fd576d1bfde4e8a"
+    },
+    {
+      "relative_path": "repo\\.git\\packed-refs",
+      "size_bytes": 112,
+      "sha256": "76ab06e7b5b0e6a4be29103de43a2871d7c16bf9dcc1b93934478d7ec4f56fa6"
+    },
+    {
+      "relative_path": "repo\\.git\\shallow",
+      "size_bytes": 41,
+      "sha256": "09f0dba77ecd21e481742e992f25875deb1b5c9308d1b192fe902927c941985f"
+    },
+    {
+      "relative_path": "repo\\.vscode\\launch.json",
+      "size_bytes": 3068,
+      "sha256": "ac8ef3ae7a56cda6ade7a9d19e81ccfa0f2defb15fc372da872c95f3aa41aa53"
+    },
+    {
+      "relative_path": "repo\\clusters\\360net.json",
+      "size_bytes": 50687,
+      "sha256": "bf8c9bec31c4814ca18c9331e08f4b1646271ab52b2c1e7d06b1f517f31fa6d6"
+    },
+    {
+      "relative_path": "repo\\clusters\\agent-threat-rules.json",
+      "size_bytes": 1179365,
+      "sha256": "aa2fdedc7ba7ad3fc2f0beaad1e21277f690ac40aefea3f8bbcdca5bd368696d"
+    },
+    {
+      "relative_path": "repo\\clusters\\ammunitions.json",
+      "size_bytes": 147540,
+      "sha256": "100ed483cbc8134d6d388b8169e58aff18f941edb31dac49ab9f9a2ce1aa07da"
+    },
+    {
+      "relative_path": "repo\\clusters\\android.json",
+      "size_bytes": 203271,
+      "sha256": "d5be6624610073d6f03183eff54f6e6b6aa2b7c4bae2f0c0e84822788cfc40f9"
+    },
+    {
+      "relative_path": "repo\\clusters\\atrm.json",
+      "size_bytes": 49875,
+      "sha256": "c80625e893a25b2d4901ec3bcc6986d42d0568a7ec8989984d16e361528f3934"
+    },
+    {
+      "relative_path": "repo\\clusters\\attck4fraud.json",
+      "size_bytes": 41009,
+      "sha256": "8de37d74064d62834d3aa986861e14f32ddc06e08a1e6495b94eb5cd4afed732"
+    },
+    {
+      "relative_path": "repo\\clusters\\backdoor.json",
+      "size_bytes": 25652,
+      "sha256": "36ebf7eb98e58728342f5bc215202abfdf6b9073991b7a8dafcd4a4d8d083852"
+    },
+    {
+      "relative_path": "repo\\clusters\\banker.json",
+      "size_bytes": 49696,
+      "sha256": "a30f4438f4062c0811b228ddcc98f41b74120810d29e022f6379ee910caacdcf"
+    },
+    {
+      "relative_path": "repo\\clusters\\bhadra-framework.json",
+      "size_bytes": 25357,
+      "sha256": "ddf7f16807281d8bc81856b4241a82c245b2770909c5fb85b284c664cea2773e"
+    },
+    {
+      "relative_path": "repo\\clusters\\bitns.json",
+      "size_bytes": 30320,
+      "sha256": "daf921fd2861ac8f36a9bf484bd15ddf8ba8505a59199de01248a9ad6f281992"
+    },
+    {
+      "relative_path": "repo\\clusters\\botnet.json",
+      "size_bytes": 116977,
+      "sha256": "49bbd295cbe295fa9208c6ef5be4814fa7ac740c2b30e6cdf242fd756c2c5162"
+    },
+    {
+      "relative_path": "repo\\clusters\\branded_vulnerability.json",
+      "size_bytes": 11627,
+      "sha256": "a509e906d1635c25a8794915b96fdcd8827af18751926d07f0a95d93a49969d3"
+    },
+    {
+      "relative_path": "repo\\clusters\\cancer.json",
+      "size_bytes": 38376,
+      "sha256": "a77ac0aba768fc038b33de27adb0f4a057babeda1f2025b30cf98e2781d09adf"
+    },
+    {
+      "relative_path": "repo\\clusters\\cert-eu-govsector.json",
+      "size_bytes": 878,
+      "sha256": "0f3b1e26b4af1dfd6725bcb0248bf5241c96ce9012ac45c14f1ddc480e3fb212"
+    },
+    {
+      "relative_path": "repo\\clusters\\china-defence-universities.json",
+      "size_bytes": 376292,
+      "sha256": "bce24565f346f686de4db3651209d681e57d723a9094b04cfbbc970c6acadc92"
+    },
+    {
+      "relative_path": "repo\\clusters\\cloak.json",
+      "size_bytes": 29831,
+      "sha256": "e8a6390fa2218f86ca410465ca81b5b468e1f1da3acd098e026a57a6048ef88c"
+    },
+    {
+      "relative_path": "repo\\clusters\\cmtmf-attack-pattern.json",
+      "size_bytes": 26922,
+      "sha256": "9d9dbc7604b8a42ba30462c29c44f853cf5d3ca9cccae534775de5dac760e3bf"
+    },
+    {
+      "relative_path": "repo\\clusters\\country.json",
+      "size_bytes": 148999,
+      "sha256": "1665e7201efd4b95b76cfdf5d947d9f58dc9afee2bb7f892c596984baae5561f"
+    },
+    {
+      "relative_path": "repo\\clusters\\cryptominers.json",
+      "size_bytes": 3443,
+      "sha256": "538a19ad39925d8260f23163335bbcaf17d8aa3d83800b9a6fa63d75cd7fa72d"
+    },
+    {
+      "relative_path": "repo\\clusters\\cti-cmm-1-3.json",
+      "size_bytes": 549756,
+      "sha256": "ec182df782cd2f227296f2783707eb9724e942dc7b56ac481516e1cc470590b7"
+    },
+    {
+      "relative_path": "repo\\clusters\\cyfun-assurance-requirements-2023.json",
+      "size_bytes": 333691,
+      "sha256": "71de3fbbbf9795850eac8dc5eb155d3734d65f64939737d7df6d8f164bec0d67"
+    },
+    {
+      "relative_path": "repo\\clusters\\cyfun-control-catalogue-2023.json",
+      "size_bytes": 128478,
+      "sha256": "51c59ea8979f3806f0a4bac27eb1de3bf45a441ca5a7e1ef738ccdc3c5a77f2c"
+    },
+    {
+      "relative_path": "repo\\clusters\\dima-techniques.json",
+      "size_bytes": 41350,
+      "sha256": "5dfa1ecda99ed6a72b02046605956728c537036f692986029695c9475b228852"
+    },
+    {
+      "relative_path": "repo\\clusters\\disarm-actortypes.json",
+      "size_bytes": 27019,
+      "sha256": "4434acd214f395a677218835d0287a8289d1e28cbd96a1fb42353cd95dfd88e3"
+    },
+    {
+      "relative_path": "repo\\clusters\\disarm-countermeasures.json",
+      "size_bytes": 131876,
+      "sha256": "285c3b057b4613e47184e18aa037805e90d698f31223a2a28255ffc3b91d29b3"
+    },
+    {
+      "relative_path": "repo\\clusters\\disarm-detections.json",
+      "size_bytes": 77813,
+      "sha256": "842d2b7a82ca3b1fdc712219750652979034796d541c0644ac947b7bae21af71"
+    },
+    {
+      "relative_path": "repo\\clusters\\disarm-techniques.json",
+      "size_bytes": 225079,
+      "sha256": "8eb5f49f3d04e4c61ea4ecf4b0445c414160f2f9ef1e34c9d5fa7a7cd657bf24"
+    },
+    {
+      "relative_path": "repo\\clusters\\election-guidelines.json",
+      "size_bytes": 12698,
+      "sha256": "eeea75269dfea99a59ef8308cc5f49d4d384e55eb17d4a6dd3146425338200da"
+    },
+    {
+      "relative_path": "repo\\clusters\\entity.json",
+      "size_bytes": 923,
+      "sha256": "81b2fcfb02bb2f107df1edccdf1e665dd87c35fac400df3ee4153b07c77709ad"
+    },
+    {
+      "relative_path": "repo\\clusters\\exercise-world.json",
+      "size_bytes": 46781,
+      "sha256": "b590701eee532e406ca115306a1bf9e7de31bd399e601fa7a3706ecb3ec46838"
+    },
+    {
+      "relative_path": "repo\\clusters\\exploit-kit.json",
+      "size_bytes": 34904,
+      "sha256": "779be2a1327c3853e1568effafffd540929bd33f368726e5272f13ca17b5c597"
+    },
+    {
+      "relative_path": "repo\\clusters\\firearms.json",
+      "size_bytes": 2431676,
+      "sha256": "9d0f7e3c2c13da0ba338d499206f9eef1dfac41323d95aa8af70c7a071833168"
+    },
+    {
+      "relative_path": "repo\\clusters\\first-csirt-services-framework.json",
+      "size_bytes": 143040,
+      "sha256": "16e3d101559230444a54cb1d91c96aef722790a88116e676c1f12372fcf828cd"
+    },
+    {
+      "relative_path": "repo\\clusters\\first-dns.json",
+      "size_bytes": 12619,
+      "sha256": "686afb314fae7988f619618c08d29c0fa18f43f402b21f8458bf5fd0d3180cc8"
+    },
+    {
+      "relative_path": "repo\\clusters\\gsma-motif.json",
+      "size_bytes": 53771,
+      "sha256": "91835a2c203681efdd53631064e85c944c617056774f42aef1f5516f059d8f03"
+    },
+    {
+      "relative_path": "repo\\clusters\\handicap.json",
+      "size_bytes": 10510,
+      "sha256": "d5e68accb8120b3415f9792fcebbea1a25d896b286061a29fe89b1354589fb75"
+    },
+    {
+      "relative_path": "repo\\clusters\\human-kill-chain.json",
+      "size_bytes": 5532,
+      "sha256": "b84408284d6771d7b4ed9e5c604f335645ab9bc0d7e788446aee1da69ec28493"
+    },
+    {
+      "relative_path": "repo\\clusters\\intelligence-agencies.json",
+      "size_bytes": 193941,
+      "sha256": "5ccc6374259a22b5795e6aea0108f07f0ae2940079b33b1517ef2c7dfb15e00c"
+    },
+    {
+      "relative_path": "repo\\clusters\\interpol-dwva.json",
+      "size_bytes": 43687,
+      "sha256": "48adcbeaa5e25f6b97b0b9bde5c897ee0f31c49ea59b8de2bc2b21da90765eab"
+    },
+    {
+      "relative_path": "repo\\clusters\\it-infrastructure-equipment.json",
+      "size_bytes": 7569,
+      "sha256": "21fcb45def0455f6cdf48e93382e5c77f2643ccb076225acd72d94fd4612417c"
+    },
+    {
+      "relative_path": "repo\\clusters\\malpedia.json",
+      "size_bytes": 3894074,
+      "sha256": "5e9f3507ca6f0e85aee3a4b7807125f304ca10331576ffaa2dd8e73513380387"
+    },
+    {
+      "relative_path": "repo\\clusters\\microsoft-activity-group.json",
+      "size_bytes": 139538,
+      "sha256": "1650c324b47c3f6b608f993cfe76453d3485b2620cf310584681bfb8950590f2"
+    },
+    {
+      "relative_path": "repo\\clusters\\misinfosec-amitt-misinformation-pattern.json",
+      "size_bytes": 44956,
+      "sha256": "059ff73d73c7849dab860c5d6c25cac81a11e9ab75e8fa1e8ad26ffb9667ee71"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-analytic.json",
+      "size_bytes": 1362251,
+      "sha256": "b9ac3ce6809d9f6f87e0874de7a4f5e3d671956120bab6c348508d5cc67600d4"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-asset.json",
+      "size_bytes": 18770,
+      "sha256": "22caa7a4813d224736db93af660a4d084290362de4b3546405cd57cd40fbafe8"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-atlas-attack-pattern.json",
+      "size_bytes": 273892,
+      "sha256": "dd7f01b293ac9ae70595c4f533842eb994d3e8e639af61b0a39d2f28485f90a7"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-atlas-case-study.json",
+      "size_bytes": 265567,
+      "sha256": "0c5968d5c8e7f216b6319f26b1cbff4d1b63ba3dff6c5960360c5173d8b5d5f5"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-atlas-course-of-action.json",
+      "size_bytes": 134979,
+      "sha256": "ab0df2bd4115bf8c2ae5c0c29966938e9bdfe5ecd3568387115158a1d02bfc41"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-attack-pattern.json",
+      "size_bytes": 3024516,
+      "sha256": "208b964e40f82497a52479822a367ba47effecbacc7f0c902950fce99dd5cdb1"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-campaign.json",
+      "size_bytes": 247232,
+      "sha256": "e56128f650b66a3589f08e1a569a09b11fd57a3083d62bdf3b1825f36ec7409d"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-course-of-action.json",
+      "size_bytes": 642779,
+      "sha256": "ff824982b8a394b155f4fa59ce35a3f77cdd4259e67b196bcd7754797b510b17"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-d3fend.json",
+      "size_bytes": 640980,
+      "sha256": "119b5a7d20780ca57f286ca0c9b95b557d62766a93efff145c40f7e1d936eafa"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-data-component.json",
+      "size_bytes": 133302,
+      "sha256": "2fc2b2feccf230aa4d88f22a40bc51551ddf258bdbfaf3e302048deff1588592"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-data-source.json",
+      "size_bytes": 29413,
+      "sha256": "f882b3a3a752db949fa849a4a2e81710182cc2bf75c617339661787043a61f8c"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-detection-strategy.json",
+      "size_bytes": 666878,
+      "sha256": "20723e5ec1af6a62671b3103f7883ae644c63f87e1cb322fe6d0f1c1a436ec76"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-engage-framework.json",
+      "size_bytes": 84982,
+      "sha256": "07d1bb2d588827c612c135b1e326f5ef1a8740812d278d9731e12aa103c302b1"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-enterprise-attack-attack-pattern.json",
+      "size_bytes": 585824,
+      "sha256": "ef7995fa9a2107d6a0f3002f73e4731bce2304677276a3a06667b73b02f4c119"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-enterprise-attack-course-of-action.json",
+      "size_bytes": 222040,
+      "sha256": "8cb61ba7042cbe0f301a972801e13b0b2559dd2c3072016e05d0e1d2aa086247"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-enterprise-attack-intrusion-set.json",
+      "size_bytes": 101438,
+      "sha256": "8bb39f073797e9c221cf0876e61adad68178b6c9389bc3c2875dbd8b000722a0"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-enterprise-attack-malware.json",
+      "size_bytes": 216683,
+      "sha256": "1e095142b163f19e3e50ee33f36804c0baddd1d923b80536cec8e59ff46667d8"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-enterprise-attack-tool.json",
+      "size_bytes": 44904,
+      "sha256": "3e641974114c25c0578f7cd3c6084fe59f5b184b87e501fc69ef556cea5fabe3"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-fraud-framework.json",
+      "size_bytes": 148887,
+      "sha256": "82b5e9f18a7f81541e1cf348b827389bd75f57bb33890ee3568c72987c6536c6"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-assets.json",
+      "size_bytes": 26039,
+      "sha256": "3ce41cefa8c34f0089f9316bd155aa21995896c7170f1c78e1b78f24b3ca9dcc"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-groups.json",
+      "size_bytes": 22996,
+      "sha256": "ad15a7adf5681f888a586b910dc8fca74dc79cf3a7038bb0f56c1effa872c2a8"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-levels.json",
+      "size_bytes": 2972,
+      "sha256": "9627157c0c6aa73c5e74efb88c878fd77e00d7c8eb8ca7b274c7d0a2a95c15ce"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-software.json",
+      "size_bytes": 59638,
+      "sha256": "0a3d41cee8f0526a43bad7a1804b0561412a68d22380b29ef1a860f529424801"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-tactics.json",
+      "size_bytes": 29240,
+      "sha256": "4c942472fbdc9ecd6076a19c78bb8b5a7cdb3e2d855ff7c082596507a9db1872"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-ics-techniques.json",
+      "size_bytes": 211082,
+      "sha256": "4d1cf3adcea185387cbb1d824fb39c8dad52dc7c2358937e36b36c4a88ee05e7"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-intrusion-set.json",
+      "size_bytes": 971976,
+      "sha256": "693e4c54959b0dcecc1081fb0cacf092727d330e2ba7b6c6442f2c4aefd7f8bc"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-malware.json",
+      "size_bytes": 2224317,
+      "sha256": "44c93c55cbdd4877d9384c20950fa54ced12a9eb123185ba468af04b4f7c61e9"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-mobile-attack-attack-pattern.json",
+      "size_bytes": 96619,
+      "sha256": "2eb8569d0dd4c242b185d4be57d2a2b7ae9c655db920650b4a45b9057c1f764f"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-mobile-attack-course-of-action.json",
+      "size_bytes": 13914,
+      "sha256": "0f57f68b70f88ae7da7f72270568400ce98d41974e5b498cbdb7ab4b9778f183"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-mobile-attack-intrusion-set.json",
+      "size_bytes": 1967,
+      "sha256": "63c0884d7965044e4bca7a8b47dab16b9d6fa3e44d9ea66ebf9613fa0721a0fa"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-mobile-attack-malware.json",
+      "size_bytes": 41885,
+      "sha256": "0a1b99f0845ff85b7c73b9b2dc4dc824d3048e4e127b470d40b11432d2183839"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-mobile-attack-tool.json",
+      "size_bytes": 2280,
+      "sha256": "709b1e0db3b01664701a41444aff274628eacd0c7f4fc3c9b42208d4d9eaa3dd"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-pre-attack-attack-pattern.json",
+      "size_bytes": 230410,
+      "sha256": "28a487ba64fb1ba84429492264620292ddefb40a5bc4d2d44699c7da177c2c99"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-pre-attack-intrusion-set.json",
+      "size_bytes": 13222,
+      "sha256": "1e0c838a8685326e455d646295fd72d610f857ad8cc1d98de7a45871b53eb47b"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-software.json",
+      "size_bytes": 2450528,
+      "sha256": "d35f14d74b4d3c0d74a0659412a5da47ffc06591935b5e700c836425afe3501d"
+    },
+    {
+      "relative_path": "repo\\clusters\\mitre-tool.json",
+      "size_bytes": 190805,
+      "sha256": "2a6cf419309c3b5d1f333f50332ca6769b0ea077ff498d1cc9370ddd489bdedd"
+    },
+    {
+      "relative_path": "repo\\clusters\\nace.json",
+      "size_bytes": 1722368,
+      "sha256": "2a2cbe52612a289a7f03194dadf56848e85cbb20f3e50936a3532469cc23bd9c"
+    },
+    {
+      "relative_path": "repo\\clusters\\naics.json",
+      "size_bytes": 1542218,
+      "sha256": "4f1ac374e5d74d795bcd47bcb524db314ebe92cfaaefab985b1ab1f084cb9d9b"
+    },
+    {
+      "relative_path": "repo\\clusters\\nato.json",
+      "size_bytes": 14154,
+      "sha256": "c4d58a65ca6db9834480c2ebbcd41d77c456934021f41d164c5d92a8c36e732a"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-competency_areas.json",
+      "size_bytes": 6136,
+      "sha256": "1a1e24115c0670feb8f6e9a7989d1bf74c0ffde467cc18a9deeccba76494f260"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-knowledges.json",
+      "size_bytes": 159330,
+      "sha256": "36b6d43414575bbf5e2cfac97bd7d5254457f63984d3a98f93a3db47da94509e"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-opm_codes.json",
+      "size_bytes": 29579,
+      "sha256": "efba173f5270b3e9b51e583199b5d05f103ef9149dc5af2a5c4fb7aab1190709"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-skills.json",
+      "size_bytes": 128101,
+      "sha256": "8acac5d7f8fe92ba2fcb0ce244c562c8fca43c50b02fa33c42b0c9b969564465"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-tasks.json",
+      "size_bytes": 275100,
+      "sha256": "c92d1558a21a33f5050580613a88178a7b8c98eff153436052c6c864f47aa2de"
+    },
+    {
+      "relative_path": "repo\\clusters\\nice-framework-work_roles.json",
+      "size_bytes": 903998,
+      "sha256": "4be098baa50d21582a2e5e93d09769981c48b4771859c460138135f82241b7f0"
+    },
+    {
+      "relative_path": "repo\\clusters\\o365-exchange-techniques.json",
+      "size_bytes": 18231,
+      "sha256": "c16362314bf8e35d5665414dc636f54c28d667f6bb17faf91391cc521c057d7a"
+    },
+    {
+      "relative_path": "repo\\clusters\\online-service.json",
+      "size_bytes": 874,
+      "sha256": "b5a5504d7b5f340618a036c5dc97b107ec36cd8d41d339842b626527b3ab1a61"
+    },
+    {
+      "relative_path": "repo\\clusters\\operating-system.json",
+      "size_bytes": 19614,
+      "sha256": "445ec248ccc1b5c2699fcd76530f009ef8042afaa8b24486714cfb4c3801a7fa"
+    },
+    {
+      "relative_path": "repo\\clusters\\plot4ai.json",
+      "size_bytes": 438393,
+      "sha256": "612c8b95d1587590145bb435a5f3469d35c70d085c142339b0117474a90e35a7"
+    },
+    {
+      "relative_path": "repo\\clusters\\preventive-measure.json",
+      "size_bytes": 14013,
+      "sha256": "c525a1c2e66522b0b0778f62d541ed5b3b9542ce1db6e0cb92308de3f4c97551"
+    },
+    {
+      "relative_path": "repo\\clusters\\producer.json",
+      "size_bytes": 107084,
+      "sha256": "a601600d4a0d702073d8c715cfa77ee97ff3a17b8cf8b7bb99408f8057b7a1c7"
+    },
+    {
+      "relative_path": "repo\\clusters\\ransomware.json",
+      "size_bytes": 1999049,
+      "sha256": "768ebaf5e793e7a0ff8607a8298b34c9b90c84e1ce7097b6885028d00d2639bb"
+    },
+    {
+      "relative_path": "repo\\clusters\\rat.json",
+      "size_bytes": 158029,
+      "sha256": "fbd77c28c60e2cf97faad8061c4196a84809f7745f6760e97d2b8ca66761714e"
+    },
+    {
+      "relative_path": "repo\\clusters\\region.json",
+      "size_bytes": 14819,
+      "sha256": "bfd109b5d8216f82948694d7adf9e9d66a51bb4711dd323897e9557d82e99876"
+    },
+    {
+      "relative_path": "repo\\clusters\\rmm-tool.json",
+      "size_bytes": 351473,
+      "sha256": "f225ed08b900c05eed6a204121a5065a9d87b2516bc5d0900ef91302789b3c4c"
+    },
+    {
+      "relative_path": "repo\\clusters\\rsit.json",
+      "size_bytes": 22476,
+      "sha256": "3e5e1d6b9559f8ac4e13bc185668cecc7917c96cb7e3f7fcc598ea69a889a4d2"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-about.json",
+      "size_bytes": 17651,
+      "sha256": "2d4f94aca5939ba946ff97fc49ec50ecc22bde3e42f143a1e839e0e8613e3537"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-attack-paths.json",
+      "size_bytes": 19442,
+      "sha256": "5b76e8c769bdd99f94b43ace36fdfdbcedd1695942ecb259defb013134a4ec0b"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-detection-signatures.json",
+      "size_bytes": 2587,
+      "sha256": "01e144c4dcf35704f6b95dbd8820747ac6b10723beaf84d38558b39495e5983d"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-exposure-domain.json",
+      "size_bytes": 2779,
+      "sha256": "926f0366704f572d0d2f178293f801dc00df546e662cbf68b16cc673b739acd6"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-incidents.json",
+      "size_bytes": 35020,
+      "sha256": "ea231d8ac213f7c547fc0f1f17e6dfc09fe0f1ec01f348ee879484068ae0d5a2"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-resilience-measures.json",
+      "size_bytes": 1973,
+      "sha256": "2ba14be9c89cec91795530e08de6bf19f6529cc2a2b8db09b3a77e6f99e36c50"
+    },
+    {
+      "relative_path": "repo\\clusters\\scor-tens.json",
+      "size_bytes": 9493,
+      "sha256": "547a7317c6ff303486176aa468a4be7fe750f22cfab709a1f6993cc712f5f431"
+    },
+    {
+      "relative_path": "repo\\clusters\\sector.json",
+      "size_bytes": 25521,
+      "sha256": "42499ea65712964f5ee827caaf3232c4e0e2b9fbc18073d32de74c4527de55a7"
+    },
+    {
+      "relative_path": "repo\\clusters\\sigma-rules.json",
+      "size_bytes": 4782497,
+      "sha256": "b6f4870655df0a3978dc2d1f691075a5b250333ea112e4ed53a4c1712797e52a"
+    },
+    {
+      "relative_path": "repo\\clusters\\social-dark-patterns.json",
+      "size_bytes": 9853,
+      "sha256": "7b2f8f566607d89f4a8821485fdd5d6c11006876870b37445237d8209a1472df"
+    },
+    {
+      "relative_path": "repo\\clusters\\sod-matrix.json",
+      "size_bytes": 93624,
+      "sha256": "14fb6e35a818b0ec7fde69bd708232ee7c0004c80977dc0da658a2d5899aa4ea"
+    },
+    {
+      "relative_path": "repo\\clusters\\software-vendor.json",
+      "size_bytes": 533824,
+      "sha256": "9bb34b9ffdc52a19ecfa4f956ff467c01bc3b164e621ae7285be18875db5bcb5"
+    },
+    {
+      "relative_path": "repo\\clusters\\sparta-mitigations.json",
+      "size_bytes": 419597,
+      "sha256": "f3946a93bf5abcbe0cc75e9912d06fe7d0718c7018a65bc4557f27f74c880d1c"
+    },
+    {
+      "relative_path": "repo\\clusters\\sparta-tactics.json",
+      "size_bytes": 1854,
+      "sha256": "eeec8920fdeefb73c9eee4da8b42487d8119dd8ef23be82c22b23ac9ccdf70ca"
+    },
+    {
+      "relative_path": "repo\\clusters\\sparta-techniques.json",
+      "size_bytes": 486003,
+      "sha256": "7fa845fbd892752927b5a106c69dda8556f0424270cf620055903bd72079b31e"
+    },
+    {
+      "relative_path": "repo\\clusters\\stalkerware.json",
+      "size_bytes": 64195,
+      "sha256": "57100aee7e539f8542413ffbc394108f4015b325a5bf5e43fd85e650d81bbbf2"
+    },
+    {
+      "relative_path": "repo\\clusters\\stealer.json",
+      "size_bytes": 15792,
+      "sha256": "427eb0e57ad2438bbd0a80f398fb158da82f9040b18fb7b0393d4bb89c7babf4"
+    },
+    {
+      "relative_path": "repo\\clusters\\surveillance-vendor.json",
+      "size_bytes": 849981,
+      "sha256": "3971e615d40031960c52e9dc45ef6300436211fcc1f212148438ff155658a33c"
+    },
+    {
+      "relative_path": "repo\\clusters\\target-information.json",
+      "size_bytes": 178580,
+      "sha256": "9a3e238926965a28cda9e31da3fdfc93e66e6bb7cde37f79d0a6d56732079a45"
+    },
+    {
+      "relative_path": "repo\\clusters\\taxonomy-of-fraud.json",
+      "size_bytes": 87788,
+      "sha256": "7225e09fee6ff6127be4862fdad09e5e69be53b9c40037e71b6420ba89f82774"
+    },
+    {
+      "relative_path": "repo\\clusters\\tds.json",
+      "size_bytes": 4094,
+      "sha256": "8483b60bf54ecb952f1e8ccb1a90d1e17c50858253fe518a28e819978c85cd5b"
+    },
+    {
+      "relative_path": "repo\\clusters\\tea-matrix.json",
+      "size_bytes": 2368,
+      "sha256": "13cc2fb2fc2f8fa52a9741a645f82520164003e12fc4982328c02a899b6376f5"
+    },
+    {
+      "relative_path": "repo\\clusters\\terrorist-groups.json",
+      "size_bytes": 286766,
+      "sha256": "703b5696bd9eb7f9fc0a99fd6b42e918653ed644a4f1d689809d25804f00ba77"
+    },
+    {
+      "relative_path": "repo\\clusters\\threat-actor.json",
+      "size_bytes": 1437659,
+      "sha256": "39fa7b7553fd2eaaa4a171976de9a700358446d4f53cca0252e8c050a0ae5a13"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-campaigns.json",
+      "size_bytes": 221474,
+      "sha256": "a0db06bc21722eca82d4386722068383f7340f0a7d08830059daf6172d15e486"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-groups.json",
+      "size_bytes": 454768,
+      "sha256": "207e9cda68fa55c31d24f0e356eabbe7e2a057f5d51919a9f8b4d0e9eee0b865"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-references.json",
+      "size_bytes": 3297290,
+      "sha256": "752d6afe5e5cb3a1dae0145d8769e9adde31efc5a604240ef76c65aacc594594"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-software.json",
+      "size_bytes": 1799817,
+      "sha256": "1c84c86f597e55c07c62707cd50be13ac6093a6d7aa3e06c040102e143511e60"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-tactic.json",
+      "size_bytes": 110576,
+      "sha256": "4bf9d75dcf423d84ddb1a82eecf5f9fe97bccb5b81f7c08a797d4446a1cb3943"
+    },
+    {
+      "relative_path": "repo\\clusters\\tidal-technique.json",
+      "size_bytes": 469065,
+      "sha256": "812956fb3d2cc7f8e790eded35a4e3e3568e873efc2ada153cbe4482acdc8939"
+    },
+    {
+      "relative_path": "repo\\clusters\\tmss.json",
+      "size_bytes": 32212,
+      "sha256": "827ca87bd349760a12cea332d87953fb6a579a65506939e959be101e02fa458e"
+    },
+    {
+      "relative_path": "repo\\clusters\\tool.json",
+      "size_bytes": 495104,
+      "sha256": "9f37fc6995aaa9d0db0aafb8b73d637b087949e55aae289bb69d0ed0df447dcb"
+    },
+    {
+      "relative_path": "repo\\clusters\\uavs.json",
+      "size_bytes": 2185484,
+      "sha256": "9b40a30588cbccfad75681798af5d2c83230acd4f26c1b3257ad37ac809cab3b"
+    },
+    {
+      "relative_path": "repo\\clusters\\ukhsa-culture-collections.json",
+      "size_bytes": 4878567,
+      "sha256": "12516b34d13c1fc31d9f22ffd05f2c9010f5b22819e82888758c877aa0e85d87"
+    },
+    {
+      "relative_path": "repo\\clusters\\veris-framework.json",
+      "size_bytes": 1189696,
+      "sha256": "8218dd6148ea2ab52803ba3662f5efcc41f207954695f0d843913712d985808a"
+    },
+    {
+      "relative_path": "repo\\clusters\\wiper.json",
+      "size_bytes": 15344,
+      "sha256": "1d150d5e8a650f3ac85364f330dde5350376632d4e066bca2a8c761b56f0edea"
+    },
+    {
+      "relative_path": "repo\\doc\\scor-attack-paths-archived-relationships.md",
+      "size_bytes": 4267,
+      "sha256": "96d9bcf6474dadffc60c5e5695416ffe0625b2c7e636de1a38ca02ac9cad63f0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\360net.json",
+      "size_bytes": 278,
+      "sha256": "1a94f7ef573d757ac4b2090edc0174423c29c07bdc3e5cc2f95e73bae67a23ad"
+    },
+    {
+      "relative_path": "repo\\galaxies\\agent-threat-rules.json",
+      "size_bytes": 786,
+      "sha256": "6668b222275bdc778336c4021374789ad47ae91894afb2df4f7cda7a8e220bb7"
+    },
+    {
+      "relative_path": "repo\\galaxies\\ammunitions.json",
+      "size_bytes": 230,
+      "sha256": "f0c5862aa35e3f06830e613135b19d1d9ce0e08479b098efc8a0347c30948a14"
+    },
+    {
+      "relative_path": "repo\\galaxies\\android.json",
+      "size_bytes": 239,
+      "sha256": "957b9814abb9c724bcb7b82d6f1c0b20f131ebc47e152f5f8432f0488315f806"
+    },
+    {
+      "relative_path": "repo\\galaxies\\atrm.json",
+      "size_bytes": 750,
+      "sha256": "e357bd8410c7653297a0a07ec0feee94b66bbcdeaaf1036906aa411cfa6f6723"
+    },
+    {
+      "relative_path": "repo\\galaxies\\attck4fraud.json",
+      "size_bytes": 495,
+      "sha256": "a1b694ad3f355acfa443b906e9090975ea2688063dfb98d5a67f6595bdc98f60"
+    },
+    {
+      "relative_path": "repo\\galaxies\\backdoor.json",
+      "size_bytes": 213,
+      "sha256": "729d2d4d6c17f3f81b2c8e4faf34181cb21387eca037e9a213e53e681800d9c6"
+    },
+    {
+      "relative_path": "repo\\galaxies\\banker.json",
+      "size_bytes": 210,
+      "sha256": "359eecac3ab7e8e1553920a6545f1a70a8145814b1da6da3f805997d414cdbfd"
+    },
+    {
+      "relative_path": "repo\\galaxies\\bhadra-framework.json",
+      "size_bytes": 492,
+      "sha256": "cbd720d96f553d0b3b6b284a98dbebf2f6e2d16a974292b8ab62cfecf6e8a5e1"
+    },
+    {
+      "relative_path": "repo\\galaxies\\bitns.json",
+      "size_bytes": 728,
+      "sha256": "920c27e09a9c5c30b3f07a0b460b740809f2837fc5b79eecbb26c8c6ced1f7f4"
+    },
+    {
+      "relative_path": "repo\\galaxies\\botnet.json",
+      "size_bytes": 197,
+      "sha256": "1312a459816ff2abb4888212a70da68aa2c23a18e2656ba3e4055228e6fd79bc"
+    },
+    {
+      "relative_path": "repo\\galaxies\\branded_vulnerability.json",
+      "size_bytes": 251,
+      "sha256": "f383f4adf09bd2f2562527c342b47e678d3277236e009a34df7d7cc9bba9e996"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cancer.json",
+      "size_bytes": 202,
+      "sha256": "a96735c1eb406ea3f9bad2b20482530b03dd0e99d41e26e4626e858a68ba2630"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cert-eu-govsector.json",
+      "size_bytes": 220,
+      "sha256": "7312b93c9d31d5b7be41774ab254eb84d54be22ef724a385acd276c06564dab0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\china-defence-universities.json",
+      "size_bytes": 255,
+      "sha256": "a0bc3e47b349a5f5fc90b26e977048ba81ce3973c6d6bd945f306d9f9104c4c5"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cloak.json",
+      "size_bytes": 1433,
+      "sha256": "550fadb80eca3ba203c7c21d59be919839d118061ee5386c0221bf7855a28cd3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cmtmf-attack-pattern.json",
+      "size_bytes": 701,
+      "sha256": "efb72cf6e27c946edf8e20cf77c0bf975207e1fa8e45b956e720977e815aaa6f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\country.json",
+      "size_bytes": 255,
+      "sha256": "434f21e2bbfd8407b56088f4d3b7a92f8aed51413e0c1a3dac13a32e81aa3326"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cryptominers.json",
+      "size_bytes": 273,
+      "sha256": "07dc50b446520f296b4a664a869bc04eb3f3a86ee14962053da8e816106c551d"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cti-cmm-1-3.json",
+      "size_bytes": 972,
+      "sha256": "f84c6fddf48562a51770300ad58234a1fd4345b3aac508a8cf97ef2097af184d"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cyfun-assurance-requirements-2023.json",
+      "size_bytes": 1050,
+      "sha256": "968da3640e7347b869a607ae30be5a7a997739696ab290abffea8b4cb58385b4"
+    },
+    {
+      "relative_path": "repo\\galaxies\\cyfun-control-catalogue-2023.json",
+      "size_bytes": 427,
+      "sha256": "187d1e0d9fffdf9c24efa86e7d90ef60cc838a03e06481092935506269ed997f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\dima-techniques.json",
+      "size_bytes": 1131,
+      "sha256": "6e7cda901352118dae0f7ac67605780568f9f8f617029292dda2dbde91cb6428"
+    },
+    {
+      "relative_path": "repo\\galaxies\\disarm-actortypes.json",
+      "size_bytes": 588,
+      "sha256": "2ca0095c93526a9197420224d8e84a9943d4c74ad6698ae18508ffb64137742b"
+    },
+    {
+      "relative_path": "repo\\galaxies\\disarm-countermeasures.json",
+      "size_bytes": 1328,
+      "sha256": "52285224d4e8ecf66eebbdfd87e66dafe4c8d9b4dbafd20baf434d84b2903ec1"
+    },
+    {
+      "relative_path": "repo\\galaxies\\disarm-detections.json",
+      "size_bytes": 981,
+      "sha256": "1e749da53aaffa9ae21c0ba22427dc6ec431b928d27d633ef2c39da7eb46e321"
+    },
+    {
+      "relative_path": "repo\\galaxies\\disarm-techniques.json",
+      "size_bytes": 829,
+      "sha256": "1fdda4601d2b983c74d926886296b4220bb85add9d70a7a24fea456df05c818c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\election-guidelines.json",
+      "size_bytes": 590,
+      "sha256": "6860ddb986973db34ac7830646f0e33c608a6e4849a786bbc52331a328a9a7f8"
+    },
+    {
+      "relative_path": "repo\\galaxies\\entity.json",
+      "size_bytes": 235,
+      "sha256": "c8895edf2b92c501c7d9817bf28081a4cf9d40079f9a904e4681c1f92e0b2662"
+    },
+    {
+      "relative_path": "repo\\galaxies\\exercise-world.json",
+      "size_bytes": 289,
+      "sha256": "7a509d444fa96620cf7854317e15dcd31a6ee77d7f9bb07d34aa250e876e38a4"
+    },
+    {
+      "relative_path": "repo\\galaxies\\exploit-kit.json",
+      "size_bytes": 433,
+      "sha256": "ef703f1eef6dee66ee86fca003aea6d5429ad902e7a38e119e282c77f4488552"
+    },
+    {
+      "relative_path": "repo\\galaxies\\firearms.json",
+      "size_bytes": 210,
+      "sha256": "69e035e43ec290b2007d8d68458b2c16c40dfd448cb8199eeaeaca32ba94c10e"
+    },
+    {
+      "relative_path": "repo\\galaxies\\first-csirt-services-framework.json",
+      "size_bytes": 543,
+      "sha256": "f877fd632577f665d44e468fb8ed0e4b6fcf272153c6a3241d6db0ca040e2cbf"
+    },
+    {
+      "relative_path": "repo\\galaxies\\first-dns.json",
+      "size_bytes": 978,
+      "sha256": "7b3bf5d4dd8a3c1cb79c9a2629d3e54c997cce23d0c2e7c8bbd894344d008c70"
+    },
+    {
+      "relative_path": "repo\\galaxies\\gsma-motif.json",
+      "size_bytes": 525,
+      "sha256": "875f198e088ddf87c7c5e33b86b450ffbd79f440a8b5d546e46da7669b579966"
+    },
+    {
+      "relative_path": "repo\\galaxies\\handicap.json",
+      "size_bytes": 210,
+      "sha256": "618f150c188cc797c49a44a8722721406ecb80383741f70e8bb3777f7a3492e0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\human-kill-chain.json",
+      "size_bytes": 590,
+      "sha256": "b87c9d154a4db69af3882e98fac63864f58b9d3a18e96bfb7cb8f95b8b1fcc4a"
+    },
+    {
+      "relative_path": "repo\\galaxies\\intelligence-agencies.json",
+      "size_bytes": 258,
+      "sha256": "4f9b0f78bdb878497f35e92eddaacb85f9a267654a922b79feeba7b17d96c372"
+    },
+    {
+      "relative_path": "repo\\galaxies\\interpol-dwva.json",
+      "size_bytes": 683,
+      "sha256": "b1e309c618e6035896bae25f89da052d1f8e22918f623e9ef6b88a43e057d79d"
+    },
+    {
+      "relative_path": "repo\\galaxies\\it-infrastructure-equipment.json",
+      "size_bytes": 360,
+      "sha256": "10218524ac9a16d034b7a45df6c1a5962723462c9be51293e04f26cda16a3fca"
+    },
+    {
+      "relative_path": "repo\\galaxies\\malpedia.json",
+      "size_bytes": 233,
+      "sha256": "efcfb380399d9a6c654c7acee49c76f3e3053d078e0eb0032cff44b5cbbfa40f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\microsoft-activity-group.json",
+      "size_bytes": 270,
+      "sha256": "11ef8ee8203c416e87af3d1b162f63fad7ca407cf4559b778a880baa60224177"
+    },
+    {
+      "relative_path": "repo\\galaxies\\misinfosec-amitt-misinformation-pattern.json",
+      "size_bytes": 612,
+      "sha256": "2df4ba51de4612f8a13a9976cdae377430ded43209a102baa632ecaaeb9c3520"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-analytic.json",
+      "size_bytes": 251,
+      "sha256": "6bf89454a5f5fef0eae5e03d538a65067ace2c12f7b287f10527a0c07ad0ed11"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-asset.json",
+      "size_bytes": 288,
+      "sha256": "b73b4b30cb2cfb3af913a07e87bb2445a97275c91614bb6bd26743a6d2b22068"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-atlas-attack-pattern.json",
+      "size_bytes": 773,
+      "sha256": "e8691612797d8e835968ba66831449f70901d676726be60d7c92cc6f9de34915"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-atlas-case-study.json",
+      "size_bytes": 377,
+      "sha256": "4c14c8aceb97222d27594731da01322bf5071529ba2d228a34e79f9be29d7bcc"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-atlas-course-of-action.json",
+      "size_bytes": 316,
+      "sha256": "2efd5732b89ceb0fffd498897ca250361c17733d0a7c0fbe74210bc34ec2483e"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-attack-pattern.json",
+      "size_bytes": 6329,
+      "sha256": "11df7b8a72962595e77f4b603f351adcc5a6bf359dffe95ea5c531759b7b1b10"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-campaign.json",
+      "size_bytes": 243,
+      "sha256": "5aa24fb2972491b3900ef395a7835d48458ac7a1b872200fcbf260c43b73c480"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-course-of-action.json",
+      "size_bytes": 245,
+      "sha256": "8211092fb699d7495b85d022b2daf02d84c58ee67cf459cd2d77c1f7f6ac3742"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-d3fend.json",
+      "size_bytes": 1342,
+      "sha256": "0d4b40927aafda295644d3e94e5f1e64973c0372f1b0df85ae8dfb4c75e86a7f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-data-component.json",
+      "size_bytes": 328,
+      "sha256": "e38a36447d7c7b06fc0183a42f36efbafc445fb429051d3ef3411f0efe6027b0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-data-source.json",
+      "size_bytes": 317,
+      "sha256": "6e523e13cf3751e4d25892d30b0c449f60c422e68a48e652981cdb24bdbc3328"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-detection-strategy.json",
+      "size_bytes": 273,
+      "sha256": "2b13b873773f8ffffe6faa10347bae5fd6594703c3c35b5313a4ac2fd0c6f37e"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-engage-framework.json",
+      "size_bytes": 286,
+      "sha256": "a98cb7925be5f376789fbba747042f7cd2658e50c8303a1fd91fc3d5c4f65617"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-enterprise-attack-attack-pattern.json",
+      "size_bytes": 258,
+      "sha256": "5ae7b1173422e7c80b15cd06c4e02d668e99b23d10e020a22b0632fed0df3db2"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-enterprise-attack-course-of-action.json",
+      "size_bytes": 267,
+      "sha256": "97a64eb4a0ddaecc264a27cb229b2ef4fe6901af4b5a1a47b0a19974b2e660d1"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-enterprise-attack-intrusion-set.json",
+      "size_bytes": 271,
+      "sha256": "482dc7a0178f96000452f730510ff621a3b850323f74e9fed48b896c96015fb3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-enterprise-attack-malware.json",
+      "size_bytes": 264,
+      "sha256": "d0e0085dbc507c318f4a5b6c62379371b7b141f9300094273b5a1913e9a142ba"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-enterprise-attack-tool.json",
+      "size_bytes": 250,
+      "sha256": "7c51fd25d6f8844c29ab880dc0b4d49d34f008e11c7ce001160c8da1821dfe98"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-fraud-framework.json",
+      "size_bytes": 535,
+      "sha256": "dd2991b72c6487187df52acecf51a527897cddfb6dfc775bd12b81709c58e70c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-assets.json",
+      "size_bytes": 253,
+      "sha256": "ed75252ae99528c15cd5c325a32e78ce05b048955f1981be62efab9cc91d8db2"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-groups.json",
+      "size_bytes": 268,
+      "sha256": "559ab8d8c42f733988d60e80a75a736db6ccbba496ad014ef570560ad5fa8ac5"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-levels.json",
+      "size_bytes": 269,
+      "sha256": "f00210ba093796d511eb33e4fd49017e34d26bca17c17e9031c4b36d370dd826"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-software.json",
+      "size_bytes": 257,
+      "sha256": "d9c02261ee1303ba60ff332ec105c3257c09bbea7f9793713d56758a74abaec7"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-tactics.json",
+      "size_bytes": 255,
+      "sha256": "7bebf3fe6576c2407c24ec0ea802e05f23f8952a8bedaf2e60e811ad809470b3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-ics-techniques.json",
+      "size_bytes": 264,
+      "sha256": "62e369b963c77e17399721a3036085b1df4cd7ea333d0c95072702edbc8b4f51"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-intrusion-set.json",
+      "size_bytes": 255,
+      "sha256": "0679f717e4f75836352b71db9da88623eeb06fedeeb198c85a5a311f977acd9e"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-malware.json",
+      "size_bytes": 259,
+      "sha256": "99b6128926fa032f3ef97fdfc24bc2d1c8325200e3a16592f99df03b2e9f31c3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-mobile-attack-attack-pattern.json",
+      "size_bytes": 250,
+      "sha256": "552a04057dde2dba514ccc8880f56992fd1d0315be0287dbf8a9d1997686d897"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-mobile-attack-course-of-action.json",
+      "size_bytes": 259,
+      "sha256": "423ec67405f0dff979a51a10fcd5a108d6bd890f935c4caa70f6b65c28547656"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-mobile-attack-intrusion-set.json",
+      "size_bytes": 263,
+      "sha256": "01fbb1bb6486450e67df3b35841f97e0383253801097d7d4c75bd2552c63b2b6"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-mobile-attack-malware.json",
+      "size_bytes": 256,
+      "sha256": "29d01aee8ff827a35e7b1cf96aee817b4c125bfc40befd4f273dd2f77bef2dfc"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-mobile-attack-tool.json",
+      "size_bytes": 242,
+      "sha256": "2892098de747a09a8a7f165191bb57e157126d1e3dc773fa221618c38edfcd9b"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-pre-attack-attack-pattern.json",
+      "size_bytes": 244,
+      "sha256": "d2c81e56c40fb44262ebe4b81d15824310f77ff3cfa130922123838191f603b3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-pre-attack-intrusion-set.json",
+      "size_bytes": 257,
+      "sha256": "7e6ed5292a389f0dbaf11d6744c55662d5f51abf74936e02330aa20b6779c862"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-software.json",
+      "size_bytes": 287,
+      "sha256": "95f314c448e1b94e59a48264b78e55e9d70e15ecb1220704c48f0092c79ffbb8"
+    },
+    {
+      "relative_path": "repo\\galaxies\\mitre-tool.json",
+      "size_bytes": 267,
+      "sha256": "14a952af4a5240753147e111c295c894072189c18205989c74ef6caeb4ce7111"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nace.json",
+      "size_bytes": 476,
+      "sha256": "49ab8eb37f78f04313a6aedcc0054003e01e084f484478ab736fe038c8203532"
+    },
+    {
+      "relative_path": "repo\\galaxies\\naics.json",
+      "size_bytes": 235,
+      "sha256": "10ee1acbcb63a21e8d9d68ea7dde8742aec32befb4a41f096b818dc3ae5f996c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nato.json",
+      "size_bytes": 221,
+      "sha256": "889ee16bbf49852d01a9a716fc830ade079bada5b1ebb934317a4cdf21c1c48c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-competency_areas.json",
+      "size_bytes": 274,
+      "sha256": "2bb07b363272a158e7676a013fada0a1028f5e941974ad1dc8575a65a30539f8"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-knowledges.json",
+      "size_bytes": 255,
+      "sha256": "c13e2a779231f45e28dd4c235be3ab8a634eb5bde0e5820933ba7402108c1f5a"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-opm_codes.json",
+      "size_bytes": 276,
+      "sha256": "e958bd5248681a93ddcfa4703f2d7a3e8f59d3a2ed4bda4133de23bc260798f1"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-skills.json",
+      "size_bytes": 244,
+      "sha256": "ebebe28329381740ce0217f7599140ed5dc21274186d22d4e41194320bd51f96"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-tasks.json",
+      "size_bytes": 241,
+      "sha256": "fae15e57aa74d6c80f5841d29d598a5363d5a92ea9383c9f3bdc20c972659b84"
+    },
+    {
+      "relative_path": "repo\\galaxies\\nice-framework-work_roles.json",
+      "size_bytes": 256,
+      "sha256": "fafd73671d604e7785af598b320e2dc53f9f4b3761f066c9d72c61766f5fcdc5"
+    },
+    {
+      "relative_path": "repo\\galaxies\\o365-exchange-techniques.json",
+      "size_bytes": 506,
+      "sha256": "5d07560b11de2e4ce6e930c31eb9a82f432c088f0c591e2f2ce955a8446af863"
+    },
+    {
+      "relative_path": "repo\\galaxies\\online-service.json",
+      "size_bytes": 226,
+      "sha256": "0396169000b1459ddd8a65a15169cf059235a70c96d9b5296c073ee2f81da0c7"
+    },
+    {
+      "relative_path": "repo\\galaxies\\operating-system.json",
+      "size_bytes": 334,
+      "sha256": "9c4d89860b96ab9b0238dc710a7602fabc8734a7f6af0cc9d55a8025565dbc02"
+    },
+    {
+      "relative_path": "repo\\galaxies\\plot4ai.json",
+      "size_bytes": 302,
+      "sha256": "4af81c891f1cdd6ee48acc5f4469bfde50f5f68b36b5a676846928483a40b896"
+    },
+    {
+      "relative_path": "repo\\galaxies\\preventive-measure.json",
+      "size_bytes": 501,
+      "sha256": "f35020d8211c54c920df713deebc3bf2e5101c52c25d7ec4d47103982129d2ba"
+    },
+    {
+      "relative_path": "repo\\galaxies\\producer.json",
+      "size_bytes": 300,
+      "sha256": "d290f7dfab1d01f05e90f1c7d38b6d9d756610380e6a84374cfca44b52cb8532"
+    },
+    {
+      "relative_path": "repo\\galaxies\\ransomware.json",
+      "size_bytes": 305,
+      "sha256": "f7d1b3e6fdbe7fab2be3db021a65083c8b9ba6b2daf394971b8c03bdc10a77ad"
+    },
+    {
+      "relative_path": "repo\\galaxies\\rat.json",
+      "size_bytes": 412,
+      "sha256": "2d94ddc3404c02cca29de4a436c6d34dcdbb814982f6713cded0d5a61cb8282c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\region.json",
+      "size_bytes": 220,
+      "sha256": "c4a5d6fd71fd3f87e389479bc98ba95f6ba5810ae2000cd4612a9b96303ce740"
+    },
+    {
+      "relative_path": "repo\\galaxies\\rmm-tool.json",
+      "size_bytes": 267,
+      "sha256": "a458034ad1648765b162d294f7fe747e1fcfbb0725923fdca45f000f1e222c4c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\rsit.json",
+      "size_bytes": 541,
+      "sha256": "2a477dcf5020dafddb49cbf7592010718c8799b032726e9aeb7c346ecd9cc4f0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-about.json",
+      "size_bytes": 4097,
+      "sha256": "6da9bd4965f0362bda1eb572697072de4102908be6628d2c3600cb02c53ba3f0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-attack-paths.json",
+      "size_bytes": 449,
+      "sha256": "781d8c3d9c642c247a103bc0267222b5a1b280e8797e6d558ba71af352570959"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-detection-signatures.json",
+      "size_bytes": 462,
+      "sha256": "0d51fb12d1938ddf79ffec627b1896c47963bb587ac0142f330e9235b9478939"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-exposure-domain.json",
+      "size_bytes": 556,
+      "sha256": "1def988bf82648c1607fc6ec92e8b77a2bd2d41f3d9ae60b9c475abf5cf5f1c5"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-incidents.json",
+      "size_bytes": 429,
+      "sha256": "7cbb47e9643b33c270559aa0dd2f3c5e10b80f9d7533e0ef718ed9260ab213d4"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-resilience-measures.json",
+      "size_bytes": 453,
+      "sha256": "2bf3d97d0028d9add22310bd73495ccb4ddad07ddc26f681bd852604536d49d9"
+    },
+    {
+      "relative_path": "repo\\galaxies\\scor-tens.json",
+      "size_bytes": 449,
+      "sha256": "f49a0961a5868b445cfe996e09ccfea385f078f3751bbbdadaba6101a230d6dd"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sector.json",
+      "size_bytes": 200,
+      "sha256": "47e40e68ef87f51c4da8e8ef9fb9f325444d71e13b479c6f01a420a1773ec6ee"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sigma-rules.json",
+      "size_bytes": 285,
+      "sha256": "5159ecdbd54c8a318e03bae8ab6eb4f6e880e3a3b70866042635377e3ef5370a"
+    },
+    {
+      "relative_path": "repo\\galaxies\\social-dark-patterns.json",
+      "size_bytes": 235,
+      "sha256": "4c3b66c89788378a62fcaba7484ccdbd539dfe3c74e3bd3c8484584c0803173c"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sod-matrix.json",
+      "size_bytes": 566,
+      "sha256": "c49ec377e571e00a1edd61548978a581bb0a1441d2ff73aec22b6fb7373963b0"
+    },
+    {
+      "relative_path": "repo\\galaxies\\software-vendor.json",
+      "size_bytes": 330,
+      "sha256": "5beb514fb4daa828b4af1f0f992f4dbb384f773bd835f6201dbcda99615253e2"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sparta-mitigations.json",
+      "size_bytes": 271,
+      "sha256": "a4ef504ccc109debf5d6f9379bd93598061e6ad5fdbdd24ecb212ee62970c9b3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sparta-tactics.json",
+      "size_bytes": 521,
+      "sha256": "5b4fed0fe4f8af35ae6af46a4481eecc089094e31dcd3be7ce4925d4a812bc45"
+    },
+    {
+      "relative_path": "repo\\galaxies\\sparta-techniques.json",
+      "size_bytes": 546,
+      "sha256": "4dd2dd68dc880783d6364e38de71eb7fd24b7974bdc40bd785e5eeb36ad77a50"
+    },
+    {
+      "relative_path": "repo\\galaxies\\stalkerware.json",
+      "size_bytes": 208,
+      "sha256": "0fd25158d5d007c613882e6076bd7a06b60ddfb1a11f377b606f0638ff64be9e"
+    },
+    {
+      "relative_path": "repo\\galaxies\\stealer.json",
+      "size_bytes": 204,
+      "sha256": "63bb0bcff93abb55fd7732941af16117f2947b7ec3b4d3329176170eb17293db"
+    },
+    {
+      "relative_path": "repo\\galaxies\\surveillance-vendor.json",
+      "size_bytes": 336,
+      "sha256": "e61273cf696f08ec64ac9d3a85cfeb66cb28b66379b018182f93360a32568a9a"
+    },
+    {
+      "relative_path": "repo\\galaxies\\target-information.json",
+      "size_bytes": 248,
+      "sha256": "1cc450180c9c19dd8318e0704091d04645c2881fcf6607847301f8cf75fc4e10"
+    },
+    {
+      "relative_path": "repo\\galaxies\\taxonomy-of-fraud.json",
+      "size_bytes": 267,
+      "sha256": "6ebbe13be13c2301a1846a26db053d6db1fc22176564e5fba19a207d99506fb3"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tds.json",
+      "size_bytes": 246,
+      "sha256": "44dfdcb2ee9133508609e74b0a043cc1d8f3ddb56230960183f33a96ba092211"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tea-matrix.json",
+      "size_bytes": 377,
+      "sha256": "7e5c8ab225a3f40235e6f7eae883be026259419addf071592ec1da48b5ba97db"
+    },
+    {
+      "relative_path": "repo\\galaxies\\terrorist-groups.json",
+      "size_bytes": 304,
+      "sha256": "1c3992b017aecc5882909dcae02f13c13ff490b888124bf716c0f6ed61ee81ee"
+    },
+    {
+      "relative_path": "repo\\galaxies\\threat-actor.json",
+      "size_bytes": 367,
+      "sha256": "26162f55f7d7a048975cfab2e2b80ebfa145dee129c7dfdccd81fd1fc57b1571"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-campaigns.json",
+      "size_bytes": 219,
+      "sha256": "0dfe53128007b452999164c272791a5f715404bfdc876235ce049b0ed618b78f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-groups.json",
+      "size_bytes": 213,
+      "sha256": "45f4a50772ed90415978e6776eba6c1c01d1fee711cc9a992954651ac14d693b"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-references.json",
+      "size_bytes": 218,
+      "sha256": "0af3c95795b9cd2f398bd85fa21704a5aa062271eeced72b429b3b77220512cf"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-software.json",
+      "size_bytes": 217,
+      "sha256": "42e38055736321a367558afb17cd205e8647bb03310369450d79caadbbf159f2"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-tactic.json",
+      "size_bytes": 205,
+      "sha256": "f26bbd7910e4fb4b11e03668473e5709574e5fc4417d01682f719429958c3e34"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tidal-technique.json",
+      "size_bytes": 221,
+      "sha256": "76a7446ea4305cc91fe9508496586d5d3ad84f5623bb63ad6b86a904b07a0ec6"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tmss.json",
+      "size_bytes": 654,
+      "sha256": "4257ad39b34bc85e7180024735c08a0001b5726838bb7dbc92657fbee332eca7"
+    },
+    {
+      "relative_path": "repo\\galaxies\\tool.json",
+      "size_bytes": 338,
+      "sha256": "9ee8809aa19d1d910528ba7c6c730d1c457b78f25b61859df7d3e9531eda7e96"
+    },
+    {
+      "relative_path": "repo\\galaxies\\uavs.json",
+      "size_bytes": 238,
+      "sha256": "089d6c4b919a378500072f9a54428fb7a6298da2d0211aa56a87a8f0b5133ab7"
+    },
+    {
+      "relative_path": "repo\\galaxies\\ukhsa-culture-collections.json",
+      "size_bytes": 401,
+      "sha256": "f2d1a0651c11be12b5fd1c5e81b5148e3f3e0b71592f3849d89b0b1e8dc2263f"
+    },
+    {
+      "relative_path": "repo\\galaxies\\veris-framework.json",
+      "size_bytes": 300,
+      "sha256": "bb9da64dc9708aeb0c9315caa2ef9110a62beb6a77b0504a9f352475e42a2260"
+    },
+    {
+      "relative_path": "repo\\galaxies\\wiper.json",
+      "size_bytes": 355,
+      "sha256": "832ed429f18372024ec69d20087b888eb48097035161f3a398437290fac84289"
+    },
+    {
+      "relative_path": "repo\\misp\\threat-actor.json",
+      "size_bytes": 317,
+      "sha256": "a145392cad112591c3cfb3a42edd2a179c0f0910359a2b816132f4d168397846"
+    },
+    {
+      "relative_path": "repo\\scripts\\generate-atr-galaxy.py",
+      "size_bytes": 9175,
+      "sha256": "c0ea84a6142542b56bae8e69aeca11d0aa599e8ad4c20ed479ce19c5f30ae7a6"
+    },
+    {
+      "relative_path": "repo\\tests\\test_del_duplicate_uuids.py",
+      "size_bytes": 1633,
+      "sha256": "b2939d895559f7df62d972840e95a4d9ce3d5adbc9dba08b440abce0966a52fc"
+    },
+    {
+      "relative_path": "repo\\tools\\add_missing_attribution-confidence.py",
+      "size_bytes": 1122,
+      "sha256": "1dcb84755bd57d816a8fa25e50ef54e84d8b0879a34a9b774508680af555ba65"
+    },
+    {
+      "relative_path": "repo\\tools\\add_missing_uuid.py",
+      "size_bytes": 673,
+      "sha256": "8606947036cd994bcc06502f37d6cbccdfaa602e00467e06752645a37a57c237"
+    },
+    {
+      "relative_path": "repo\\tools\\adoc_galaxy.py",
+      "size_bytes": 7499,
+      "sha256": "b10e1729c930b83da6e57d5874a2aa308a2e1229e69dcfa4dba9d632e2d76cca"
+    },
+    {
+      "relative_path": "repo\\tools\\chk_dup.py",
+      "size_bytes": 1993,
+      "sha256": "8b28eeb1ebed3449010d108d8da394dca994d5d0b3f4afaf63f1c299810e91d4"
+    },
+    {
+      "relative_path": "repo\\tools\\chk_empty_strings.py",
+      "size_bytes": 788,
+      "sha256": "636d90fafba6ff6eba074cee0078ddaf8cb4b8b50a1f7f107928695bdbb41984"
+    },
+    {
+      "relative_path": "repo\\tools\\csv_to_galaxy.py",
+      "size_bytes": 3166,
+      "sha256": "3431f573ce65f7bfc2826442062f8c054cc5f8239b6698ec2258b619e0c5b936"
+    },
+    {
+      "relative_path": "repo\\tools\\del_duplicate_refs.py",
+      "size_bytes": 345,
+      "sha256": "eeba75313114fd616af12483690ea59bcf589af02e1a72f00905edb18417f172"
+    },
+    {
+      "relative_path": "repo\\tools\\del_duplicate_uuids.py",
+      "size_bytes": 606,
+      "sha256": "73ba05fe01e305df62f80af52bf39c9e8b60bedc61c114e2c6ca1eb415a7e77a"
+    },
+    {
+      "relative_path": "repo\\tools\\del_duplicate_value.py",
+      "size_bytes": 5150,
+      "sha256": "71923d0c5ad5ea7427e2be6072b7c09f4a16b060c445adc5047333561a9fb4f0"
+    },
+    {
+      "relative_path": "repo\\tools\\del_empty.py",
+      "size_bytes": 1356,
+      "sha256": "c7b385b7fe2926232db03673c22adfd7056d82ca0c49a3f0dc851ad8e4654ebe"
+    },
+    {
+      "relative_path": "repo\\tools\\description_value.py",
+      "size_bytes": 559,
+      "sha256": "87575d57d13bb5c9e42dde59bebb11f3bce62cd11266dae2cb083a6644ab6cfc"
+    },
+    {
+      "relative_path": "repo\\tools\\fetch_malpedia.sh",
+      "size_bytes": 446,
+      "sha256": "1719c391c97dfdff1f0f0bc6ec87a9925c20a3fe43108322c051e6cb71a94a85"
+    },
+    {
+      "relative_path": "repo\\tools\\generate_naics_clusters.py",
+      "size_bytes": 4454,
+      "sha256": "8cbe4f10827e3339b8309edf399ee70edfa90ac66ef669c38f1a933aa2dc815b"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_360net.py",
+      "size_bytes": 3351,
+      "sha256": "6b09c8690a9b4940248de948187dd4609df062cac39e9aa2e616784b32fda68b"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_adoc_galaxy.sh",
+      "size_bytes": 586,
+      "sha256": "aab33cd77b975b8c1b9c8ed3f6949854aeaa9c1e7a8f1e88e781f94627757da8"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_amitt.py",
+      "size_bytes": 5888,
+      "sha256": "fcf689ef22103a694acc829d08d0d37cf1c78523b05c1d9ef31ef7c1ea3c0111"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_ca_listed_terrorist_entities.py",
+      "size_bytes": 6729,
+      "sha256": "070517b3d9066cc2e068f3fab33172787073ab2945f3dee8721a91fb0bc6ba31"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_csf.py",
+      "size_bytes": 9068,
+      "sha256": "0a5b06b0c96b5b705090ef12c6340be44e8aa266361543a9518e1fee7b1375cc"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_defence_university.py",
+      "size_bytes": 10629,
+      "sha256": "7ff701cec04f6d8037ebfd2d95974b8131a2efdc5782f4642df4fe4d2f5e4f11"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_dima.py",
+      "size_bytes": 4796,
+      "sha256": "4f55bbe06e36e8fef87c69611ed76d53134d1d8c6d9f16a078828c06aefb526b"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_disarm.py",
+      "size_bytes": 216,
+      "sha256": "e5c904ac6027571ad21105de2fddf4bc91e8a81583e36cc0a414b858d72fe117"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_east_fraud.py",
+      "size_bytes": 4871,
+      "sha256": "954ddfd4f15561f2bf8f3beee3a2c274b47789e7e2a3dccce72f03fdd7ed1dcf"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_graphml.py",
+      "size_bytes": 18634,
+      "sha256": "028b6bb5267e7c0f6a62eea335db66520b19df4a4705a32628a9e0ceea7a227d"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_gsma_motif.py",
+      "size_bytes": 10626,
+      "sha256": "01721378e01b5ef7174feb87d8e66b71b1386460eaaa5b4b9dee98ba4eeb4919"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_interpol_dwvat.py",
+      "size_bytes": 5850,
+      "sha256": "0704f317acc788dcf5272e2bce8e73d21c33ef0c2c1b2db970c4040a24853180"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_lolrmm.py",
+      "size_bytes": 7673,
+      "sha256": "6e218ffd97cabca40cf1738fb2ff202f0edc856837f1d22b07d2a5a76c84d65c"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_malpedia.py",
+      "size_bytes": 2953,
+      "sha256": "12bb88cdbe81c98dee1730bc2df2777ffb11eca55a9c2c9a8a24ccf5c8e95e68"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mapping.py",
+      "size_bytes": 8013,
+      "sha256": "3ebc3d7c4042fb282a4ef432d59c985be8511be3cc20d379636e82240e05a709"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_microsoft_activity_group.py",
+      "size_bytes": 9443,
+      "sha256": "a0b736e89f70774e7d2d71b0d2aabce631ddf8919e4cfb6a793bd44dc7191612"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mitre.py",
+      "size_bytes": 19501,
+      "sha256": "efafa049f9523b5acd7ad8084343f56bf8b422a620b902c044fc16f130db603a"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mitre_atlas.py",
+      "size_bytes": 12523,
+      "sha256": "8f0a9f64ae344b1e47693d473887003bbd6d1e59c9fae670301f6ddf00c341a6"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mitre_d3fend.py",
+      "size_bytes": 18354,
+      "sha256": "e95df0c19d0c92c49e11518e45f695dc5689452d9d660767387f1e0673dc47e6"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mitre_fight.py",
+      "size_bytes": 11184,
+      "sha256": "fed2cf9d2550a20bb08b8050288f12b8047343756946ac07042bd552e8708825"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_mitre_fraud_framework.py",
+      "size_bytes": 14270,
+      "sha256": "6760c423a27906958e84f85f863bf4cd0073b4705ffe71b7adc0a5311cc3381c"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_ms_atrm.py",
+      "size_bytes": 5935,
+      "sha256": "1270c256718cf07e9e51136c2be7a05906f87b56fe65fab47fa1138c9645e4c4"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_ms_tmss.py",
+      "size_bytes": 6730,
+      "sha256": "7636df6a14f93b29e35b71f831f6397baf1d111ad46cd5f4c131acb9335172d3"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_relationships.py",
+      "size_bytes": 11263,
+      "sha256": "d36c32eb2ad212762a3feeb251dc36a289a8e197a73417ed0ebd6e823bc337ee"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_software_vendor.py",
+      "size_bytes": 5591,
+      "sha256": "44947fbd657a9866dd8be0d741969fbbce7dd6b444ca30c9e297ff7ea96743e4"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_sparta.py",
+      "size_bytes": 14117,
+      "sha256": "0ff5748c5e924245a98c18d0a9b0d7b2b5e9b7ed8112b104d4e5b2d99d3bc4ab"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_ukhsa_culture_collections.py",
+      "size_bytes": 6189,
+      "sha256": "b3973a5575aa2fe6bf7e21ed99a1c0271422767dd5b661c77620b68df08909ce"
+    },
+    {
+      "relative_path": "repo\\tools\\gen_veris.py",
+      "size_bytes": 9924,
+      "sha256": "363dd5624ad79294e626a1d4cddf922683e64e8788a3d56b2c01eb087957466f"
+    },
+    {
+      "relative_path": "repo\\tools\\graph.py",
+      "size_bytes": 7417,
+      "sha256": "d9412a4f8b65a4b7ae59ca9aa91d2529bda1785466cc307c6a72e44d8a94c9aa"
+    },
+    {
+      "relative_path": "repo\\tools\\requirements.txt",
+      "size_bytes": 175,
+      "sha256": "7bb105d9210e6aab01dbfa42ee03176ff8f084f9e4a90ac1d4d0494639c06305"
+    },
+    {
+      "relative_path": "repo\\tools\\threat_actor_similarity_report.py",
+      "size_bytes": 13314,
+      "sha256": "9c865d101d49203c36a3fd59887ed5e6495fe434add90da2655836abb2167a60"
+    },
+    {
+      "relative_path": "repo\\tools\\update_README_with_index.py",
+      "size_bytes": 2340,
+      "sha256": "21d4d7908445e5a7ba7bf624f6d7e5dfe547f719183fa4da304bac2ce4b86e63"
+    },
+    {
+      "relative_path": "repo\\tools\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\applypatch-msg.sample",
+      "size_bytes": 478,
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\commit-msg.sample",
+      "size_bytes": 1972,
+      "sha256": "efc1401b0e99d1ff51494d154d98b46c1e99059bcd8bf9f73cecde19fd3eb23b"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\fsmonitor-watchman.sample",
+      "size_bytes": 4611,
+      "sha256": "9159720099ad5595b8e66645cbfd47763c1e920f46e0b50ae75e642bbec57ef0"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\post-update.sample",
+      "size_bytes": 189,
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-applypatch.sample",
+      "size_bytes": 424,
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-commit.sample",
+      "size_bytes": 1649,
+      "sha256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-merge-commit.sample",
+      "size_bytes": 416,
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-push.sample",
+      "size_bytes": 1374,
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-rebase.sample",
+      "size_bytes": 4898,
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\pre-receive.sample",
+      "size_bytes": 544,
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\prepare-commit-msg.sample",
+      "size_bytes": 1492,
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\push-to-checkout.sample",
+      "size_bytes": 2783,
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\sendemail-validate.sample",
+      "size_bytes": 2308,
+      "sha256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92"
+    },
+    {
+      "relative_path": "repo\\.git\\hooks\\update.sample",
+      "size_bytes": 3650,
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106"
+    },
+    {
+      "relative_path": "repo\\.git\\info\\exclude",
+      "size_bytes": 240,
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1"
+    },
+    {
+      "relative_path": "repo\\.git\\logs\\HEAD",
+      "size_bytes": 194,
+      "sha256": "ab29ced31c2faea32d389a7b02ad48ab159e247399db3e734be3b83951cc4e80"
+    },
+    {
+      "relative_path": "repo\\.git\\logs\\refs\\heads\\main",
+      "size_bytes": 194,
+      "sha256": "ab29ced31c2faea32d389a7b02ad48ab159e247399db3e734be3b83951cc4e80"
+    },
+    {
+      "relative_path": "repo\\.git\\logs\\refs\\remotes\\origin\\HEAD",
+      "size_bytes": 194,
+      "sha256": "ab29ced31c2faea32d389a7b02ad48ab159e247399db3e734be3b83951cc4e80"
+    },
+    {
+      "relative_path": "repo\\.git\\objects\\pack\\pack-f49211b884da4f5f762c56acf5d019b53e223c2c.idx",
+      "size_bytes": 15436,
+      "sha256": "da00328a24913e9e44fd99ef553fd8b97fd006b752e63b176bb46fbbe024db28"
+    },
+    {
+      "relative_path": "repo\\.git\\objects\\pack\\pack-f49211b884da4f5f762c56acf5d019b53e223c2c.pack",
+      "size_bytes": 12010025,
+      "sha256": "2c4cdf7743ea5aede9a726003a7b6ec87a77f290cc6870a96f993334305e02b2"
+    },
+    {
+      "relative_path": "repo\\.git\\objects\\pack\\pack-f49211b884da4f5f762c56acf5d019b53e223c2c.rev",
+      "size_bytes": 2104,
+      "sha256": "1c92c1e0bfe67874548a13fb0ad841ee295283a0195bbee073c5526822b9b606"
+    },
+    {
+      "relative_path": "repo\\.git\\refs\\heads\\main",
+      "size_bytes": 41,
+      "sha256": "09f0dba77ecd21e481742e992f25875deb1b5c9308d1b192fe902927c941985f"
+    },
+    {
+      "relative_path": "repo\\.git\\refs\\remotes\\origin\\HEAD",
+      "size_bytes": 30,
+      "sha256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4"
+    },
+    {
+      "relative_path": "repo\\.github\\workflows\\pytest.yml",
+      "size_bytes": 1449,
+      "sha256": "4f63f6afac42d1e01de278a65a602e2af085bc8c2d3432f869e66ec31c56903f"
+    },
+    {
+      "relative_path": "repo\\doc\\images\\galaxy.png",
+      "size_bytes": 1003727,
+      "sha256": "380503db1264280f4b766d5474886f5182ff3e0633be2f99e76c2b14adc3a8e1"
+    },
+    {
+      "relative_path": "repo\\doc\\images\\misp-galaxy-logo.png",
+      "size_bytes": 85413,
+      "sha256": "7137a3dc1887346d011c58d31a0a643595077e83697e9856b3e4affa1bf25908"
+    },
+    {
+      "relative_path": "repo\\doc\\images\\screenshot.png",
+      "size_bytes": 170505,
+      "sha256": "51856221591b0757f694e43bfdc2b00b6f6f206ead9c043efe94ff63d3aaac3f"
+    },
+    {
+      "relative_path": "repo\\tools\\cyfun\\generate_cyfun_2023.py",
+      "size_bytes": 17545,
+      "sha256": "bc6eb41a315e59ec254da771d8d274dadab5c0c1196a5fcc8f2965e947dea305"
+    },
+    {
+      "relative_path": "repo\\tools\\cyfun\\README.md",
+      "size_bytes": 3181,
+      "sha256": "ff72e29936bb9c40595d15df1dea9aa411e775125f30cbba6fed02397c7a213c"
+    },
+    {
+      "relative_path": "repo\\tools\\cyfun\\SOURCE_AND_REUSE_NOTICE.md",
+      "size_bytes": 812,
+      "sha256": "b890ca58218c03c1d4db9005a491076b55a47716415e03c01a0aca10d0b8d39f"
+    },
+    {
+      "relative_path": "repo\\tools\\cyfun\\VALIDATION_REPORT.md",
+      "size_bytes": 2239,
+      "sha256": "2a9d3cb4d6e430833c6baf685b13246e6088f9f905c22b0d92f6b1ab587aba57"
+    },
+    {
+      "relative_path": "repo\\tools\\IntelAgencies\\main.py",
+      "size_bytes": 5929,
+      "sha256": "23bcfadaa9634fccb1dbc193f25b783a1cfcbef355bf1fbdf9417d47a11b7f8c"
+    },
+    {
+      "relative_path": "repo\\tools\\IntelAgencies\\REQUIREMENTS",
+      "size_bytes": 11,
+      "sha256": "b2f65a586af6b5344a86792294983f95ab7faf7d28daf448dfa2062e1ab051e4"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\.gitignore",
+      "size_bytes": 57,
+      "sha256": "c9f9359de7c8dd01762c5f1d24fc67f5aed067e41a4b694c34e43610bc80f736"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\build.sh",
+      "size_bytes": 619,
+      "sha256": "faff19c4b6aaa5c78d502cbef793a044b1d3c95b1eddde0cdfdf9a337aa8d299"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\generator.py",
+      "size_bytes": 8596,
+      "sha256": "5bd63b16371039e2dfc1c0221fbe35971d6947997967f49852f921b1d7395cea"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\README.md",
+      "size_bytes": 2715,
+      "sha256": "f10fff1b3293d5f083977bf72c67a32f9fbfd5f8796177424e02777b9e98ff4f"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\requirements.txt",
+      "size_bytes": 902,
+      "sha256": "48ccd12bd5a91eb3a4f55406d4aa9a3102b6475a93201dc7c619d67d2b32a290"
+    },
+    {
+      "relative_path": "repo\\tools\\NER\\extract.py",
+      "size_bytes": 1174,
+      "sha256": "64b4659da808d719826514d9011187c9f87f5de167e74b1b0c95e3c4858676e4"
+    },
+    {
+      "relative_path": "repo\\tools\\nist-nice\\cybersecurity-opm.csv",
+      "size_bytes": 15463,
+      "sha256": "10b5a45028c7e152ca17cbaba3780a830a9e6bfe94c3e447981f1195ea41bf4f"
+    },
+    {
+      "relative_path": "repo\\tools\\nist-nice\\gen_nice.py",
+      "size_bytes": 10040,
+      "sha256": "a5f315999669aaa21d21c5f5123fbd9f5838a13949f9ffe955f600b61e40ed19"
+    },
+    {
+      "relative_path": "repo\\tools\\plot4ai\\generate_plot4ai_galaxy.py",
+      "size_bytes": 11523,
+      "sha256": "06096ec26d8d5c1ae131093a87438a37622ad02dac303d4756b684d6436c7e71"
+    },
+    {
+      "relative_path": "repo\\tools\\plot4ai\\README.md",
+      "size_bytes": 1137,
+      "sha256": "96b44d148f121074b22aa54ad7db3fc0b365975385227df8b774b38759650f8b"
+    },
+    {
+      "relative_path": "repo\\tools\\ransomware\\ransomlook_update.py",
+      "size_bytes": 5484,
+      "sha256": "8e2ec1050dc56d59c49c7af213ed498ef5ba9227f4c95459abaf1bec23d5e274"
+    },
+    {
+      "relative_path": "repo\\tools\\sigma\\config.ini",
+      "size_bytes": 90,
+      "sha256": "e47de3c038cafa5d305353dfa832570b9770fa4b61600be6f9ec224c1db8d2a2"
+    },
+    {
+      "relative_path": "repo\\tools\\sigma\\sigma-to-galaxy.py",
+      "size_bytes": 10375,
+      "sha256": "c916af51eda74cf51fe9e068f9b3233cbce5c5a94f9e633a8064521db7ec7a05"
+    },
+    {
+      "relative_path": "repo\\tools\\sigma\\test_sigma_to_galaxy.py",
+      "size_bytes": 2280,
+      "sha256": "481001a5dde3cab707c4779cea72a405c02a6a1baa18b49b4becb82e43882f7e"
+    },
+    {
+      "relative_path": "repo\\tools\\sigma\\update.sh",
+      "size_bytes": 710,
+      "sha256": "a74dc9d582f62bc1d8530c29a03fd601cdda89cae5cf58470458f395bcb5729d"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\main.py",
+      "size_bytes": 3823,
+      "sha256": "ef1e7a8b21afbc8de485a44bb9ccad3bd6bc6d3d352be70cfb7a09c67c0ffd9f"
+    },
+    {
+      "relative_path": "repo\\tools\\UN M49\\generate_region_cluster.py",
+      "size_bytes": 4185,
+      "sha256": "9665995040fb0667303e42ac36e904161962e48d20ee36569fd14d694ad114a4"
+    },
+    {
+      "relative_path": "repo\\tools\\UN M49\\region_galaxy.py",
+      "size_bytes": 6185,
+      "sha256": "2a34adec0643756a7648391ce14bd2315f7becbebb0f5ee1951e0ef39e3d6d87"
+    },
+    {
+      "relative_path": "repo\\tools\\UN M49\\UNSD.csv",
+      "size_bytes": 22458,
+      "sha256": "2f7b10e7e33224815910a29e2686d8d22d040517c56dcb9d9fc3e6a258e06702"
+    },
+    {
+      "relative_path": "repo\\tools\\IntelAgencies\\modules\\api.py",
+      "size_bytes": 2355,
+      "sha256": "6a90f4f476889a4de14ad9a9c2dd93e3e47d468c2d7add0f5aa2335d4ad675dc"
+    },
+    {
+      "relative_path": "repo\\tools\\IntelAgencies\\modules\\intel.py",
+      "size_bytes": 2399,
+      "sha256": "9d688ec7b5fce184921b35e52df8d6984506b48db2c064b24e58bc8cd5ea679e"
+    },
+    {
+      "relative_path": "repo\\tools\\IntelAgencies\\modules\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v1.0\\create_attack-pattern_galaxy.py",
+      "size_bytes": 2263,
+      "sha256": "52cb77174260e010678bcaea21734e03ad3bde5aa4fc2eb7b881611d0e1e6103"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v1.0\\create_course-of-action_galaxy.py",
+      "size_bytes": 1808,
+      "sha256": "fbac0e7649bed34bebd898668acb00eaedc5a5f0eec2a04d4d7750a10dd98b41"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v1.0\\create_intrusion-set_galaxy.py",
+      "size_bytes": 2078,
+      "sha256": "f37fee17acf21a4f50682fe852fcf605210dc2fb32dec2e9cd3ef88e1610fc66"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v1.0\\create_malware_galaxy.py",
+      "size_bytes": 2078,
+      "sha256": "e34c2b7db84aecad335f0272fe7af1a67f238a2c0d9ce5e0010737b4a66af1f7"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v1.0\\create_tool_galaxy.py",
+      "size_bytes": 2046,
+      "sha256": "682420b2d91edcb4cf570c49721427c19d8363f745ccbc783145e603600ac3bf"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-enterprise-attack-attack-pattern_galaxy.py",
+      "size_bytes": 2979,
+      "sha256": "735343e3c07337e5db0642a45f9f62f0552882a724e500c408852b130145f0d6"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-enterprise-attack-course-of-action_galaxy.py",
+      "size_bytes": 2110,
+      "sha256": "256842d7548c393a9c7158adca7352cea643146666c4862a872bc61fc44784ba"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-enterprise-attack-intrusion-set_galaxy.py",
+      "size_bytes": 2521,
+      "sha256": "0d95f35b1665960a6e0b929c659f4b11bb6dcb076323a857f160d6f3f2381d4b"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-enterprise-attack-malware_galaxy.py",
+      "size_bytes": 2458,
+      "sha256": "693c4884805debf1ce7bc40bf6cc6e103e5ba0d662e567f75342965d37670a8b"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-enterprise-attack-tool_galaxy.py",
+      "size_bytes": 2408,
+      "sha256": "c543a43f1339fe1568fcc16a09d176a0dcd6fb0919bdd0b4b46d75687d50415f"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-mobile-attack-attack-pattern_galaxy.py",
+      "size_bytes": 2829,
+      "sha256": "6edbb6b944140c1d8e0b09a0a052464f5a2a3464832180010abc71bd1102a9be"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-mobile-attack-course-of-action_galaxy.py",
+      "size_bytes": 2094,
+      "sha256": "1f430e87729f2bb04189fddf09cbc671007b7c14219b0daea519775527c1b58d"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-mobile-attack-intrusion-set_galaxy.py",
+      "size_bytes": 2433,
+      "sha256": "8be0bc6d6d3ceee4ebe1bc502f29c4e8d68604e792f4db84fd9be7fb6435f487"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-mobile-attack-malware_galaxy.py",
+      "size_bytes": 2450,
+      "sha256": "7a3fa06016a8f4fc7d318d8b1cb0cc0ccbd0897751cc5ce484316e4084969034"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-mobile-attack-tool_galaxy.py",
+      "size_bytes": 2418,
+      "sha256": "085a0e29c78c52aa0b09b772c8e0abb32351c301d18645998032a82719250b8a"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-pre-attack-attack-pattern_galaxy.py",
+      "size_bytes": 2805,
+      "sha256": "d8ce4f5326164912c36558ff1a2ac1e73eb3449c0d93fa94e3115bd0885b10a8"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre-pre-attack-intrusion-set_galaxy.py",
+      "size_bytes": 2412,
+      "sha256": "fc8654aecf256ba2dd064112f82cce40318208091fb4c9208560263599c5e34a"
+    },
+    {
+      "relative_path": "repo\\tools\\mitre-cti\\v2.0\\create_mitre_relationships.py",
+      "size_bytes": 3483,
+      "sha256": "f58f2c587269d8b310410daecdbd935464aee56c1da294a3a65e98ad2aa29251"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\modules\\cluster.py",
+      "size_bytes": 4680,
+      "sha256": "c81ca5fa2ffb4391aac5896e32167aad42e9c1f3fe9e816bc6a7df3cc609f1ab"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\modules\\galaxy.py",
+      "size_bytes": 5420,
+      "sha256": "85e14005da4b957d1d881843c16b416cd8bf64eb6041dc67f97e991fa86d1b11"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\modules\\site.py",
+      "size_bytes": 5187,
+      "sha256": "8344c754ebfe87524e600a631149c45695507e2f03ebba4390a63a1a18624e7c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\modules\\universe.py",
+      "size_bytes": 4878,
+      "sha256": "bcea65b29958544a15a706530c72db4b66b6d14dfea3546d1c0213abdfb37deb"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\modules\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\mkdocs.yml",
+      "size_bytes": 2673,
+      "sha256": "f4659e7770b902b52a200350989a3244cae825a06341bddeccf80b79c09e0b12"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\utils\\helper.py",
+      "size_bytes": 3375,
+      "sha256": "e245fe1ef658a491de5d4e28f7d4bc735c7b5136c63536806049fb41271d1460"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\utils\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\javascripts\\graph.js",
+      "size_bytes": 18559,
+      "sha256": "eee3dadd6f11ad94cedecf7d7d7b72acabcb51fa3664036ddbae45efb1119ac3"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\javascripts\\navigation.js",
+      "size_bytes": 903,
+      "sha256": "230a11d3dbdee6c36422a1f12d778f0a5248892b35f4a667194a64f1a3dc4343"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\javascripts\\statistics.js",
+      "size_bytes": 5867,
+      "sha256": "51f276eb23de48a2b9a36d50a8645030437d64616adabd1d98bcc411f7b6892d"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\javascripts\\tablefilter.js",
+      "size_bytes": 1817,
+      "sha256": "756743baaf942f9e4f1d8b6e85d6847de47e807313fff47478b94721adc1af00"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\d3.min.js",
+      "size_bytes": 279635,
+      "sha256": "ea62155b8d6b07270bea6029002e5def097bc83a82fd90fd1c62f2aa209e4e2f"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\stylesheets\\buttons.css",
+      "size_bytes": 106,
+      "sha256": "a0ff036c511171963ad229c8ebccd26705a4050d1d613cb1ec35e65af8e8419d"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\stylesheets\\graph.css",
+      "size_bytes": 515,
+      "sha256": "8666a4e2f149075fc8c08f834eb791dee5102a0125a92458749a4dd41a7d67d8"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\stylesheets\\navigation.css",
+      "size_bytes": 1275,
+      "sha256": "09ef88af1183dae36b2d673d3ceec77d42ffdea4ef4be2b09237e35870092e85"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\tablefilter.js",
+      "size_bytes": 275047,
+      "sha256": "56814d517e4956615a812765f29dabe063297f2d115f646a12c61361b17186b1"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\tf-1-2aa33b10e0e549020c12.js",
+      "size_bytes": 62549,
+      "sha256": "7cf659f6ba7040cf033927c6752d542b63091717752beb4c4dbcad7309b4b4d7"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\colsVisibility.css",
+      "size_bytes": 1325,
+      "sha256": "f90ea3928fac10f767387f8c1da6fc846a310a9ce3d0095c27a24c42e07fbe05"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\filtersVisibility.css",
+      "size_bytes": 182,
+      "sha256": "de022f5424e3d9df7bde040acf6057762c65d9ad45a181c976284376f5c4369c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\tablefilter.css",
+      "size_bytes": 12539,
+      "sha256": "73b60ddc88175c7bc772739691fb46c1c43d174976b6c1f651af3e026cc6d294"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\blank.png",
+      "size_bytes": 144,
+      "sha256": "afeb8f339d2dfa9208cffd0e631d9cd80131d7fa9082f6628c63c9916a55bc7b"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_clear_filters.png",
+      "size_bytes": 360,
+      "sha256": "d504b4dd79068b374a5a72581e30ed7a597d974700bb2b09cb68e7a190334674"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_filter.png",
+      "size_bytes": 325,
+      "sha256": "8f409a5d45636fd4bfdeaf60cd1b3e65d0eb98cd3a963a1cdeeac5b392ec902f"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_first_page.gif",
+      "size_bytes": 63,
+      "sha256": "2c8df7c4e9d112c83db6ee8497bd2c612d7f8c34b0073cc6a722180cb3250abf"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_last_page.gif",
+      "size_bytes": 61,
+      "sha256": "8e332901635e4fa8ee31c651f1affc24ae78bbf37367620f619bad4767e2e409"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_next_page.gif",
+      "size_bytes": 59,
+      "sha256": "229161e71bcc0de522bec079b6df6e45917b78b7aefbcde000cf113cc5c52dc0"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\btn_previous_page.gif",
+      "size_bytes": 58,
+      "sha256": "57ab4511cee75a92d38e2211abf92e94f499ccc8d2a02bfcdce7250dd0a3711c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\downsimple.png",
+      "size_bytes": 201,
+      "sha256": "d0306b66b6b236f6ff31020441b84939ef226ab6be09269851a67c1029d9d5c0"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\icn_clp.png",
+      "size_bytes": 441,
+      "sha256": "91b7f737a460eddfa0d200665b4fb4fd255fc00f5748bac3178093bd2ddb5d71"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\icn_exp.png",
+      "size_bytes": 469,
+      "sha256": "f33408da03a60728812bc7fb4a9d9514d312354f5ba4693cc806c53605f6f098"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\icn_filter.gif",
+      "size_bytes": 68,
+      "sha256": "cb9d505a485ceca0af8c526520e80379abd6e3680e26123dbbc80b368005515c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\icn_filterActive.gif",
+      "size_bytes": 78,
+      "sha256": "b2cb5694348e4122fe3d7c1ecf04ac3045f841022d96b8c46eb4860183c30805"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\upsimple.png",
+      "size_bytes": 201,
+      "sha256": "6be1003ff69eb9398689dc7a61b4c44dbcf49163a8892e808fe92145c30974d6"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\default.css",
+      "size_bytes": 2875,
+      "sha256": "6ff58555d7bf6d9615aaf828be537a5dfb1a33de9efdadcff6d871a911e28b59"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\mytheme.css",
+      "size_bytes": 2773,
+      "sha256": "30d1910e238d2db6b2a5496d86f7f97569927af2fe79079b1f97ecf12663fdc3"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\skyblue.css",
+      "size_bytes": 3613,
+      "sha256": "0416ca508c5278da90066877d14c9eeb0c9ca0bc169e870b75e8f8d19050addc"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\transparent.css",
+      "size_bytes": 3801,
+      "sha256": "5475ecbcbe290c3af1b6b77439ac43e5f60dc5f8654bdd1508b96dad7b478237"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\bg_infDiv.jpg",
+      "size_bytes": 303,
+      "sha256": "c4e0c0d8eab563a3ff091987cfc3b635ba0303020ede0dc08161640b5f520ab8"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\bg_th.jpg",
+      "size_bytes": 326,
+      "sha256": "b4238b80e45714dbcb069c95cf7b744b24df1105a98ee77e80b609f458424208"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_eraser.gif",
+      "size_bytes": 356,
+      "sha256": "b6b767d7784d928a455f90e40204ebc6ab7fb53d9c79012f539a4ca84ea20289"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_first_page.gif",
+      "size_bytes": 332,
+      "sha256": "96d19306ef610b60bc38315f56a3feb8eecbe27a9ed4f04b3d4f6ae6064fe133"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_last_page.gif",
+      "size_bytes": 331,
+      "sha256": "5748b73f9102941990a9a27f6376fd7c437d0274d94f40a6644e767de58b791d"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_next_page.gif",
+      "size_bytes": 187,
+      "sha256": "9b2f60f2a1b912111294d9a397d3e0d67792ad7771a5d7de32d8875bfe399280"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_over_eraser.gif",
+      "size_bytes": 440,
+      "sha256": "457294bb19953e6c1b5d08a27c856bb7394d38ff9a6bb706db21972f52ff0291"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_over_first_page.gif",
+      "size_bytes": 640,
+      "sha256": "b41a54167147027db1e870a057614e2a7ad1677a3291466f13d1f80ac730d78a"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_over_last_page.gif",
+      "size_bytes": 427,
+      "sha256": "001a893a7b32299034df19d4aeed58ec5907e52562f06bb8149a0907b5e9ced2"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_over_next_page.gif",
+      "size_bytes": 393,
+      "sha256": "c79b4a17767c14c9d04a37ed6caaa56225b5da845af5341ac408d2954454db72"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_over_previous_page.gif",
+      "size_bytes": 395,
+      "sha256": "ea67c1638f8f0a1c7f0bda45e56c3d365beadda0c088d8fff5d07532e33f90b1"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\btn_previous_page.gif",
+      "size_bytes": 290,
+      "sha256": "f0ae907b4f4e1307e736fb39d3dd86741aec29bbb33360002eb676a5028f54ec"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\default\\images\\img_loading.gif",
+      "size_bytes": 3236,
+      "sha256": "d0e2228ebfacab516c72ae1debd4f0325e0e0b9d63b8c0b61095c6b3e8b1aa53"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\bg_headers.jpg",
+      "size_bytes": 300,
+      "sha256": "9db88388dcfe66690ce48146e8b3d59820ce655f45679a128c82b23d321b1054"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\bg_infDiv.jpg",
+      "size_bytes": 303,
+      "sha256": "c4e0c0d8eab563a3ff091987cfc3b635ba0303020ede0dc08161640b5f520ab8"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\btn_filter.png",
+      "size_bytes": 928,
+      "sha256": "1516e5ad1c4af1664f10ce5af139a8f26640c525dac54bd76540ffad6cfd7d02"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\btn_first_page.gif",
+      "size_bytes": 63,
+      "sha256": "2c8df7c4e9d112c83db6ee8497bd2c612d7f8c34b0073cc6a722180cb3250abf"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\btn_last_page.gif",
+      "size_bytes": 61,
+      "sha256": "8e332901635e4fa8ee31c651f1affc24ae78bbf37367620f619bad4767e2e409"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\btn_next_page.gif",
+      "size_bytes": 59,
+      "sha256": "229161e71bcc0de522bec079b6df6e45917b78b7aefbcde000cf113cc5c52dc0"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\btn_previous_page.gif",
+      "size_bytes": 58,
+      "sha256": "57ab4511cee75a92d38e2211abf92e94f499ccc8d2a02bfcdce7250dd0a3711c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\mytheme\\images\\img_loading.gif",
+      "size_bytes": 8787,
+      "sha256": "229b555e9199ffa5209a18ed5f75d34128ba2f58921849f8eaad92be08ede149"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\bg_skyblue.gif",
+      "size_bytes": 554,
+      "sha256": "a48cc8c3011fdab4c58e5bb46f745a58d9a8716bcb50143e6c19b3cc86e1b1bb"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\btn_first_page.gif",
+      "size_bytes": 118,
+      "sha256": "a6c03e8cbd818e75da736ba1e24cd85f5436d048055763b90a3bdd10b3614eb6"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\btn_last_page.gif",
+      "size_bytes": 118,
+      "sha256": "4981aa6ef2d4a0a8d9c72d59124b87e29b9e5b6ca8431279099a4e20c1b77998"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\btn_next_page.gif",
+      "size_bytes": 97,
+      "sha256": "b9ef391e7b90b5ddae18e938bc71a1df74f985ab4c8384308213b5ceb19ad917"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\btn_prev_page.gif",
+      "size_bytes": 97,
+      "sha256": "f6f4274947d5b936911084c9063b1cd97058a3274cfe5bfc9cbb060268d1bdf8"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\icn_clear_filters.png",
+      "size_bytes": 601,
+      "sha256": "d5a2759e241abae0692203e925bdd67b69be635d3a3ac7ad6b1dc12d3a21bc5c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\skyblue\\images\\img_loading.gif",
+      "size_bytes": 847,
+      "sha256": "213d082ed332fd8292b833d9cfebb5508dfc627b5c1b0d762b4048ed392c06ac"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\btn_first_page.gif",
+      "size_bytes": 63,
+      "sha256": "2c8df7c4e9d112c83db6ee8497bd2c612d7f8c34b0073cc6a722180cb3250abf"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\btn_last_page.gif",
+      "size_bytes": 61,
+      "sha256": "8e332901635e4fa8ee31c651f1affc24ae78bbf37367620f619bad4767e2e409"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\btn_next_page.gif",
+      "size_bytes": 59,
+      "sha256": "229161e71bcc0de522bec079b6df6e45917b78b7aefbcde000cf113cc5c52dc0"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\btn_prev_page.gif",
+      "size_bytes": 58,
+      "sha256": "57ab4511cee75a92d38e2211abf92e94f499ccc8d2a02bfcdce7250dd0a3711c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\icn_clear_filters.png",
+      "size_bytes": 601,
+      "sha256": "d5a2759e241abae0692203e925bdd67b69be635d3a3ac7ad6b1dc12d3a21bc5c"
+    },
+    {
+      "relative_path": "repo\\tools\\mkdocs\\site\\docs\\01_attachements\\modules\\tablefilter\\style\\themes\\transparent\\images\\img_loading.gif",
+      "size_bytes": 847,
+      "sha256": "213d082ed332fd8292b833d9cfebb5508dfc627b5c1b0d762b4048ed392c06ac"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\api\\api.py",
+      "size_bytes": 394,
+      "sha256": "e01a13ec9e82b55d1ade8ac845aa7250a44149a8001bee1a00c6706346be6a85"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\api\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\campaigns.json",
+      "size_bytes": 568,
+      "sha256": "399b58c82cf23efed4e126acbb9ee353bffcc1dcf7bf5569950a30d4f0d03db9"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\groups.json",
+      "size_bytes": 553,
+      "sha256": "d48f2fdb590d3fd95bfdd3393d09e65f494ef0deb8ceb23d60e43ccd073dc57d"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\references.json",
+      "size_bytes": 572,
+      "sha256": "d512a67ab8dea8f05345cffb1087e4e22eeba46504c4377536d6eb6a28a8099d"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\software.json",
+      "size_bytes": 561,
+      "sha256": "f39fe4846fb10a67bfaa7faf30d98d8ecdd68cc941c6095f1900fd620356ff48"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\tactic.json",
+      "size_bytes": 539,
+      "sha256": "cae0c939e7324574051050c23cd51a16e65da8d269379291c8fa0f3a00dce1af"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\config\\technique.json",
+      "size_bytes": 570,
+      "sha256": "28f9fd2871c416871a4c40d26b71be03c5d8e90c1eb27517fd8f00612291c49d"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\models\\cluster.py",
+      "size_bytes": 24085,
+      "sha256": "37cc805360b0a06234d9e6ac900092fb5769bea83387818d4bfe6f529905f712"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\models\\galaxy.py",
+      "size_bytes": 378,
+      "sha256": "d1dec865814cf4ed7de167a319553e1bcd16a4356954cf306e333c72cc508cb8"
+    },
+    {
+      "relative_path": "repo\\tools\\tidal-api\\models\\__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\common\\certainty-level.json",
+      "size_bytes": 816,
+      "sha256": "fdc289399d3edcf91a0a1721cbee1a3ae37b3c3c07a961eb3ef324095cbfc471"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\common\\sector.json",
+      "size_bytes": 1526,
+      "sha256": "95560264e8a120ec28413183ed8ca23d05f2f85feb517d90701a825d18a89a43"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\common\\threat-actor-type.json",
+      "size_bytes": 483,
+      "sha256": "6c9a5118368a5b0990158857230a164318882ee08656e111a4cbb81d644e2836"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\common\\ttp-category.json",
+      "size_bytes": 1469,
+      "sha256": "279984b9776ffcfe78faf79a8b486ded5ea8f5c58c205d6052cd7aaab4abef4c"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\common\\ttp-type.json",
+      "size_bytes": 8029,
+      "sha256": "d03fc2e8c5cbe5ad98d02d2b9cb000368ff46fd64d27d52ce45a21f9995ca5ab"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\cert-eu-motive.json",
+      "size_bytes": 653,
+      "sha256": "0aea2d4ae77a3a6896e7942b965bc567908f3c88a9ec2ff4707947101c3335f4"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\intended-effect.json",
+      "size_bytes": 3672,
+      "sha256": "b3ca9e654a0654b343f59e1f1059fb50903373740d4a47c3163e6e7a5dcb4d9b"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\motivation.json",
+      "size_bytes": 2478,
+      "sha256": "873a3cfd3ab9dc1ef13cfc9baafd6e92323f8626647f1f5b7778ce7da22dd096"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\planning-and-operational-support.json",
+      "size_bytes": 2054,
+      "sha256": "f331e60f63ca8ea163ae99b1fd65983e172813d5a5c4f0acd3b3066c3bc047cd"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\sophistication.json",
+      "size_bytes": 2259,
+      "sha256": "651ec94fa095511069cddc958a62edc3491838e916070754b3d18008e48ade14"
+    },
+    {
+      "relative_path": "repo\\vocabularies\\threat-actor\\type.json",
+      "size_bytes": 1390,
+      "sha256": "bba60fdafa51674a987d632dcc37610a6207822efbcb7c9dac18673388fbf565"
+    }
+  ],
+  "license_or_usage_notes": "CC0 1.0 Universal",
+  "citation": "MISP Project, 'MISP Galaxy - Threat Intelligence Knowledge Base', GitHub.",
+  "preprocessing_version": "1.0.0",
+  "status": "downloaded"
+}

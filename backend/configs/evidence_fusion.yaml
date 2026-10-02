@@ -1,0 +1,51 @@
+# HACTM Phase 4 Cross-Domain Evidence Fusion Configuration
+
+fusion:
+  algorithm: "weighted_contextual_baseline"
+  version: "1.0.0"
+  configuration_version: "1.0.0"
+
+  # Feature Weighting Allocation (Sum = 1.0)
+  weights:
+    confidence_weight: 0.25
+    quality_weight: 0.20
+    relevance_weight: 0.20
+    freshness_weight: 0.10
+    diversity_weight: 0.10
+    severity_weight: 0.15
+
+  # Evidence Freshness Thresholds (seconds)
+  freshness:
+    fresh_seconds: 300       # < 5 minutes
+    recent_seconds: 3600     # < 1 hour
+    stale_seconds: 86400     # > 24 hours
+
+  # Correlation Windows
+  temporal_windows:
+    default_window_seconds: 1800  # 30 minutes
+    max_window_seconds: 86400      # 24 hours
+
+  # Cyber Risk Categories (0.0 to 1.0)
+  risk_categories:
+    low_max: 0.24
+    moderate_max: 0.49
+    high_max: 0.74
+    critical_min: 0.75
+
+  # Evidence Saturation & Redundancy Control
+  saturation:
+    diminishing_returns_factor: 0.60
+    max_domain_contribution_cap: 0.85
+
+  # Conflict Detection Thresholds
+  conflicts:
+    risk_disagreement_threshold: 0.35
+
+  # Domain Coverage Expectations
+  coverage:
+    expected_domains:
+      - "network-security-agent"
+      - "phishing-intelligence-agent"
+      - "uba-agent"
+      - "identity-authentication-agent"
+      - "transaction-security-agent"

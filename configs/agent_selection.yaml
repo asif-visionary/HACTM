@@ -1,0 +1,32 @@
+# HACTM Phase 7 - Adaptive Agent Selection Configuration
+
+selection:
+  method: adaptive_evidence_orchestration
+  mode: HYBRID
+
+weights:
+  relevance: 0.20
+  expected_information_gain: 0.20
+  reliability: 0.15
+  uncertainty_reduction: 0.15
+  evidence_coverage: 0.05
+  temporal_relevance: 0.10
+  chain_relevance: 0.10
+  diversity: 0.05
+  redundancy_penalty: 0.10
+  cost_penalty: 0.05
+  latency_penalty: 0.05
+  recent_invocation_penalty: 0.05
+  drift_penalty: 0.10
+  calibration_penalty: 0.05
+
+constraints:
+  max_agent_calls: 3
+  max_parallel_agents: 2
+  max_total_cost: 5.0
+  latency_budget_ms: 1000.0
+
+stopping:
+  uncertainty_threshold: 0.25
+  minimum_expected_gain: 0.05
+  risk_stability_threshold: 0.02

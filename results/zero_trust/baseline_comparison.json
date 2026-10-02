@@ -1,0 +1,34 @@
+{
+  "BASELINE_A": {
+    "total_requests": 5,
+    "allowed": 5,
+    "verified": 0,
+    "quarantined": 0,
+    "blocked": 0,
+    "blast_radius_reduction": "0.0%"
+  },
+  "BASELINE_B": {
+    "total_requests": 5,
+    "allowed": 5,
+    "verified": 0,
+    "quarantined": 0,
+    "blocked": 0,
+    "blast_radius_reduction": "0.0%"
+  },
+  "BASELINE_C": {
+    "total_requests": 5,
+    "allowed": 5,
+    "verified": 0,
+    "quarantined": 0,
+    "blocked": 0,
+    "blast_radius_reduction": "0.0%"
+  },
+  "BASELINE_D": {
+    "total_requests": 5,
+    "allowed": 5,
+    "verified": 0,
+    "quarantined": 0,
+    "blocked": 0,
+    "blast_radius_reduction": "73.3%"
+  }
+}

@@ -1,0 +1,23 @@
+uba:
+  agent_id: "uba-agent"
+  version: "1.0.0"
+  model_version: "uba_stat_v1.0"
+
+  profile:
+    min_events_for_baseline: 5
+    max_history_events: 1000
+    retention_days: 90
+
+  detection:
+    zscore_threshold: 3.0
+    data_transfer_threshold_bytes: 524288000  # 500 MB
+    off_hours_start: 22  # 10 PM
+    off_hours_end: 6     # 6 AM
+    contamination: 0.05
+
+  weights:
+    off_hours: 0.20
+    unusual_device: 0.20
+    unusual_resource: 0.25
+    data_movement: 0.35
+    privilege_abuse: 0.40

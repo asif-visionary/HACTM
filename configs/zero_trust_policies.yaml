@@ -1,0 +1,74 @@
+# HACTM Phase 8 Zero-Trust Policy Engine Configuration
+
+engine:
+  mode: DRY_RUN  # Options: DRY_RUN, SIMULATION, CONTROLLED_ENFORCEMENT
+  version: 1.0.0
+  precedence:
+    - BLOCK
+    - QUARANTINE
+    - VERIFY
+    - MONITOR
+    - ALLOW
+
+risk_bands:
+  LOW:
+    min: 0.00
+    max: 0.29
+  MODERATE:
+    min: 0.30
+    max: 0.59
+  HIGH:
+    min: 0.60
+    max: 0.79
+  CRITICAL:
+    min: 0.80
+    max: 1.00
+
+policies:
+  - id: pol_critical_risk_quarantine
+    name: Critical Risk Compromise Quarantine
+    priority: 500
+    conditions:
+      min_risk: 0.80
+      required_tags: ["COMPROMISED"]
+    decision: QUARANTINE
+    actions: ["QUARANTINE", "NOTIFY_SOC"]
+
+  - id: pol_high_uncertainty_verify
+    name: High Uncertainty Step-Up Verification
+    priority: 400
+    conditions:
+      min_uncertainty: 0.70
+      min_risk: 0.40
+    decision: VERIFY
+    required_assurance: AAL2
+    actions: ["REQUIRE_2FA"]
+
+  - id: pol_transaction_stepup
+    name: Elevated Risk Financial Transaction Verification
+    priority: 350
+    conditions:
+      actions: ["TRANSFER", "TRANSACT"]
+      min_risk: 0.50
+    decision: VERIFY
+    required_assurance: AAL2
+    actions: ["REQUIRE_2FA"]
+
+  - id: pol_database_admin_protection
+    name: Database Zone Admin Protection
+    priority: 300
+    conditions:
+      zone: DATABASE_ZONE
+      actions: ["ADMINISTER", "EXECUTE"]
+    decision: VERIFY
+    required_assurance: AAL3
+    actions: ["REQUIRE_2FA", "REQUIRE_BIOMETRIC"]
+
+  - id: pol_low_risk_allow
+    name: Low Risk Standard Access Allow
+    priority: 100
+    conditions:
+      max_risk: 0.30
+    decision: ALLOW
+    required_assurance: AAL1
+    actions: ["ALLOW"]

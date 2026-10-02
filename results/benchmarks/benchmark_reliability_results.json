@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-10-02T03:55:22.161325+00:00",
+  "benchmarks": [
+    {
+      "record_scale": 1000,
+      "reliability_eval": {
+        "mean_ms": 0.1887,
+        "p95_ms": 0.2828,
+        "p99_ms": 0.4313,
+        "throughput_ops_sec": 5251.9
+      },
+      "calibration_eval": {
+        "latency_ms": 6.7269,
+        "samples_evaluated": 1000
+      },
+      "drift_eval": {
+        "latency_ms": 1.396,
+        "samples_evaluated": 1000
+      },
+      "memory_usage": {
+        "peak_mb": 0.0218
+      }
+    },
+    {
+      "record_scale": 10000,
+      "reliability_eval": {
+        "mean_ms": 0.1412,
+        "p95_ms": 0.2009,
+        "p99_ms": 0.3089,
+        "throughput_ops_sec": 7012.73
+      },
+      "calibration_eval": {
+        "latency_ms": 6.719,
+        "samples_evaluated": 1000
+      },
+      "drift_eval": {
+        "latency_ms": 1.3955,
+        "samples_evaluated": 1000
+      },
+      "memory_usage": {
+        "peak_mb": 0.0194
+      }
+    },
+    {
+      "record_scale": 100000,
+      "reliability_eval": {
+        "mean_ms": 0.1538,
+        "p95_ms": 0.2895,
+        "p99_ms": 0.3923,
+        "throughput_ops_sec": 6437.83
+      },
+      "calibration_eval": {
+        "latency_ms": 5.1699,
+        "samples_evaluated": 1000
+      },
+      "drift_eval": {
+        "latency_ms": 1.5805,
+        "samples_evaluated": 1000
+      },
+      "memory_usage": {
+        "peak_mb": 0.0194
+      }
+    }
+  ]
+}

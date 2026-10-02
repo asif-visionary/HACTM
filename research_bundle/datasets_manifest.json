@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-10-02T05:19:02.154955+00:00",
+  "experiment": "EXP_14_END_TO_END",
+  "workload": 10000,
+  "pdf_report": "research_bundle\\reports\\rpt_exp_14_end_to_end_pdf_1790918341.pdf.md",
+  "json_report": "research_bundle\\reports\\rpt_exp_14_end_to_end_json_1790918342.json",
+  "csv_report": "research_bundle\\reports\\rpt_exp_14_end_to_end_csv_1790918342.csv",
+  "checksum_sha256": "c125565edc1c0f045f1a75e0abe9c3ee5d9e3cfc9059ec5d6d6e10bb8e6a28de"
+}

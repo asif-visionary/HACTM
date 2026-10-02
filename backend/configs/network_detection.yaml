@@ -1,0 +1,66 @@
+# HACTM Network Security Agent Configuration
+# Phase 2 — Detection Thresholds, Windows, and Model Parameters
+
+network:
+  agent_id: "network-security-agent"
+  version: "1.0.0"
+  schema_version: "1.0.0"
+
+  # Port-Scan Detection Heuristic
+  port_scan:
+    enabled: true
+    window_seconds: 30
+    distinct_ports_threshold: 15
+    connection_attempts_threshold: 20
+    severity: "HIGH"
+    risk_score: 0.78
+    confidence: 0.88
+    description: "Detects multiple destination ports probed on single or multiple targets within a sliding time window"
+
+  # Host-Scan / Network Sweep Heuristic
+  host_scan:
+    enabled: true
+    window_seconds: 30
+    distinct_hosts_threshold: 10
+    severity: "HIGH"
+    risk_score: 0.75
+    confidence: 0.85
+    description: "Detects sweeping across multiple destination IP addresses within a bounded window"
+
+  # Connection Flood / Rate Anomaly Heuristic
+  connection_rate:
+    enabled: true
+    window_seconds: 10
+    threshold: 100
+    severity: "MEDIUM"
+    risk_score: 0.65
+    confidence: 0.80
+    description: "Detects abnormal burst in connection attempts from a single source"
+
+  # Signatures Configuration
+  signatures:
+    enabled: true
+    rule_file: "configs/network_signatures.json"
+    confidence_default: 0.92
+
+  # Anomaly Detection Configuration
+  anomaly:
+    enabled: true
+    algorithm: "isolation_forest"
+    contamination: 0.05
+    n_estimators: 100
+    random_seed: 42
+    model_dir: "models/network"
+    active_model_id: "model_net_baseline_v1"
+    features:
+      - "duration"
+      - "flow_bytes"
+      - "flow_packets"
+      - "bytes_per_second"
+      - "packets_per_second"
+      - "forward_ratio"
+
+  # Streaming & Latency Parameters
+  lateness:
+    allowed_lateness_seconds: 60
+    max_window_buffer_size: 10000

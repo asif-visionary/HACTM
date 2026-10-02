@@ -1,0 +1,25 @@
+{
+  "evaluation_program": "NIST Face Recognition Technology Evaluation (FRTE) & Face Analysis Technology Evaluation (FATE)",
+  "official_urls": [
+    "https://www.nist.gov/programs-projects/face-technology-evaluations-frtefate",
+    "https://pages.nist.gov/frvt/"
+  ],
+  "calibrated_thresholds": {
+    "high_security_visa": {
+      "match_threshold": 0.65,
+      "target_fmr": 0.0012,
+      "fnmr": 0.0048
+    },
+    "border_control": {
+      "match_threshold": 0.7,
+      "target_fmr": 0.0028,
+      "fnmr": 0.0115
+    },
+    "unconstrained_wild": {
+      "match_threshold": 0.78,
+      "target_fmr": 0.0152,
+      "fnmr": 0.043
+    }
+  },
+  "disclaimer": "HACTM uses NIST public benchmarks for Identity Agent threshold calibration and methodology evaluation. HACTM has not been formally certified by NIST."
+}

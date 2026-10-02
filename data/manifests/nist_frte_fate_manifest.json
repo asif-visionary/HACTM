@@ -1,0 +1,20 @@
+{
+  "dataset_name": "NIST_FRTE_FATE",
+  "source_url": "https://www.nist.gov/programs-projects/face-technology-evaluations-frtefate",
+  "source_type": "nist",
+  "download_timestamp": "2026-10-02T11:31:21Z",
+  "version": "2026.Q1",
+  "commit_or_release": "main",
+  "file_count": 1,
+  "files": [
+    {
+      "relative_path": "nist_frte_fate_benchmarks.json",
+      "size_bytes": 1326,
+      "sha256": "a18dc3f3af1a9bd56e657c381dfd44b36a05ec136ad9de40c9ba86b84a08a759"
+    }
+  ],
+  "license_or_usage_notes": "Public Domain (U.S. Government Work)",
+  "citation": "P. Grother et al., NIST Special Publication 800-76 / NIST IR 8429 Face Recognition Vendor Test (FRVT) / FRTE & FATE Reports.",
+  "preprocessing_version": "1.0.0",
+  "status": "downloaded"
+}

@@ -1,0 +1,26 @@
+{
+  "quarantined_at": "2026-10-02T04:10:06.859039+00:00",
+  "run_id": "run_e26edf16a5ff",
+  "source_name": "sample_evidence.csv",
+  "row_number": 13,
+  "error_reason": "Constraint violation: risk_score must be between 0.0 and 1.0, got 1.45",
+  "original_record": {
+    "event_id": "EVT-SYN-ERR-01",
+    "agent_id": "AGENT-NET-01",
+    "entity_id": "IP:10.0.0.99",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T11:00:00Z",
+    "risk_score": "1.45",
+    "confidence": "0.90",
+    "uncertainty": "0.10",
+    "source": "CIC-IDS2017",
+    "dataset": "SYNTHETIC_EVAL",
+    "ip": "10.0.0.99",
+    "email": "",
+    "user": "",
+    "evidence": "",
+    "security_tags": {
+      "error": "risk_score_too_high"
+    }
+  }
+}

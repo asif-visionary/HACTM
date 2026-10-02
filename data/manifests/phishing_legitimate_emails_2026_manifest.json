@@ -1,0 +1,20 @@
+{
+  "dataset_name": "Phishing_Legitimate_Emails_2026",
+  "source_url": "https://www.kaggle.com/datasets/kuladeep19/phishing-and-legitimate-emails-dataset",
+  "source_type": "kaggle",
+  "download_timestamp": "2026-10-02T11:31:21Z",
+  "version": "2026.1",
+  "commit_or_release": "main",
+  "file_count": 1,
+  "files": [
+    {
+      "relative_path": "phishing_legit_dataset_KD_10000.csv",
+      "size_bytes": 2721719,
+      "sha256": "fb65d38e33e9fe070cc842abf3a6f7ed679da5ae0fd823cec31db46ede5f1aa7"
+    }
+  ],
+  "license_or_usage_notes": "CC BY-SA 4.0",
+  "citation": "Phishing and Legitimate Emails Dataset for ML 2026, Kaggle.",
+  "preprocessing_version": "1.0.0",
+  "status": "downloaded"
+}

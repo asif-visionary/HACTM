@@ -1,0 +1,18 @@
+transaction:
+  agent_id: "transaction-security-agent"
+  version: "1.0.0"
+  model_version: "tx_anom_v1.0"
+
+  velocity:
+    time_window_seconds: 120
+    max_transactions_threshold: 5
+
+  amount_anomaly:
+    zscore_threshold: 3.0
+    min_account_transactions: 3
+
+  weights:
+    velocity: 0.35
+    amount_deviation: 0.40
+    new_recipient: 0.25
+    device_novelty: 0.20

@@ -1,0 +1,31 @@
+phishing:
+  agent_id: "phishing-intelligence-agent"
+  version: "1.0.0"
+  model_version: "phish_tfidf_v1.0"
+  
+  nlp_model:
+    enabled: true
+    algorithm: "tfidf_logistic_regression"
+    max_features: 5000
+    ngram_range: [1, 2]
+    threshold: 0.5
+
+  header_analysis:
+    check_mismatch: true
+    require_auth_results: false
+
+  url_analysis:
+    max_urls_per_email: 50
+    suspicious_tlds: [".xyz", ".top", ".work", ".click", ".link", ".zip", ".mov"]
+
+  weights:
+    header_mismatch: 0.25
+    suspicious_url: 0.25
+    attachment_risk: 0.20
+    nlp_text_score: 0.30
+    spear_phishing_bonus: 0.10
+    bec_bonus: 0.15
+
+  resource_limits:
+    max_body_bytes: 1048576  # 1 MB max body size
+    max_attachments: 20

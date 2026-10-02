@@ -1,0 +1,15 @@
+{
+  "quarantined_at": "2026-10-02T09:00:30.357417+00:00",
+  "run_id": "run_6b96c2817c4f",
+  "source_name": "quarantine_test",
+  "row_number": 2,
+  "error_reason": "Constraint violation: risk_score must be between 0.0 and 1.0, got 2.5",
+  "original_record": {
+    "event_id": "EVT-INVALID-RISK",
+    "agent_id": "AGENT-01",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T10:00:00Z",
+    "risk_score": 2.5,
+    "evidence": {}
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "A1": {
+    "ablation_code": "A1",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A2": {
+    "ablation_code": "A2",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A3": {
+    "ablation_code": "A3",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A4": {
+    "ablation_code": "A4",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A5": {
+    "ablation_code": "A5",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A6": {
+    "ablation_code": "A6",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A7": {
+    "ablation_code": "A7",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A8": {
+    "ablation_code": "A8",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A9": {
+    "ablation_code": "A9",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A10": {
+    "ablation_code": "A10",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  },
+  "A11": {
+    "ablation_code": "A11",
+    "avg_calls": 1.0,
+    "avg_cost": 1.0
+  }
+}

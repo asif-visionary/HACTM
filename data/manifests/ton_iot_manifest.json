@@ -1,0 +1,20 @@
+{
+  "dataset_name": "ToN-IoT",
+  "source_url": "https://research.unsw.edu.au/projects/toniot-datasets",
+  "source_type": "official+kaggle",
+  "download_timestamp": "2026-10-02T11:30:51Z",
+  "version": "1.0.0",
+  "commit_or_release": "main",
+  "file_count": 1,
+  "files": [
+    {
+      "relative_path": "train_test_network.csv",
+      "size_bytes": 29902775,
+      "sha256": "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974"
+    }
+  ],
+  "license_or_usage_notes": "UNSW Research License - Academic & Educational Use Permitted",
+  "citation": "N. Moustafa, 'ToN_IoT datasets,' UNSW Canberra, 2019.",
+  "preprocessing_version": "1.0.0",
+  "status": "downloaded"
+}

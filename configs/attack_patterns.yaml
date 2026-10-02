@@ -1,0 +1,45 @@
+patterns:
+  - pattern_id: PHISH_AUTH_TRANSACTION
+    name: Phishing to Account Compromise to Fraudulent Transaction
+    description: Phishing indicator followed by authentication anomaly and transaction anomaly
+    sequence:
+      - phishing
+      - identity
+      - transaction
+    max_gap_seconds: 3600
+    required_relationship: same_user_or_account
+    minimum_domains: 2
+
+  - pattern_id: NET_AUTH_UBA
+    name: Network Anomaly to Lateral Auth to Anomalous Behavior
+    description: Network intruder executing anomalous authentication followed by abnormal user behavior
+    sequence:
+      - network
+      - identity
+      - uba
+    max_gap_seconds: 7200
+    required_relationship: same_user_or_account
+    minimum_domains: 2
+
+  - pattern_id: PHISH_AUTH_NET_TRANSACTION
+    name: Full Spectrum Cyber Attack Chain
+    description: Initial phishing hook leading to credential reuse, network persistence, and exfiltration/fraud
+    sequence:
+      - phishing
+      - identity
+      - network
+      - transaction
+    max_gap_seconds: 14400
+    required_relationship: same_user_or_account
+    minimum_domains: 3
+
+  - pattern_id: IDENTITY_ANOMALY_SEQUENCE
+    name: Identity Anomaly to Behavioral Anomaly to Transaction
+    description: Suspicious auth followed by UBA deviation and transaction anomaly
+    sequence:
+      - identity
+      - uba
+      - transaction
+    max_gap_seconds: 3600
+    required_relationship: same_user_or_account
+    minimum_domains: 2

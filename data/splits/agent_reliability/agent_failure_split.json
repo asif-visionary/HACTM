@@ -1,0 +1,5 @@
+{
+  "train": 1200,
+  "validation": 150,
+  "test": 150
+}

@@ -1,0 +1,24 @@
+{
+  "num_events": 1000,
+  "total_duration_sec": 0.03961038589477539,
+  "throughput_ops_sec": 25245.90400751183,
+  "avg_latency_ms": 0.03557395935058594,
+  "p95_latency_ms": 0.0,
+  "p99_latency_ms": 1.016378402709961,
+  "decisions_breakdown": {
+    "ALLOW": 508,
+    "VERIFY": 283,
+    "QUARANTINE": 209,
+    "BLOCK": 0,
+    "MONITOR": 0,
+    "ESCALATE": 0
+  },
+  "blast_radius_reduction": {
+    "total_assets": 100,
+    "unsegmented_reachable": 100,
+    "static_segmented_reachable": 45,
+    "dynamic_segmented_reachable": 12,
+    "blast_radius_reduction_percent": 88.0,
+    "reduction_vs_static_percent": 73.33
+  }
+}

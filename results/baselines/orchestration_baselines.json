@@ -1,0 +1,50 @@
+{
+  "BASELINE_1": {
+    "total_events": 5,
+    "total_agent_calls": 25,
+    "avg_calls_per_event": 5.0,
+    "avg_latency_ms": 750.0,
+    "avg_cost_units": 4.2,
+    "avg_uncertainty_reduction": 0.65
+  },
+  "BASELINE_2": {
+    "total_events": 5,
+    "total_agent_calls": 10,
+    "avg_calls_per_event": 2.0,
+    "avg_latency_ms": 300.0,
+    "avg_cost_units": 1.8,
+    "avg_uncertainty_reduction": 0.4
+  },
+  "BASELINE_3": {
+    "total_events": 5,
+    "total_agent_calls": 11,
+    "avg_calls_per_event": 2.2,
+    "avg_latency_ms": 330.0,
+    "avg_cost_units": 2.2,
+    "avg_uncertainty_reduction": 0.3298
+  },
+  "BASELINE_4": {
+    "total_events": 5,
+    "total_agent_calls": 10,
+    "avg_calls_per_event": 2.0,
+    "avg_latency_ms": 270.0,
+    "avg_cost_units": 1.5,
+    "avg_uncertainty_reduction": 0.48
+  },
+  "BASELINE_5": {
+    "total_events": 5,
+    "total_agent_calls": 10,
+    "avg_calls_per_event": 2.0,
+    "avg_latency_ms": 250.0,
+    "avg_cost_units": 1.4,
+    "avg_uncertainty_reduction": 0.55
+  },
+  "BASELINE_6": {
+    "total_events": 5,
+    "total_agent_calls": 10,
+    "avg_calls_per_event": 2.0,
+    "avg_latency_ms": 210.0,
+    "avg_cost_units": 2.1,
+    "avg_uncertainty_reduction": 0.221
+  }
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "event_id": "EVT-JSON-001",
+    "agent_id": "AGENT-NET-01",
+    "entity_id": "IP:192.168.1.200",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T12:00:00Z",
+    "risk_score": 0.77,
+    "confidence": 0.89,
+    "uncertainty": 0.11,
+    "source": "Zeek_Core",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "conn_state": "S0",
+      "history": "ShADadFf",
+      "orig_pkts": 482
+    },
+    "security_tags": ["lateral_movement", "internal_scan"]
+  },
+  {
+    "event_id": "EVT-JSON-002",
+    "agent_id": "AGENT-EMAIL-01",
+    "entity_id": "EMAIL:security_lead@acme-security.com",
+    "event_type": "EMAIL",
+    "timestamp": "2026-10-01T12:05:30Z",
+    "risk_score": 0.10,
+    "confidence": 0.95,
+    "uncertainty": 0.05,
+    "source": "Proofpoint_Mock",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "sender_score": 98,
+      "spf": "pass",
+      "virus_total_clean": true
+    },
+    "security_tags": ["clean_email"]
+  },
+  {
+    "event_id": "EVT-JSON-003",
+    "agent_id": "AGENT-AUTH-01",
+    "entity_id": "USER:contractor_mark",
+    "event_type": "AUTHENTICATION",
+    "timestamp": "2026-10-01T12:12:00Z",
+    "risk_score": 0.65,
+    "confidence": 0.84,
+    "uncertainty": 0.16,
+    "source": "Okta_Mock",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "location": "Lagos, Nigeria",
+      "device_known": false,
+      "mfa_challenged": true
+    },
+    "security_tags": ["unusual_location", "new_device"]
+  },
+  {
+    "event_id": "EVT-JSON-004",
+    "agent_id": "AGENT-UBA-01",
+    "entity_id": "USER:engineer_dave",
+    "event_type": "UBA",
+    "timestamp": "2026-10-01T12:18:45Z",
+    "risk_score": 0.35,
+    "confidence": 0.80,
+    "uncertainty": 0.20,
+    "source": "Exabeam_Mock",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "git_pushes_hour": 34,
+      "target_repo": "core-mesh-infra"
+    },
+    "security_tags": ["code_burst"]
+  },
+  {
+    "event_id": "EVT-JSON-005",
+    "agent_id": "AGENT-TX-01",
+    "entity_id": "ACCOUNT:ACC-991204",
+    "event_type": "TRANSACTION",
+    "timestamp": "2026-10-01T12:22:10Z",
+    "risk_score": 0.91,
+    "confidence": 0.93,
+    "uncertainty": 0.07,
+    "source": "Stripe_Mock",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "card_country": "US",
+      "ip_country": "RU",
+      "decline_count_prior": 4
+    },
+    "security_tags": ["geo_mismatch", "card_testing"]
+  },
+  {
+    "event_id": "EVT-JSON-006",
+    "agent_id": "AGENT-NET-01",
+    "entity_id": "IP:fe80::1ff:feee:a4a0:4001",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T12:28:00Z",
+    "risk_score": 0.02,
+    "confidence": 0.99,
+    "uncertainty": 0.01,
+    "source": "Router_Flow",
+    "dataset": "SYNTHETIC_BENCH",
+    "evidence": {
+      "protocol": "ICMPv6",
+      "router_advertisement": true
+    },
+    "security_tags": ["link_local", "ipv6"]
+  }
+]

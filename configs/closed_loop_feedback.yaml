@@ -1,0 +1,38 @@
+# Closed-Loop Feedback & Adaptive Policy Optimization Configuration
+version: "1.0.0"
+
+learning_mode: "SHADOW" # OFF, OBSERVE, SHADOW, CONTROLLED, ACTIVE
+
+trust_levels:
+  GROUND_TRUTH_DATASET: 1.0
+  CONTROLLED_EXPERIMENT: 0.95
+  ANALYST_VALIDATION: 0.85
+  INCIDENT_INVESTIGATION: 0.90
+  SUCCESSFUL_2FA: 0.80
+  FAILED_2FA: 0.80
+  CONFIRMED_PHISHING_REPORT: 0.90
+  CONFIRMED_ACCOUNT_COMPROMISE: 0.95
+  CONFIRMED_TRANSACTION_FRAUD: 0.95
+  CONFIRMED_NETWORK_ATTACK: 0.90
+  VERIFIED_POLICY_VIOLATION: 0.85
+
+quality_thresholds:
+  min_usable_quality_score: 0.60
+  min_reliability_update_quality: 0.70
+  min_policy_adaptation_quality: 0.80
+
+bounded_adaptation:
+  max_weight_change_per_update: 0.05
+  min_agent_reliability_weight: 0.10
+  max_agent_reliability_weight: 0.95
+  max_policy_threshold_delta: 0.05
+  cooldown_period_seconds: 300
+  min_sample_count_for_update: 5
+
+champion_challenger:
+  shadow_evaluation_window_samples: 100
+  min_f1_improvement_for_promotion: 0.02
+  max_ece_degradation_allowed: 0.01
+
+decision_replay:
+  max_historical_replay_window_days: 90

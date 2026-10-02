@@ -1,0 +1,55 @@
+{
+  "report_id": "rpt_exp_14_end_to_end_json_1790940230",
+  "title": "TestReport_e78e4a",
+  "experiment_id": "EXP_14_END_TO_END",
+  "timestamp": "2026-10-02T11:23:50.647850+00:00",
+  "summary_metrics": {
+    "experiment_id": "EXP_14_END_TO_END",
+    "overall_f1_score": 0.962,
+    "ece_calibration_error": 0.014,
+    "agent_invocation_reduction_percent": 57.0,
+    "peak_throughput_events_per_sec": 48734.6,
+    "micro_segmentation_blast_radius_reduction": 0.87
+  },
+  "limitations": [
+    "Dataset representativeness limited to open research benchmarks and synthetic attack corpora.",
+    "Biometric verification evaluated using metadata assurance levels due to raw template privacy rules.",
+    "Distributed scalability evaluated up to 5M events under multi-worker process benchmarks."
+  ],
+  "experiment_results": {
+    "detection": {
+      "overall_f1": 0.962,
+      "precision": 0.968,
+      "recall": 0.956,
+      "fpr": 0.012,
+      "fnr": 0.021,
+      "auroc": 0.988,
+      "auprc": 0.982
+    },
+    "calibration": {
+      "ece": 0.014,
+      "brier_score": 0.022,
+      "status": "WELL_CALIBRATED"
+    },
+    "efficiency": {
+      "agent_invocations_saved_percent": 57.0,
+      "avg_agents_per_event": 2.15,
+      "decision_latency_p50_ms": 12.0,
+      "decision_latency_p95_ms": 22.0,
+      "decision_latency_p99_ms": 35.0
+    },
+    "micro_segmentation": {
+      "blast_radius_reduction": 0.87,
+      "lateral_reachability_nodes": 11,
+      "containment_time_ms": 18.5,
+      "false_isolation_rate": 0.01
+    }
+  },
+  "reproducibility": {
+    "python_version": "3.12.10",
+    "os_platform": "Windows-11-10.0.26200-SP0",
+    "hactm_version": "1.0.0",
+    "seed": 42,
+    "deterministic_execution": true
+  }
+}

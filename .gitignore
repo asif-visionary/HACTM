@@ -1,0 +1,34 @@
+# Environment & Secrets
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/node_modules/
+.DS_Store
+
+# Brain & Temp artifacts
+ scratch/
+
+# Large Bot-IoT raw datasets
+data/raw/network/bot_iot/
+backend/data/raw/network/bot_iot/
+
+data/raw/network/
+backend/data/raw/network/

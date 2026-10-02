@@ -1,0 +1,26 @@
+memory:
+  hot:
+    max_age_seconds: 900
+    max_entries: 10000
+  warm:
+    max_age_seconds: 86400
+    max_entries: 100000
+  cold:
+    retention_days: 30
+
+importance_weights:
+  w_risk: 0.35
+  w_confidence: 0.25
+  w_severity: 0.20
+  w_recency: 0.10
+  w_relevance: 0.10
+
+retrieval:
+  max_results: 100
+  max_context_tokens: 10000
+
+graph:
+  default_k_hop: 2
+  max_k_hop: 4
+  max_nodes: 200
+  max_edges: 500

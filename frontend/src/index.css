@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-hactm-bg text-hactm-text font-sans antialiased selection:bg-hactm-accent/20 selection:text-hactm-accent;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar for cyber command center */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B111A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2D3D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A3F55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Haulix-inspired subtle sidebar scrollbar */
+.hactm-sidebar-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.25) transparent;
+  scroll-behavior: smooth;
+}
+
+.hactm-sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hactm-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hactm-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+}
+
+.hactm-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 184, 255, 0.55);
+}
+

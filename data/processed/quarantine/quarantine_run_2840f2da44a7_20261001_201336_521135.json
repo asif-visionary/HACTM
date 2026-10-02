@@ -1,0 +1,26 @@
+{
+  "quarantined_at": "2026-10-01T20:13:36.521135+00:00",
+  "run_id": "run_2840f2da44a7",
+  "source_name": "sample_evidence.csv",
+  "row_number": 14,
+  "error_reason": "Normalization failed: Failed to normalize timestamp: Unknown string format: NOT_A_VALID_DATE_TIME",
+  "original_record": {
+    "event_id": "EVT-SYN-ERR-02",
+    "agent_id": "AGENT-NET-01",
+    "entity_id": "IP:10.0.0.100",
+    "event_type": "NETWORK",
+    "timestamp": "NOT_A_VALID_DATE_TIME",
+    "risk_score": "-0.20",
+    "confidence": "0.90",
+    "uncertainty": "0.10",
+    "source": "CIC-IDS2017",
+    "dataset": "SYNTHETIC_EVAL",
+    "ip": "10.0.0.100",
+    "email": "",
+    "user": "",
+    "evidence": "",
+    "security_tags": {
+      "error": "malformed_timestamp"
+    }
+  }
+}

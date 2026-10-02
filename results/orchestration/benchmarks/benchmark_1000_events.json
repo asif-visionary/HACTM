@@ -1,0 +1,11 @@
+{
+  "num_events": 1000,
+  "total_duration_sec": 0.07857322692871094,
+  "throughput_ops_sec": 12726.981429785168,
+  "avg_latency_ms": 0.07556295394897461,
+  "p95_latency_ms": 0.9970664978027344,
+  "p99_latency_ms": 1.0793209075927734,
+  "total_calls_all_agents": 5000,
+  "total_calls_adaptive": 1488,
+  "invocation_reduction_percent": 70.24000000000001
+}
