@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, Users, AlertTriangle, ShieldCheck, Database, Network, Mail, UserCheck, Shield, CreditCard, ArrowRight, Activity, Radio, Cpu, Sparkles } from 'lucide-react';
+import { Layers, Users, AlertTriangle, ShieldCheck, Database, Network, Mail, UserCheck, Shield, CreditCard, ArrowRight, Activity, Radio, Cpu, Sparkles, Laptop } from 'lucide-react';
 import { useMetricsOverview, useEvidenceTimeline } from '../hooks/useEvidence';
 import { KpiCard } from '../components/dashboard/KpiCard';
 import { RiskDistribution } from '../components/dashboard/RiskDistribution';
@@ -71,6 +71,14 @@ export const Overview: React.FC<OverviewProps> = ({
       description: 'Email headers, URLs, BEC & NLP indicators',
     },
     {
+      id: 'device',
+      name: 'Device & Endpoint',
+      icon: Laptop,
+      color: 'text-teal-400 border-teal-500/30 bg-teal-950/30',
+      agentId: 'device-security-agent',
+      description: 'Endpoint posture, MAC fingerprinting & process execution',
+    },
+    {
       id: 'uba',
       name: 'User Behavior (UBA)',
       icon: UserCheck,
@@ -119,15 +127,25 @@ export const Overview: React.FC<OverviewProps> = ({
           </div>
         </div>
 
-        {isEmpty && (
+        <div className="flex items-center gap-3">
           <button
-            onClick={onNavigateToSettings}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20"
+            onClick={() => onNavigateToDomain && onNavigateToDomain('3d-mesh')}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-extrabold text-sm transition-all shadow-lg shadow-cyan-500/20"
           >
-            <Database size={16} />
-            <span>Load Sample Dataset</span>
+            <Sparkles size={16} />
+            <span>Launch 3D AI Orchestrator SOC</span>
           </button>
-        )}
+
+          {isEmpty && (
+            <button
+              onClick={onNavigateToSettings}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all border border-slate-700"
+            >
+              <Database size={16} />
+              <span>Load Sample Dataset</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Primary KPI Summary Cards */}
@@ -195,7 +213,7 @@ export const Overview: React.FC<OverviewProps> = ({
                 <p className="text-xs text-slate-400">Independent multi-domain telemetry & anomaly evaluation</p>
               </div>
               <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-[#0B111A] text-cyan-400 border border-slate-800 font-semibold">
-                5 / 5 Operational
+                6 / 6 Operational
               </span>
             </div>
 

@@ -7,7 +7,7 @@ export const TopBar: React.FC = () => {
   const { status, isConnected, lastSyncTime, refetch, isLoading } = useSystemStatus();
 
   return (
-    <header className="h-16 border-b border-slate-800/80 bg-[#070B12]/90 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-40 transition-colors">
+    <header className="h-16 flex-shrink-0 border-b border-slate-800/80 bg-[#070B12]/90 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-40 transition-colors">
       {/* Brand & Command Center Title */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3">
@@ -34,7 +34,7 @@ export const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0B111A] border border-slate-800/80 text-xs font-mono">
           <Cpu className="w-3.5 h-3.5 text-cyan-400" />
           <span className="text-slate-400">Agents:</span>
-          <span className="text-white font-semibold">5 / 5 Active</span>
+          <span className="text-white font-semibold">6 / 6 Active</span>
         </div>
 
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0B111A] border border-slate-800/80 text-xs font-mono">

@@ -22,13 +22,17 @@ import {
   Sliders,
   RefreshCw,
   Activity,
+  Box,
+  Laptop,
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export type NavigationTab =
   | 'overview'
+  | '3d-mesh'
   | 'network'
   | 'phishing'
+  | 'device'
   | 'uba'
   | 'identity'
   | 'transaction'
@@ -78,11 +82,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       title: 'COMMAND',
       items: [
+        { id: '3d-mesh', label: '3D AI Orchestrator', icon: Box, badge: '3D SOC' },
         { id: 'overview', label: 'Overview', icon: LayoutDashboard },
         { id: 'events', label: 'Security Events', icon: Layers },
         { id: 'evidence', label: 'Evidence Explorer', icon: FileSearch },
         { id: 'entities', label: 'Entities & Assets', icon: Users },
-        { id: 'agents', label: 'Agents Status', icon: Bot, badge: '5 Agents' },
+        { id: 'agents', label: 'Agents Status', icon: Bot, badge: '6 Agents' },
         { id: 'reports', label: 'Reports', icon: FileBarChart2 },
       ],
     },
@@ -91,6 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       items: [
         { id: 'network', label: 'Network Security', icon: Network },
         { id: 'phishing', label: 'Phishing Intelligence', icon: Mail },
+        { id: 'device', label: 'Device Security', icon: Laptop },
         { id: 'uba', label: 'User Behavior (UBA)', icon: UserCheck },
         { id: 'identity', label: 'Identity & Auth', icon: KeyRound },
         { id: 'transaction', label: 'Transaction Security', icon: CreditCard },

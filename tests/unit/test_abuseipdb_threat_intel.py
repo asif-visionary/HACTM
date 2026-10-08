@@ -15,6 +15,7 @@ from hactm.services.threat_intelligence import (
     ThreatIntelEvidenceMapper,
     NormalizedThreatIntelResult
 )
+# pyrefly: ignore [missing-import]
 from hactm.fusion.engine import EvidenceFusionEngine
 
 

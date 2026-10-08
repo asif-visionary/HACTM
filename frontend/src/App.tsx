@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AppLayout } from './components/layout/AppLayout';
 import { NavigationTab } from './components/layout/Sidebar';
+import { CyberTrustOrchestratorDashboard } from './components/dashboard/CyberTrustOrchestratorDashboard';
 import { Overview } from './pages/Overview';
 import { NetworkSecurity } from './pages/NetworkSecurity';
 import { PhishingIntelligence } from './pages/PhishingIntelligence';
+import { DeviceSecurity } from './pages/DeviceSecurity';
 import { UserBehavior } from './pages/UserBehavior';
 import { IdentityAuthentication } from './pages/IdentityAuthentication';
 import { TransactionSecurity } from './pages/TransactionSecurity';
@@ -40,6 +42,9 @@ const getTabFromLocation = (): NavigationTab | null => {
   const hash = window.location.hash.replace('#', '').toLowerCase();
   const path = window.location.pathname.replace('/', '').toLowerCase();
 
+  if (hash === '3d-mesh' || hash === '3d' || path === '3d-mesh' || path === '3d') {
+    return '3d-mesh';
+  }
   if (hash === 'security-events' || hash === 'events' || path === 'security-events' || path === 'events') {
     return 'events';
   }
@@ -48,7 +53,7 @@ const getTabFromLocation = (): NavigationTab | null => {
   }
 
   const validTabs: NavigationTab[] = [
-    'overview', 'network', 'phishing', 'uba', 'identity', 'transaction',
+    '3d-mesh', 'overview', 'network', 'phishing', 'device', 'uba', 'identity', 'transaction',
     'evidence-fusion', 'cyber-risk', 'memory', 'graph', 'temporal', 'research-lab',
     'reliability', 'orchestration', 'zero-trust', 'feedback', 'evaluation',
     'research', 'events', 'evidence', 'entities', 'agents', 'reports', 'settings'
@@ -61,7 +66,7 @@ const getTabFromLocation = (): NavigationTab | null => {
 };
 
 export function App() {
-  const [currentTab, setCurrentTab] = useState<NavigationTab>(() => getTabFromLocation() || 'overview');
+  const [currentTab, setCurrentTab] = useState<NavigationTab>(() => getTabFromLocation() || '3d-mesh');
 
   useEffect(() => {
     const handleHashOrPopState = () => {
@@ -87,6 +92,8 @@ export function App() {
 
   const renderContent = () => {
     switch (currentTab) {
+      case '3d-mesh':
+        return <CyberTrustOrchestratorDashboard />;
       case 'overview':
         return (
           <Overview
@@ -99,6 +106,8 @@ export function App() {
         return <NetworkSecurity />;
       case 'phishing':
         return <PhishingIntelligence />;
+      case 'device':
+        return <DeviceSecurity />;
       case 'uba':
         return <UserBehavior />;
       case 'identity':
