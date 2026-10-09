@@ -28,6 +28,7 @@ import { Entities } from './pages/Entities';
 import { Agents } from './pages/Agents';
 import { Reports } from './pages/Reports';
 import { Settings } from './pages/Settings';
+import { GovernedResilienceDashboard } from './pages/GovernedResilienceDashboard';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -51,9 +52,12 @@ const getTabFromLocation = (): NavigationTab | null => {
   if (hash === 'evidence' || hash === 'evidence-explorer' || path === 'evidence' || path === 'evidence-explorer') {
     return 'evidence';
   }
+  if (hash === 'governance-resilience' || hash === 'governance' || path === 'governance-resilience' || path === 'governance') {
+    return 'governance-resilience';
+  }
 
   const validTabs: NavigationTab[] = [
-    '3d-mesh', 'overview', 'network', 'phishing', 'device', 'uba', 'identity', 'transaction',
+    'governance-resilience', '3d-mesh', 'overview', 'network', 'phishing', 'device', 'uba', 'identity', 'transaction',
     'evidence-fusion', 'cyber-risk', 'memory', 'graph', 'temporal', 'research-lab',
     'reliability', 'orchestration', 'zero-trust', 'feedback', 'evaluation',
     'research', 'events', 'evidence', 'entities', 'agents', 'reports', 'settings'
@@ -92,8 +96,11 @@ export function App() {
 
   const renderContent = () => {
     switch (currentTab) {
+      case 'governance-resilience':
+        return <GovernedResilienceDashboard />;
       case '3d-mesh':
         return <CyberTrustOrchestratorDashboard />;
+
       case 'overview':
         return (
           <Overview

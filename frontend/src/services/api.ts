@@ -1075,7 +1075,110 @@ export const api = {
     const res = await fetch(`${API_BASE}/research/datasets`);
     return handleResponse<any>(res);
   },
+
+  // Governed Investigation & Work Orders
+  async getWorkOrders(agentId?: string, statusFilter?: string): Promise<any> {
+    const query = new URLSearchParams();
+    if (agentId) query.append('assigned_agent_id', agentId);
+    if (statusFilter) query.append('status_filter', statusFilter);
+    const res = await fetch(`${API_BASE}/governance/work-orders?${query.toString()}`);
+    return handleResponse<any>(res);
+  },
+
+  async createWorkOrder(payload: any): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/work-orders`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async validateEvidencePack(payload: any): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/evidence-packs/validate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  // Human Response Approvals
+  async getApprovalRequests(statusFilter?: string): Promise<any> {
+    const query = new URLSearchParams();
+    if (statusFilter) query.append('status_filter', statusFilter);
+    const res = await fetch(`${API_BASE}/governance/approvals?${query.toString()}`);
+    return handleResponse<any>(res);
+  },
+
+  async proposePolicyAction(payload: any): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/approvals/propose`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async approveAction(decision: { request_id: string; approver_identity: string; approver_role: string; notes?: string }): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/approvals/approve`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(decision),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async rejectAction(decision: { request_id: string; approver_identity: string; approver_role: string; notes?: string }): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/approvals/reject`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(decision),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async requestMoreEvidence(decision: { request_id: string; approver_identity: string; approver_role: string; notes?: string }): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/approvals/request-evidence`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(decision),
+    });
+    return handleResponse<any>(res);
+  },
+
+  // Audit Trail & Hash-Chain Verification
+  async getAuditTrail(incidentId?: string, limit: number = 50): Promise<any> {
+    const query = new URLSearchParams();
+    if (incidentId) query.append('incident_id', incidentId);
+    query.append('limit', limit.toString());
+    const res = await fetch(`${API_BASE}/governance/audit-trail?${query.toString()}`);
+    return handleResponse<any>(res);
+  },
+
+  async verifyAuditTrail(): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/audit-trail/verify`);
+    return handleResponse<any>(res);
+  },
+
+  // Incident Explanations
+  async getIncidentExplanation(incidentId: string): Promise<any> {
+    const res = await fetch(`${API_BASE}/incidents/${encodeURIComponent(incidentId)}/explanation`);
+    return handleResponse<any>(res);
+  },
+
+  // Resilience Evaluation Harness
+  async getResilienceScenarios(): Promise<any> {
+    const res = await fetch(`${API_BASE}/resilience-evaluation/scenarios`);
+    return handleResponse<any>(res);
+  },
+
+  async runResilienceEvaluation(): Promise<any> {
+    const res = await fetch(`${API_BASE}/resilience-evaluation/run`, { method: 'POST' });
+    return handleResponse<any>(res);
+  },
 };
+
 
 
 

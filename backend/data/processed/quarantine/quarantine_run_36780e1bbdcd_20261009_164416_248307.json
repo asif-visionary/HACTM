@@ -1,0 +1,27 @@
+{
+  "quarantined_at": "2026-10-09T16:44:16.248307+00:00",
+  "run_id": "run_36780e1bbdcd",
+  "source_name": "sample_evidence.csv",
+  "row_number": 8,
+  "error_reason": "Schema validation error: 1 validation error for SecurityEvidence\nsecurity_tags\n  Input should be a valid list [type=list_type, input_value={'flags': 'SYN-FIN', 'scan_type': 'XMAS'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/list_type",
+  "original_record": {
+    "event_id": "EVT-SYN-007",
+    "agent_id": "AGENT-NET-01",
+    "entity_id": "IP:10.0.0.52",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T10:40:00Z",
+    "risk_score": "0.61",
+    "confidence": "0.80",
+    "uncertainty": "0.20",
+    "source": "CIC-IDS2017",
+    "dataset": "SYNTHETIC_EVAL",
+    "ip": "10.0.0.52",
+    "email": "",
+    "user": "",
+    "evidence": "",
+    "security_tags": {
+      "flags": "SYN-FIN",
+      "scan_type": "XMAS"
+    }
+  }
+}

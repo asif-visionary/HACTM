@@ -162,7 +162,7 @@ def test_evidence_report_generation(client):
     assert rep_res.status_code == status.HTTP_200_OK
     rep_data = rep_res.json()["data"]
     assert rep_data["evidence_count"] >= 1
-    assert rep_data["summary"]["pdf_export_status"] == "ACTIVE_EVALUATION"
+    assert rep_data["summary"]["pdf_export_status"] == "AVAILABLE"
 
 
 def test_not_found_and_validation_errors(client):

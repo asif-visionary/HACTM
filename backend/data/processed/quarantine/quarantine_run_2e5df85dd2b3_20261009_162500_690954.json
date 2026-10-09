@@ -1,0 +1,15 @@
+{
+  "quarantined_at": "2026-10-09T16:25:00.690954+00:00",
+  "run_id": "run_2e5df85dd2b3",
+  "source_name": "quarantine_test",
+  "row_number": 3,
+  "error_reason": "Missing or empty required field: 'event_id'",
+  "original_record": {
+    "event_id": "",
+    "agent_id": "AGENT-01",
+    "event_type": "NETWORK",
+    "timestamp": "2026-10-01T10:00:00Z",
+    "risk_score": 0.5,
+    "evidence": {}
+  }
+}

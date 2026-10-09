@@ -2163,6 +2163,91 @@ class ResourceMeasurementModel(Base):
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
 
 
+class WorkOrderModel(Base):
+    """Governed Investigation Work Order model."""
+    __tablename__ = "work_orders"
+
+    work_order_id = Column(String(255), primary_key=True, index=True)
+    investigation_id = Column(String(255), nullable=False, index=True)
+    parent_incident_id = Column(String(255), nullable=False, index=True)
+    objective = Column(Text, nullable=False)
+    scope = Column(JSON, default=dict)
+    required_questions = Column(JSON, default=list)
+    success_criteria = Column(JSON, default=list)
+    permitted_tools = Column(JSON, default=list)
+    data_sources = Column(JSON, default=list)
+    forbidden_actions = Column(JSON, default=list)
+    resource_limits = Column(JSON, default=dict)
+    required_evidence = Column(JSON, default=list)
+    deadline = Column(DateTime(timezone=True), nullable=True)
+    assigned_agent_id = Column(String(128), nullable=False, index=True)
+    status = Column(String(32), nullable=False, default="ASSIGNED", index=True)  # CREATED, ASSIGNED, IN_PROGRESS, COMPLETED, FAILED, CANCELLED
+    evidence_pack = Column(JSON, nullable=True)
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class ApprovalRequestModel(Base):
+    """Human Response & Policy Approval Request Gate table."""
+    __tablename__ = "approval_requests"
+
+    request_id = Column(String(255), primary_key=True, index=True)
+    incident_id = Column(String(255), nullable=False, index=True)
+    entity_id = Column(String(255), nullable=False, index=True)
+    policy_id = Column(String(255), nullable=True)
+    action_type = Column(String(64), nullable=False, index=True)  # ACCOUNT_SUSPENSION, NETWORK_ISOLATION, BLOCK_CRITICAL_RESOURCE, DISRUPTIVE_CHANGE, etc.
+    proposed_action = Column(String(255), nullable=False)
+    risk_score = Column(Float, nullable=False)
+    confidence = Column(Float, nullable=False)
+    uncertainty = Column(Float, nullable=False)
+    is_high_impact = Column(Integer, default=1, nullable=False)
+    justification = Column(Text, nullable=False)
+    expected_impact = Column(Text, nullable=False)
+    alternatives = Column(JSON, default=list)
+    supporting_evidence = Column(JSON, default=list)
+    status = Column(String(32), nullable=False, default="PENDING_APPROVAL", index=True)  # PENDING_APPROVAL, APPROVED, REJECTED, MORE_EVIDENCE_REQUESTED, EXPIRED, EXECUTED, FAILED
+    approver_identity = Column(String(255), nullable=True)
+    approver_role = Column(String(64), nullable=True)
+    approval_notes = Column(Text, nullable=True)
+    approval_timestamp = Column(DateTime(timezone=True), nullable=True)
+    execution_status = Column(String(32), nullable=True)  # PENDING, SIMULATED, EXECUTED, FAILED, REVERTED
+    execution_result = Column(JSON, nullable=True)
+    verification_status = Column(String(32), nullable=True)  # UNVERIFIED, VERIFIED, FAILED
+    expires_at = Column(DateTime(timezone=True), nullable=False)
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+
+
+class AuditEventModel(Base):
+    """Persistent, tamper-evident append-only audit trail with hash chain verification."""
+    __tablename__ = "audit_trail"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    event_id = Column(String(255), unique=True, index=True)
+
+    incident_id = Column(String(255), nullable=True, index=True)
+    timestamp = Column(DateTime(timezone=True), nullable=False, index=True, default=lambda: datetime.now(timezone.utc))
+    actor_id = Column(String(128), nullable=False, index=True)
+    actor_type = Column(String(64), nullable=False)  # AGENT, SYSTEM, HUMAN_ANALYST, HUMAN_ADMIN
+    event_type = Column(String(128), nullable=False, index=True)
+    evidence_references = Column(JSON, default=list)
+    work_order_references = Column(JSON, default=list)
+    previous_state = Column(JSON, nullable=True)
+    resulting_state = Column(JSON, nullable=True)
+    decision_rationale = Column(Text, nullable=True)
+    proposed_or_executed_action = Column(String(255), nullable=True)
+    approver_identity = Column(String(255), nullable=True)
+    approval_timestamp = Column(DateTime(timezone=True), nullable=True)
+    execution_status = Column(String(64), nullable=True)
+    failure_reason = Column(Text, nullable=True)
+    model_version = Column(String(64), default="1.0.0")
+    policy_version = Column(String(64), default="1.0.0")
+    schema_version = Column(String(32), default="1.0.0")
+    prev_hash = Column(String(128), nullable=False)
+    record_hash = Column(String(128), nullable=False, index=True)
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+
 
 
 

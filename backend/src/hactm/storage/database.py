@@ -59,11 +59,14 @@ def init_db() -> None:
             if "artifact_path" not in existing_cols and "model_id" in existing_cols:
                 conn.exec_driver_sql("ALTER TABLE network_models ADD COLUMN artifact_path VARCHAR(512)")
 
-            # Check hypothesis_results columns
-            res_hypo = conn.exec_driver_sql("PRAGMA table_info(hypothesis_results)")
-            hypo_cols = {row[1] for row in res_hypo}
-            if "effect_size" not in hypo_cols and "hypothesis_id" in hypo_cols:
-                conn.exec_driver_sql("ALTER TABLE hypothesis_results ADD COLUMN effect_size FLOAT")
+            # Check audit_trail table columns
+            res_audit = conn.exec_driver_sql("PRAGMA table_info(audit_trail)")
+            audit_cols = {row[1] for row in res_audit}
+            if "id" not in audit_cols and "event_id" in audit_cols:
+                conn.exec_driver_sql("DROP TABLE audit_trail")
+                conn.commit()
+                Base.metadata.tables["audit_trail"].create(bind=engine)
 
             conn.commit()
+
 

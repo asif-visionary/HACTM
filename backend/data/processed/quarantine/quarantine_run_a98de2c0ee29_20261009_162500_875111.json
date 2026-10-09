@@ -1,0 +1,27 @@
+{
+  "quarantined_at": "2026-10-09T16:25:00.875111+00:00",
+  "run_id": "run_a98de2c0ee29",
+  "source_name": "sample_evidence.csv",
+  "row_number": 4,
+  "error_reason": "Schema validation error: 1 validation error for SecurityEvidence\nsecurity_tags\n  Input should be a valid list [type=list_type, input_value={'subject': 'URGENT: Veri... 'has_attachment': True}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/list_type",
+  "original_record": {
+    "event_id": "EVT-SYN-003",
+    "agent_id": "AGENT-EMAIL-01",
+    "entity_id": "EMAIL:external_actor@suspicious-domain.xyz",
+    "event_type": "EMAIL",
+    "timestamp": "2026-10-01T10:22:15Z",
+    "risk_score": "0.94",
+    "confidence": "0.88",
+    "uncertainty": "0.15",
+    "source": "SpamAssassin",
+    "dataset": "SYNTHETIC_EVAL",
+    "ip": "",
+    "email": "",
+    "user": "external_actor@suspicious-domain.xyz",
+    "evidence": "",
+    "security_tags": {
+      "subject": "URGENT: Verify Payment Credentials",
+      "has_attachment": true
+    }
+  }
+}

@@ -47,3 +47,10 @@ class DuplicateError(HACTMError):
     """Raised when duplicate entity or event is encountered in strict mode."""
     def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
         super().__init__(message=message, code="DUPLICATE_ERROR", details=details)
+
+
+class PermissionDeniedError(HACTMError):
+    """Raised when an operation or tool request violates permission constraints."""
+    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
+        super().__init__(message=message, code="PERMISSION_DENIED", details=details)
+

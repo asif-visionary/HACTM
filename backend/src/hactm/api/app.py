@@ -32,9 +32,12 @@ from hactm.api.routers import (
     research,
     zero_day,
     threat_intelligence,
+    governance,
+    incident_explanation,
+    resilience_eval,
 )
 from hactm.core.config import settings
-from hactm.core.errors import DuplicateError, HACTMError, HACTMValidationError, NotFoundError
+from hactm.core.errors import DuplicateError, HACTMError, HACTMValidationError, NotFoundError, PermissionDeniedError
 from hactm.core.logging import logger
 from hactm.storage.database import init_db
 
@@ -92,6 +95,15 @@ async def duplicate_error_handler(request: Request, exc: DuplicateError):
         status_code=status.HTTP_409_CONFLICT,
         content={"error": {"code": exc.code, "message": exc.message, "details": exc.details}},
     )
+
+
+@app.exception_handler(PermissionDeniedError)
+async def permission_denied_error_handler(request: Request, exc: PermissionDeniedError):
+    return JSONResponse(
+        status_code=status.HTTP_403_FORBIDDEN,
+        content={"error": {"code": exc.code, "message": exc.message, "details": exc.details}},
+    )
+
 
 
 @app.exception_handler(HACTMError)
@@ -154,6 +166,10 @@ app.include_router(evaluation.router)
 app.include_router(research.router)
 app.include_router(zero_day.router)
 app.include_router(threat_intelligence.router)
+app.include_router(governance.router)
+app.include_router(incident_explanation.router)
+app.include_router(resilience_eval.router)
+
 
 
 
