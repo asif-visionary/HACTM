@@ -115,20 +115,7 @@ class GovernedInvestigationController:
             )
             raise PermissionDeniedError(f"Agent '{agent_id}' is not assigned to Work Order '{work_order_id}'.")
 
-        # Check permitted tools
-        if wo.permitted_tools and tool_name not in wo.permitted_tools:
-            self.audit.log_event(
-                actor_id=agent_id,
-                actor_type="AGENT",
-                event_type="UNAUTHORIZED_TOOL_REQUEST",
-                incident_id=wo.parent_incident_id,
-                work_order_references=[work_order_id],
-                decision_rationale=f"Tool '{tool_name}' is not in permitted_tools list: {wo.permitted_tools}",
-                execution_status="REJECTED",
-            )
-            raise PermissionDeniedError(f"Tool '{tool_name}' is forbidden for Work Order '{work_order_id}'.")
-
-        # Check forbidden actions
+        # 1. Check forbidden actions (explicit deny list evaluated first)
         if wo.forbidden_actions and any(act.lower() in tool_name.lower() for act in wo.forbidden_actions):
             self.audit.log_event(
                 actor_id=agent_id,
@@ -140,6 +127,19 @@ class GovernedInvestigationController:
                 execution_status="REJECTED",
             )
             raise PermissionDeniedError(f"Action '{tool_name}' violates forbidden actions for Work Order '{work_order_id}'.")
+
+        # 2. Check permitted tools (allow list)
+        if wo.permitted_tools and tool_name not in wo.permitted_tools:
+            self.audit.log_event(
+                actor_id=agent_id,
+                actor_type="AGENT",
+                event_type="UNAUTHORIZED_TOOL_REQUEST",
+                incident_id=wo.parent_incident_id,
+                work_order_references=[work_order_id],
+                decision_rationale=f"Tool '{tool_name}' is not in permitted_tools list: {wo.permitted_tools}",
+                execution_status="REJECTED",
+            )
+            raise PermissionDeniedError(f"Tool '{tool_name}' is forbidden for Work Order '{work_order_id}'.")
 
         return True
 

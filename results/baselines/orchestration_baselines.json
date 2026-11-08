@@ -17,11 +17,11 @@
   },
   "BASELINE_3": {
     "total_events": 5,
-    "total_agent_calls": 11,
-    "avg_calls_per_event": 2.2,
-    "avg_latency_ms": 330.0,
-    "avg_cost_units": 2.2,
-    "avg_uncertainty_reduction": 0.3442
+    "total_agent_calls": 10,
+    "avg_calls_per_event": 2.0,
+    "avg_latency_ms": 300.0,
+    "avg_cost_units": 2.0,
+    "avg_uncertainty_reduction": 0.3529
   },
   "BASELINE_4": {
     "total_events": 5,

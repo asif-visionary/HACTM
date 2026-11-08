@@ -28,6 +28,7 @@ import {
 import { cn } from '../../lib/utils';
 
 export type NavigationTab =
+  | 'cyber-office'
   | 'governance-resilience'
   | 'overview'
   | '3d-mesh'
@@ -83,6 +84,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       title: 'COMMAND & GOVERNANCE',
       items: [
+        { id: 'cyber-office', label: 'Cyber Operations Office', icon: Box, badge: 'LIVE' },
         { id: 'governance-resilience', label: 'Governed Resilience', icon: ShieldCheck, badge: 'POC' },
         { id: '3d-mesh', label: '3D AI Orchestrator', icon: Box, badge: '3D SOC' },
         { id: 'overview', label: 'Overview', icon: LayoutDashboard },

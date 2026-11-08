@@ -1,0 +1,16 @@
+/* Apply class="ai-icon-motion" to an inline SVG or img, optionally inside a link. */
+.ai-icon-motion {
+  display: inline-block;
+  transform-origin: 50% 65%;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1);
+}
+.ai-icon-motion:hover,
+button:hover > .ai-icon-motion,
+a:hover > .ai-icon-motion,
+button:focus-visible > .ai-icon-motion,
+a:focus-visible > .ai-icon-motion {
+  transform: translateY(-3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-icon-motion { transition: none; transform: none !important; }
+}

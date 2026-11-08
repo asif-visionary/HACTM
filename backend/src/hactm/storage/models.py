@@ -2247,6 +2247,134 @@ class AuditEventModel(Base):
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
 
 
+# ==============================================================================
+# CENTRAL AGENT SUPERVISOR (CAS) PERSISTENT MODELS
+# ==============================================================================
+
+class AgentHeartbeatModel(Base):
+    """Continuous agent operational health and heartbeat telemetry."""
+    __tablename__ = "cas_agent_heartbeats"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    heartbeat_interval_sec = Column(Float, default=10.0)
+    current_status = Column(String(64), default="OPERATIONAL", index=True)
+    current_task = Column(String(255), nullable=True)
+    cpu_load = Column(Float, default=0.0)
+    memory_mb = Column(Float, default=0.0)
+    queue_length = Column(Integer, default=0)
+
+
+class AgentBehaviourObservationModel(Base):
+    """Continuous agent operational behaviour and interaction telemetry."""
+    __tablename__ = "cas_behaviour_observations"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    observation_id = Column(String(128), unique=True, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    task_frequency_per_min = Column(Float, default=0.0)
+    avg_execution_ms = Column(Float, default=0.0)
+    tool_request_count = Column(Integer, default=0)
+    handoff_count = Column(Integer, default=0)
+    communication_volume = Column(Integer, default=0)
+    anomaly_score = Column(Float, default=0.0)
+    flags = Column(JSON, default=list)
+
+
+class AgentAnomalyModel(Base):
+    """Central Agent Supervisor detected anomalies and policy violations."""
+    __tablename__ = "cas_agent_anomalies"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    anomaly_id = Column(String(128), unique=True, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    incident_id = Column(String(128), nullable=True, index=True)
+    task_id = Column(String(128), nullable=True)
+    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    anomaly_type = Column(String(128), nullable=False, index=True)  # UNAUTHORIZED_TOOL, HEARTBEAT_MISSING, STUCK_ANALYSING, PROMPT_INJECTION_INDICATOR, CONFLICTING_EVIDENCE, ORCHESTRATOR_ANOMALY
+    severity = Column(String(32), default="MEDIUM", index=True)  # LOW, MEDIUM, HIGH, CRITICAL
+    source = Column(String(64), default="SUPERVISOR_ENGINE")
+    description = Column(Text, nullable=False)
+    evidence_references = Column(JSON, default=list)
+    recommended_action = Column(String(128), default="OBSERVE")
+    status = Column(String(32), default="ACTIVE", index=True)  # ACTIVE, MITIGATED, DISMISSED, INVESTIGATING
+
+
+class AgentTrustAssessmentModel(Base):
+    """Transparent dynamic agent reliability and trust evaluation ledger."""
+    __tablename__ = "cas_trust_assessments"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    assessment_id = Column(String(128), unique=True, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    trust_status = Column(String(64), default="NORMAL", index=True)  # TRUSTED, NORMAL, UNDER_OBSERVATION, SUSPICIOUS, RESTRICTED, ISOLATED, REVOKED
+    trust_score = Column(Float, nullable=False)
+    reliability_score = Column(Float, nullable=False)
+    compliance_score = Column(Float, nullable=False)
+    uncertainty = Column(Float, default=0.05)
+    trigger_anomaly_id = Column(String(128), nullable=True)
+    reasoning_summary = Column(Text, nullable=False)
+    factors = Column(JSON, default=dict)
+
+
+class SupervisorDecisionModel(Base):
+    """Risk-based supervisory governance decisions and containment actions."""
+    __tablename__ = "cas_supervisor_decisions"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    decision_id = Column(String(128), unique=True, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    incident_id = Column(String(128), nullable=True)
+    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    governance_level = Column(Integer, default=0)  # Level 0 (NORMAL) to Level 5 (HUMAN_REVIEW)
+    decision_type = Column(String(64), nullable=False)  # OBSERVE, WARN, RESTRICT_CAPABILITY, ISOLATE, REASSIGN_TASKS, REQUEST_HUMAN_APPROVAL, REINSTATE
+    justification = Column(Text, nullable=False)
+    action_payload = Column(JSON, default=dict)
+    work_orders_affected = Column(JSON, default=list)
+    operator_identity = Column(String(128), default="CAS_SUPERVISOR_CORE")
+    approval_request_id = Column(String(128), nullable=True)
+    status = Column(String(32), default="EXECUTED", index=True)  # EXECUTED, PENDING_APPROVAL, REVERTED
+
+
+class AgentIsolationRecordModel(Base):
+    """Authoritative ledger of agent capability restrictions and isolation events."""
+    __tablename__ = "cas_isolation_records"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    isolation_id = Column(String(128), unique=True, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    incident_id = Column(String(128), nullable=True)
+    isolated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    reason = Column(Text, nullable=False)
+    trigger_anomaly_id = Column(String(128), nullable=True)
+    revoked_capabilities = Column(JSON, default=list)
+    reassigned_tasks = Column(JSON, default=list)
+    is_active = Column(Integer, default=1, index=True)
+    reinstated_at = Column(DateTime(timezone=True), nullable=True)
+    authorized_by = Column(String(128), default="CAS_GOVERNANCE")
+
+
+class AgentRecoveryRecordModel(Base):
+    """Controlled multi-step verification ledger for agent reinstatement."""
+    __tablename__ = "cas_recovery_records"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    recovery_id = Column(String(128), unique=True, index=True)
+    isolation_id = Column(String(128), nullable=False, index=True)
+    agent_id = Column(String(128), nullable=False, index=True)
+    requested_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    health_check_status = Column(String(32), default="PENDING")
+    identity_validation_status = Column(String(32), default="PENDING")
+    verification_tasks_status = Column(String(32), default="PENDING")
+    human_approval_status = Column(String(32), default="PENDING")
+    reinstated_at = Column(DateTime(timezone=True), nullable=True)
+    notes = Column(Text, nullable=True)
+
+
+
 
 
 

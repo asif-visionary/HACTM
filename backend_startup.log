@@ -1,0 +1,2084 @@
+C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\reports.py:138: FastAPIDeprecationWarning: `regex` has been deprecated, please use `pattern` instead
+  format: str = Query("PDF", regex="^(PDF|JSON|CSV)$"),
+INFO:     Started server process [14212]
+INFO:     Waiting for application startup.
+2026-11-08 09:45:15 [INFO] [hactm] Initializing HACTM Multi-Domain Database Tables...
+2026-11-08 09:45:15 [INFO] [hactm] HACTM Database Ready.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:24068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29466 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29469 - "GET /api/v1/governance/audit-trail/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35853 - "GET /health HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:35856 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35855 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35857 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:37317 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35477 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:37318 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35854 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39732 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:20258 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:59929 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:46:51 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:24363 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2625 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:54 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:62975 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+2026-11-08 09:46:54 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:2624 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:46:54 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:21784 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4821 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:54 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:4822 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59926 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:56 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:20157 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+2026-11-08 09:46:56 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:59925 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:46:56 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:40478 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:56 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:37276 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42981 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:57 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:24951 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+2026-11-08 09:46:57 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:42980 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:46:57 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:24851 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42199 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:46:58 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:42198 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39091 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34869 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34869 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py:59: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  response = await handler(conn, exc)  # type: ignore[arg-type]
+INFO:     127.0.0.1:51467 - "POST /api/v1/governance/approvals/approve HTTP/1.1" 422 Unprocessable Entity
+2026-11-08 09:47:13 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:26369 - "POST /api/v1/governance/approvals/approve HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:5155 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7763 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56527 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+2026-11-08 09:47:17 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:7762 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17215 - "GET /health HTTP/1.1" 200 OK
+2026-11-08 09:47:28 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:65437 - "GET /api/v1/resilience-evaluation/scenarios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45325 - "GET /api/v1/governance/work-orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45329 - "GET /api/v1/incidents/INC-001/explanation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45327 - "GET /api/v1/governance/audit-trail?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45328 - "GET /api/v1/governance/audit-trail/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45326 - "GET /api/v1/governance/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5426 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64357 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10494 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40494 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:47:46 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:64358 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:47:46 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:53255 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1094 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19798 - "GET /health HTTP/1.1" 200 OK
+2026-11-08 09:48:01 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:33425 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28851 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3686 - "GET /health HTTP/1.1" 200 OK
+2026-11-08 09:48:32 [INFO] [hactm] Audit Logged: event_id=AUD-42408E41A5FC, type=WORK_ORDER_CREATED, actor=ORCHESTRATOR, hash=112970f9
+2026-11-08 09:48:32 [INFO] [hactm] Work Order Created: wo_id=WO-6B8C960DE3, agent=phishing-intelligence-agent
+2026-11-08 09:48:32 [INFO] [hactm] Audit Logged: event_id=AUD-F84A50F7B58F, type=EVIDENCE_PACK_VALIDATED, actor=phishing-intelligence-agent, hash=01567774
+2026-11-08 09:48:32 [INFO] [hactm] Audit Logged: event_id=AUD-E549E7129C95, type=POLICY_ACTION_PROPOSED, actor=POLICY_ENGINE, hash=93c25afb
+2026-11-08 09:48:32 [INFO] [hactm] Proposed Policy Action Gated: req_id=APPR-B6D6265A62, high_impact=True, status=PENDING_APPROVAL
+INFO:     127.0.0.1:27443 - "POST /api/v1/workspace/simulate-incident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55970 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54121 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54120 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:48:32 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:54119 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63669 - "GET /health HTTP/1.1" 200 OK
+2026-11-08 09:48:47 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+2026-11-08 09:48:49 [INFO] [hactm] Audit Logged: event_id=AUD-8823447B204E, type=HUMAN_APPROVAL_GRANTED, actor=sec_operator_lead, hash=8d4deccc
+2026-11-08 09:48:49 [INFO] [hactm] Human Approval Granted: req_id=APPR-B6D6265A62, approver=sec_operator_lead
+INFO:     127.0.0.1:18963 - "POST /api/v1/governance/approvals/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42251 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42250 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:48:49 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:42249 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31610 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62790 - "GET /api/v1/incidents/INC-001/explanation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19285 - "GET /api/v1/resilience-evaluation/scenarios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62788 - "GET /api/v1/governance/audit-trail?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62787 - "GET /api/v1/governance/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62789 - "GET /api/v1/governance/audit-trail/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59166 - "GET /api/v1/governance/work-orders HTTP/1.1" 200 OK
+2026-11-08 09:48:59 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+INFO:     127.0.0.1:48695 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21547 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38736 - "GET /api/v1/resilience-evaluation/scenarios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62601 - "GET /api/v1/incidents/INC-001/explanation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62599 - "GET /api/v1/governance/audit-trail?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62598 - "GET /api/v1/governance/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62597 - "GET /api/v1/governance/work-orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62600 - "GET /api/v1/governance/audit-trail/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44943 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53649 - "GET /api/v1/workspace/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57865 - "GET /api/v1/governance/approvals?status_filter=PENDING_APPROVAL HTTP/1.1" 200 OK
+2026-11-08 09:50:10 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:10623 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:50:10 [INFO] [hactm] Loaded 6 active network signatures from network_signatures.json
+INFO:     127.0.0.1:36160 - "GET /api/v1/governance/trust-passports HTTP/1.1" 200 OK
+2026-11-08 09:50:25 [ERROR] [hactm] Unhandled server error on /api/v1/workspace/stream: async generator raised StopAsyncIteration
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\OneDrive\Desktop\HACTM\backend\src\hactm\api\routers\workspace_events.py", line 82, in sse_generator
+    event = await asyncio.wait_for(sub_gen.__anext__(), timeout=15.0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+StopAsyncIteration
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1215, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 149, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1817, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 2869, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1843, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 1308, in handle
+    await effective_context.app(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 152, in app
+    await response(scope, receive, send)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 275, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\_utils.py", line 115, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 278, in wrap
+    await func()
+  File "C:\Users\Mohamed Asif\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\responses.py", line 252, in stream_response
+    async for chunk in self.body_iterator:
+RuntimeError: async generator raised StopAsyncIteration

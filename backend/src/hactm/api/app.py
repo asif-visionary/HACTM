@@ -3,6 +3,7 @@ FastAPI Main Application for HACTM.
 Foundation Architecture - Hierarchical Adaptive Cyber Trust Mesh.
 """
 
+import asyncio
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
@@ -35,6 +36,9 @@ from hactm.api.routers import (
     governance,
     incident_explanation,
     resilience_eval,
+    workspace_events,
+    trust_passport,
+    supervisor,
 )
 from hactm.core.config import settings
 from hactm.core.errors import DuplicateError, HACTMError, HACTMValidationError, NotFoundError, PermissionDeniedError
@@ -46,7 +50,7 @@ from hactm.storage.database import init_db
 async def lifespan(app: FastAPI):
     # Startup: ensure tables initialized
     logger.info("Initializing HACTM Multi-Domain Database Tables...")
-    init_db()
+    await asyncio.to_thread(init_db)
     logger.info("HACTM Database Ready.")
     yield
     # Shutdown
@@ -169,6 +173,9 @@ app.include_router(threat_intelligence.router)
 app.include_router(governance.router)
 app.include_router(incident_explanation.router)
 app.include_router(resilience_eval.router)
+app.include_router(workspace_events.router)
+app.include_router(trust_passport.router)
+app.include_router(supervisor.router)
 
 
 

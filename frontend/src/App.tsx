@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AppLayout } from './components/layout/AppLayout';
 import { NavigationTab } from './components/layout/Sidebar';
 import { CyberTrustOrchestratorDashboard } from './components/dashboard/CyberTrustOrchestratorDashboard';
+import { CyberOperationsWorkspace } from './components/workspace/CyberOperationsWorkspace';
 import { Overview } from './pages/Overview';
 import { NetworkSecurity } from './pages/NetworkSecurity';
 import { PhishingIntelligence } from './pages/PhishingIntelligence';
@@ -43,6 +44,9 @@ const getTabFromLocation = (): NavigationTab | null => {
   const hash = window.location.hash.replace('#', '').toLowerCase();
   const path = window.location.pathname.replace('/', '').toLowerCase();
 
+  if (hash === 'cyber-office' || hash === 'office' || hash === 'soc' || path === 'cyber-office' || path === 'office') {
+    return 'cyber-office';
+  }
   if (hash === '3d-mesh' || hash === '3d' || path === '3d-mesh' || path === '3d') {
     return '3d-mesh';
   }
@@ -57,7 +61,7 @@ const getTabFromLocation = (): NavigationTab | null => {
   }
 
   const validTabs: NavigationTab[] = [
-    'governance-resilience', '3d-mesh', 'overview', 'network', 'phishing', 'device', 'uba', 'identity', 'transaction',
+    'cyber-office', 'governance-resilience', '3d-mesh', 'overview', 'network', 'phishing', 'device', 'uba', 'identity', 'transaction',
     'evidence-fusion', 'cyber-risk', 'memory', 'graph', 'temporal', 'research-lab',
     'reliability', 'orchestration', 'zero-trust', 'feedback', 'evaluation',
     'research', 'events', 'evidence', 'entities', 'agents', 'reports', 'settings'
@@ -70,7 +74,7 @@ const getTabFromLocation = (): NavigationTab | null => {
 };
 
 export function App() {
-  const [currentTab, setCurrentTab] = useState<NavigationTab>(() => getTabFromLocation() || '3d-mesh');
+  const [currentTab, setCurrentTab] = useState<NavigationTab>(() => getTabFromLocation() || 'cyber-office');
 
   useEffect(() => {
     const handleHashOrPopState = () => {
@@ -96,6 +100,8 @@ export function App() {
 
   const renderContent = () => {
     switch (currentTab) {
+      case 'cyber-office':
+        return <CyberOperationsWorkspace />;
       case 'governance-resilience':
         return <GovernedResilienceDashboard />;
       case '3d-mesh':

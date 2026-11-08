@@ -1,0 +1,427 @@
+{
+  "timestamp": "2026-11-08T04:05:28.000337+00:00",
+  "total_scenarios_evaluated": 20,
+  "confusion_matrix": {
+    "true_positives": 6,
+    "false_positives": 0,
+    "true_negatives": 13,
+    "false_negatives": 1
+  },
+  "detection_effectiveness": {
+    "accuracy": 0.95,
+    "precision": 1.0,
+    "recall": 0.8571,
+    "f1_score": 0.9231,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.1429
+  },
+  "calibration_metrics": {
+    "brier_score": 0.0688,
+    "ece": 0.1243,
+    "mce": 0.4754
+  },
+  "performance_benchmarks_ms": {
+    "ingestion": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+    },
+    "agent_execution": {
+      "mean": 0.47,
+      "p50": 0.01,
+      "p95": 3.23,
+      "p99": 3.23,
+      "max": 3.23
+    },
+    "evidence_fusion": {
+      "mean": 0.24,
+      "p50": 0.2,
+      "p95": 0.64,
+      "p99": 0.64,
+      "max": 0.64
+    },
+    "orchestration_selection": {
+      "mean": 0.1,
+      "p50": 0.07,
+      "p95": 0.33,
+      "p99": 0.33,
+      "max": 0.33
+    },
+    "policy_evaluation": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+    },
+    "total_end_to_end_pipeline": {
+      "mean": 0.82,
+      "p50": 0.32,
+      "p95": 4.05,
+      "p99": 4.05,
+      "max": 4.05
+    }
+  },
+  "ablation_evaluation": {
+    "Baseline_A_Single_Agent_Heuristic": {
+      "description": "Single specialized agent without cross-domain fusion or adaptive orchestration",
+      "precision": 0.82,
+      "recall": 0.669,
+      "f1_score": 0.738,
+      "brier_score": 0.1508,
+      "ece": 0.1893,
+      "p95_latency_ms": 1.2,
+      "cross_domain_correlation": false,
+      "human_in_the_loop_gate": false
+    },
+    "Baseline_B_Fixed_Weight_Fusion": {
+      "description": "Static weighted linear averaging without epistemic uncertainty quantification",
+      "precision": 0.9,
+      "recall": 0.754,
+      "f1_score": 0.822,
+      "brier_score": 0.1138,
+      "ece": 0.1663,
+      "p95_latency_ms": 4.5,
+      "cross_domain_correlation": true,
+      "human_in_the_loop_gate": false
+    },
+    "Baseline_C_Static_Threshold_Policy": {
+      "description": "Rigid boolean rule engine without contextual trust mesh or dynamic governance",
+      "precision": 0.85,
+      "recall": 0.703,
+      "f1_score": 0.771,
+      "brier_score": 0.1268,
+      "ece": 0.1753,
+      "p95_latency_ms": 3.8,
+      "cross_domain_correlation": false,
+      "human_in_the_loop_gate": false
+    },
+    "Baseline_D_Ungoverned_Autonomous_Agent": {
+      "description": "Direct unconstrained autonomous tool execution without work orders or human gating",
+      "precision": 0.88,
+      "recall": 0.78,
+      "f1_score": 0.826,
+      "brier_score": 0.1168,
+      "ece": 0.1703,
+      "p95_latency_ms": 6.2,
+      "security_vulnerability_score": "HIGH (Unconstrained Tool Scope, No Gate)",
+      "cross_domain_correlation": true,
+      "human_in_the_loop_gate": false
+    },
+    "Baseline_E_Full_HACTM_Architecture": {
+      "description": "Full Hierarchical Adaptive Cyber Trust Mesh with dynamic fusion, work order gating, and human approval",
+      "precision": 1.0,
+      "recall": 0.857,
+      "f1_score": 0.923,
+      "brier_score": 0.0688,
+      "ece": 0.1243,
+      "p95_latency_ms": 4.05,
+      "cross_domain_correlation": true,
+      "human_in_the_loop_gate": true
+    }
+  },
+  "detailed_scenario_evaluations": [
+    {
+      "category_id": 1,
+      "category_name": "Benign email",
+      "ground_truth": "BENIGN",
+      "predicted_risk": 0.05,
+      "predicted_confidence": 0.659,
+      "predicted_uncertainty": 0.44,
+      "expected_range": [
+        0.0,
+        0.25
+      ],
+      "range_matched": true,
+      "policy_decision": "PERMIT",
+      "execution_ms": 4.05
+    },
+    {
+      "category_id": 2,
+      "category_name": "Phishing email",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.99,
+      "predicted_confidence": 0.636,
+      "predicted_uncertainty": 0.46,
+      "expected_range": [
+        0.8,
+        1.0
+      ],
+      "range_matched": true,
+      "policy_decision": "CHALLENGE_OR_ISOLATE",
+      "execution_ms": 3.2
+    },
+    {
+      "category_id": 3,
+      "category_name": "Lookalike domain",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.525,
+      "predicted_confidence": 0.636,
+      "predicted_uncertainty": 0.46,
+      "expected_range": [
+        0.75,
+        0.95
+      ],
+      "range_matched": false,
+      "policy_decision": "STEP_UP_VERIFY",
+      "execution_ms": 2.26
+    },
+    {
+      "category_id": 4,
+      "category_name": "Suspicious URL",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.85,
+      "predicted_confidence": 0.65,
+      "predicted_uncertainty": 0.448,
+      "expected_range": [
+        0.7,
+        0.92
+      ],
+      "range_matched": true,
+      "policy_decision": "CHALLENGE_OR_ISOLATE",
+      "execution_ms": 0.52
+    },
+    {
+      "category_id": 5,
+      "category_name": "Unknown URL",
+      "ground_truth": "UNKNOWN_ELEVATED_UNCERTAINTY",
+      "predicted_risk": 0.05,
+      "predicted_confidence": 0.659,
+      "predicted_uncertainty": 0.44,
+      "expected_range": [
+        0.2,
+        0.55
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 1.85
+    },
+    {
+      "category_id": 6,
+      "category_name": "Suspicious login",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.9,
+      "predicted_confidence": 0.681,
+      "predicted_uncertainty": 0.42,
+      "expected_range": [
+        0.75,
+        0.95
+      ],
+      "range_matched": true,
+      "policy_decision": "CHALLENGE_OR_ISOLATE",
+      "execution_ms": 0.28
+    },
+    {
+      "category_id": 7,
+      "category_name": "Repeated failed authentication",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.9,
+      "predicted_confidence": 0.681,
+      "predicted_uncertainty": 0.42,
+      "expected_range": [
+        0.85,
+        0.98
+      ],
+      "range_matched": true,
+      "policy_decision": "CHALLENGE_OR_ISOLATE",
+      "execution_ms": 0.16
+    },
+    {
+      "category_id": 8,
+      "category_name": "Unusual behaviour",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.85,
+      "predicted_confidence": 0.636,
+      "predicted_uncertainty": 0.46,
+      "expected_range": [
+        0.8,
+        0.96
+      ],
+      "range_matched": true,
+      "policy_decision": "CHALLENGE_OR_ISOLATE",
+      "execution_ms": 0.27
+    },
+    {
+      "category_id": 9,
+      "category_name": "Suspicious transaction",
+      "ground_truth": "MALICIOUS",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.88,
+        1.0
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.28
+    },
+    {
+      "category_id": 10,
+      "category_name": "Cross-domain identity/network correlation",
+      "ground_truth": "CRITICAL_ATTACK_CHAIN",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.9,
+        1.0
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.53
+    },
+    {
+      "category_id": 11,
+      "category_name": "Conflicting evidence",
+      "ground_truth": "CONFLICT_EVALUATED",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.45,
+        0.65
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.44
+    },
+    {
+      "category_id": 12,
+      "category_name": "Missing evidence",
+      "ground_truth": "ELEVATED_UNCERTAINTY",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.2,
+        0.5
+      ],
+      "range_matched": true,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.36
+    },
+    {
+      "category_id": 13,
+      "category_name": "Prompt injection",
+      "ground_truth": "ADVERSARIAL_INJECTION",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.7,
+        0.95
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.32
+    },
+    {
+      "category_id": 14,
+      "category_name": "Unauthorised tool request",
+      "ground_truth": "POLICY_VIOLATION",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.9,
+        1.0
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.34
+    },
+    {
+      "category_id": 15,
+      "category_name": "AI self-approval attempt",
+      "ground_truth": "APPROVAL_BYPASS_ATTEMPT",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.95,
+        1.0
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.3
+    },
+    {
+      "category_id": 16,
+      "category_name": "Threat intelligence timeout",
+      "ground_truth": "SERVICE_DEGRADED",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.3,
+        0.6
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.26
+    },
+    {
+      "category_id": 17,
+      "category_name": "Agent failure",
+      "ground_truth": "AGENT_OUTAGE",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.5,
+        0.75
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.26
+    },
+    {
+      "category_id": 18,
+      "category_name": "Duplicate event",
+      "ground_truth": "DUPLICATE_STREAM",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.0,
+        0.2
+      ],
+      "range_matched": true,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.26
+    },
+    {
+      "category_id": 19,
+      "category_name": "Event replay",
+      "ground_truth": "REPLAY_ATTACK",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.85,
+        1.0
+      ],
+      "range_matched": false,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.25
+    },
+    {
+      "category_id": 20,
+      "category_name": "Benign anomalous-looking activity",
+      "ground_truth": "BENIGN_MAINTENANCE",
+      "predicted_risk": 0.2,
+      "predicted_confidence": 0.614,
+      "predicted_uncertainty": 0.48,
+      "expected_range": [
+        0.05,
+        0.3
+      ],
+      "range_matched": true,
+      "policy_decision": "PERMIT",
+      "execution_ms": 0.25
+    }
+  ]
+}

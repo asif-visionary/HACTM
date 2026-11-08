@@ -1177,6 +1177,169 @@ export const api = {
     const res = await fetch(`${API_BASE}/resilience-evaluation/run`, { method: 'POST' });
     return handleResponse<any>(res);
   },
+
+  // Cyber Operations Workspace & Trust Passports
+  async getTrustPassports(): Promise<any[]> {
+    const res = await fetch(`${API_BASE}/governance/trust-passports`);
+    return handleResponse<any[]>(res);
+  },
+
+  async getTrustPassport(agentId: string): Promise<any> {
+    const res = await fetch(`${API_BASE}/governance/trust-passports/${encodeURIComponent(agentId)}`);
+    return handleResponse<any>(res);
+  },
+
+  async getWorkspaceEvents(limit: number = 50): Promise<any[]> {
+    const res = await fetch(`${API_BASE}/workspace/events?limit=${limit}`);
+    return handleResponse<any[]>(res);
+  },
+
+  async simulateDemoIncident(payload?: any): Promise<any> {
+    const res = await fetch(`${API_BASE}/workspace/simulate-incident`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload || {}),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async toggleAgentIsolation(payload: {
+    agent_id: string;
+    action: 'ISOLATE' | 'REINSTATE';
+    reason: string;
+    operator_role?: string;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/workspace/agent-isolation`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async validateWorkspaceTool(payload: {
+    work_order_id: string;
+    agent_id: string;
+    tool_name: string;
+    arguments?: any;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/workspace/validate-tool`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  // ============================================================================
+  // Central Agent Supervisor (CAS) API Methods
+  // ============================================================================
+  async getSupervisorStatus(): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/status`);
+    return handleResponse<any>(res);
+  },
+
+  async getSupervisedAgents(): Promise<any[]> {
+    const res = await fetch(`${API_BASE}/supervisor/agents`);
+    return handleResponse<any[]>(res);
+  },
+
+  async getAgentHealthDetails(agentId: string): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/health`);
+    return handleResponse<any>(res);
+  },
+
+  async getAgentBehaviourDetails(agentId: string): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/behaviour`);
+    return handleResponse<any>(res);
+  },
+
+  async getAgentTrustDetails(agentId: string): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/trust`);
+    return handleResponse<any>(res);
+  },
+
+  async getSupervisorAnomalies(agentId?: string, activeOnly: boolean = true): Promise<any[]> {
+    const params = new URLSearchParams();
+    if (agentId) params.append('agent_id', agentId);
+    params.append('active_only', activeOnly.toString());
+    const res = await fetch(`${API_BASE}/supervisor/anomalies?${params.toString()}`);
+    return handleResponse<any[]>(res);
+  },
+
+  async getSupervisorDecisions(limit: number = 50): Promise<any[]> {
+    const res = await fetch(`${API_BASE}/supervisor/decisions?limit=${limit}`);
+    return handleResponse<any[]>(res);
+  },
+
+  async getSupervisorIsolationRecords(): Promise<any[]> {
+    const res = await fetch(`${API_BASE}/supervisor/isolation-records`);
+    return handleResponse<any[]>(res);
+  },
+
+  async getSupervisorIntelligence(): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/intelligence`);
+    return handleResponse<any>(res);
+  },
+
+  async restrictAgentCapability(agentId: string, payload: {
+    capabilities_to_revoke: string[];
+    reason: string;
+    operator_identity?: string;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/restrict`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async isolateAgent(agentId: string, payload: {
+    reason: string;
+    incident_id?: string;
+    reassign_outstanding_tasks?: boolean;
+    operator_identity?: string;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/isolate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async requestAgentRecovery(agentId: string, payload: {
+    reason: string;
+    notes?: string;
+    operator_identity?: string;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/request-recovery`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
+
+  async reinstateAgent(agentId: string, operatorIdentity: string = 'SECURITY_ADMIN'): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/agents/${encodeURIComponent(agentId)}/reinstate?operator_identity=${encodeURIComponent(operatorIdentity)}`, {
+      method: 'POST',
+    });
+    return handleResponse<any>(res);
+  },
+
+  async simulateSupervisorAnomaly(payload: {
+    agent_id: string;
+    scenario: string;
+  }): Promise<any> {
+    const res = await fetch(`${API_BASE}/supervisor/simulate-anomaly`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return handleResponse<any>(res);
+  },
 };
 
 

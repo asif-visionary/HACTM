@@ -14,6 +14,7 @@ from hactm.api.schemas.governed_investigation import WorkOrderCreate, WorkOrderR
 from hactm.api.schemas.approval import ApprovalRequestCreate, HumanApprovalDecision, ApprovalRequestResponse
 from hactm.storage.models import WorkOrderModel, ApprovalRequestModel, AuditEventModel
 from hactm.core.errors import NotFoundError, HACTMValidationError
+from hactm.services.workspace_event_broadcaster import broadcaster
 
 router = APIRouter(prefix="/api/v1/governance", tags=["governance"])
 
@@ -80,6 +81,33 @@ def list_approval_requests(status_filter: Optional[str] = None, db: Session = De
 def approve_action(decision: HumanApprovalDecision, db: Session = Depends(get_db)):
     gate = HumanApprovalGate(db)
     req = gate.approve_action(decision)
+    broadcaster.publish_event(
+        event_type="approval_granted",
+        incident_id=req.incident_id,
+        task_id=req.request_id,
+        agent_id="global-orchestrator",
+        status="COMPLETED",
+        message=f"Human Approver ({req.approver_identity} [{req.approver_role}]) GRANTED approval for {req.request_id}.",
+        data={"action": req.proposed_action, "approver": req.approver_identity, "role": req.approver_role},
+    )
+    broadcaster.publish_event(
+        event_type="response_executed",
+        incident_id=req.incident_id,
+        task_id=req.request_id,
+        agent_id="global-orchestrator",
+        status="COMPLETED",
+        message=f"Response action executed successfully: {req.proposed_action}.",
+        data={"execution_status": req.execution_status, "result": req.execution_result},
+    )
+    broadcaster.publish_event(
+        event_type="response_verified",
+        incident_id=req.incident_id,
+        task_id=req.request_id,
+        agent_id="global-orchestrator",
+        status="COMPLETED",
+        message=f"Response verification confirmed: Action active and audited.",
+        data={"verification_status": req.verification_status},
+    )
     return {"status": "SUCCESS", "message": "Action approved", "data": ApprovalRequestResponse.model_validate(req)}
 
 
@@ -87,6 +115,15 @@ def approve_action(decision: HumanApprovalDecision, db: Session = Depends(get_db
 def reject_action(decision: HumanApprovalDecision, db: Session = Depends(get_db)):
     gate = HumanApprovalGate(db)
     req = gate.reject_action(decision)
+    broadcaster.publish_event(
+        event_type="approval_rejected",
+        incident_id=req.incident_id,
+        task_id=req.request_id,
+        agent_id="global-orchestrator",
+        status="FAILED",
+        message=f"Human Approver ({req.approver_identity}) REJECTED action for {req.request_id}. Rationale: {decision.notes}",
+        data={"action": req.proposed_action, "approver": req.approver_identity, "notes": decision.notes},
+    )
     return {"status": "SUCCESS", "message": "Action rejected", "data": ApprovalRequestResponse.model_validate(req)}
 
 
@@ -94,6 +131,15 @@ def reject_action(decision: HumanApprovalDecision, db: Session = Depends(get_db)
 def request_more_evidence(decision: HumanApprovalDecision, db: Session = Depends(get_db)):
     gate = HumanApprovalGate(db)
     req = gate.request_more_evidence(decision)
+    broadcaster.publish_event(
+        event_type="investigation_replanned",
+        incident_id=req.incident_id,
+        task_id=req.request_id,
+        agent_id="global-orchestrator",
+        status="ASSIGNED",
+        message=f"Human Analyst requested additional evidence for {req.request_id}. Investigation replanned.",
+        data={"action": req.proposed_action, "notes": decision.notes},
+    )
     return {"status": "SUCCESS", "message": "More evidence requested", "data": ApprovalRequestResponse.model_validate(req)}
 
 

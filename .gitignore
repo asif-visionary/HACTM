@@ -32,3 +32,6 @@ backend/data/raw/network/bot_iot/
 
 data/raw/network/
 backend/data/raw/network/
+
+# External third-party / IP restricted references
+agents-office/
