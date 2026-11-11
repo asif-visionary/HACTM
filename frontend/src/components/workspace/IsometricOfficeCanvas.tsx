@@ -77,6 +77,9 @@ const CANVAS_ASSETS = {
   tools: '/assets/superintelligence/color/tools.svg',
   permissions: '/assets/superintelligence/color/permissions.svg',
   humanApproval: '/assets/superintelligence/color/human-approval.svg',
+  evaluation: '/assets/superintelligence/color/evaluation.svg',
+  alignment: '/assets/superintelligence/color/alignment.svg',
+  citations: '/assets/superintelligence/color/citations.svg',
   reasoning: '/assets/superintelligence/color/reasoning.svg',
   knowledgeGraph: '/assets/superintelligence/color/knowledge-graph.svg',
   memory: '/assets/superintelligence/color/memory.svg',
@@ -103,6 +106,403 @@ if (typeof window !== 'undefined') {
   Object.values(CANVAS_ASSETS).forEach((src) => {
     getOrLoadCanvasIcon(src);
   });
+}
+
+/** Traces an isometric diamond centred at (cx, cy) with half-width rx and half-height ry. */
+function traceIsoDiamond(
+  ctx: CanvasRenderingContext2D,
+  cx: number,
+  cy: number,
+  rx: number,
+  ry: number
+) {
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - ry);
+  ctx.lineTo(cx + rx, cy);
+  ctx.lineTo(cx, cy + ry);
+  ctx.lineTo(cx - rx, cy);
+  ctx.closePath();
+}
+
+/** Draws a cached SuperIntelligence icon centred horizontally at cx and vertically at cy. */
+function drawCanvasIcon(
+  ctx: CanvasRenderingContext2D,
+  src: string,
+  cx: number,
+  cy: number,
+  size: number
+) {
+  const img = getOrLoadCanvasIcon(src);
+  if (img) {
+    ctx.drawImage(img, cx - size / 2, cy - size / 2, size, size);
+  }
+}
+
+/**
+ * Renders the AI Trust & Governance Control Room inside the existing governance_trust tile.
+ * Coordinates stay inside x in [-2.2, 2.2], y in [-10.2, -6.9] and items sort by isometric depth.
+ */
+function drawGovernanceSecurityStation(
+  ctx: CanvasRenderingContext2D,
+  dept: OfficeDepartment,
+  hasRegisteredGovAgent: boolean,
+  originX: number,
+  originY: number,
+  zoom: number,
+  t: number
+) {
+  const cx = dept.gridX + dept.width / 2; // 0
+  const cy = dept.gridY + dept.height / 2; // -8.5
+
+  const stationItems: Array<{ depth: number; draw: () => void }> = [
+    // 1. Governance Monitoring Workstation + Dual Glowing Monitors + Decorative Emblem
+    {
+      depth: cx - 1.35 + (cy - 1.25),
+      draw: () => {
+        const pos = gridToScreen(cx - 1.35, cy - 1.25, originX, originY, zoom);
+        ctx.save();
+
+        // Workstation desk plinth
+        traceIsoDiamond(ctx, pos.x, pos.y, 28 * zoom, 14 * zoom);
+        ctx.fillStyle = '#162032';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.55)';
+        ctx.lineWidth = 1.2 * zoom;
+        ctx.stroke();
+
+        // Decorative holographic sentinel emblem when no registered governance agent exists
+        if (!hasRegisteredGovAgent) {
+          const emblemBob = Math.sin(t * 2.2) * 2.5 * zoom;
+          const ex = pos.x - 16 * zoom;
+          const ey = pos.y - 14 * zoom + emblemBob;
+
+          ctx.strokeStyle = 'rgba(139, 92, 246, 0.55)';
+          ctx.lineWidth = 1 * zoom;
+          traceIsoDiamond(ctx, pos.x - 16 * zoom, pos.y + 3 * zoom, 9 * zoom, 4.5 * zoom);
+          ctx.stroke();
+
+          // Translucent holographic diamond sentinel (clearly decorative emblem, not a specialist avatar)
+          ctx.beginPath();
+          ctx.moveTo(ex, ey - 10 * zoom);
+          ctx.lineTo(ex + 6.5 * zoom, ey - 2 * zoom);
+          ctx.lineTo(ex, ey + 6 * zoom);
+          ctx.lineTo(ex - 6.5 * zoom, ey - 2 * zoom);
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(56, 189, 248, 0.25)';
+          ctx.fill();
+          ctx.strokeStyle = '#00f0ff';
+          ctx.lineWidth = 1.2 * zoom;
+          ctx.stroke();
+        }
+
+        // Left Glowing Monitor: Continuous Telemetry
+        const m1x = pos.x - 9 * zoom;
+        const m1y = pos.y - 25 * zoom;
+        ctx.fillStyle = '#090f1d';
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1 * zoom;
+        ctx.fillRect(m1x, m1y, 17 * zoom, 11 * zoom);
+        ctx.strokeRect(m1x, m1y, 17 * zoom, 11 * zoom);
+
+        // Animated telemetry waveform inside left monitor
+        ctx.beginPath();
+        for (let i = 0; i <= 4; i++) {
+          const wx = m1x + (2.5 + i * 3) * zoom;
+          const wy = m1y + (5.5 + Math.sin(t * 4 + i * 1.4) * 2.2) * zoom;
+          if (i === 0) ctx.moveTo(wx, wy);
+          else ctx.lineTo(wx, wy);
+        }
+        ctx.strokeStyle = '#00f0ff';
+        ctx.lineWidth = 1.2 * zoom;
+        ctx.stroke();
+
+        // Right Glowing Monitor: Policy Alignment Indicators
+        const m2x = pos.x + 10 * zoom;
+        const m2y = pos.y - 22 * zoom;
+        ctx.fillStyle = '#090f1d';
+        ctx.strokeStyle = '#8b5cf6';
+        ctx.lineWidth = 1 * zoom;
+        ctx.fillRect(m2x, m2y, 15 * zoom, 10 * zoom);
+        ctx.strokeRect(m2x, m2y, 15 * zoom, 10 * zoom);
+
+        for (let b = 0; b < 3; b++) {
+          const activeRatio = 0.45 + 0.45 * Math.sin(t * 2.5 + b * 1.3);
+          ctx.fillStyle = b === 1 ? '#a78bfa' : '#10b981';
+          ctx.fillRect(m2x + 2 * zoom, m2y + (2 + b * 2.6) * zoom, 10 * zoom * activeRatio, 1.5 * zoom);
+        }
+
+        // Monitoring & Alignment SuperIntelligence SVG badges
+        drawCanvasIcon(ctx, CANVAS_ASSETS.monitoring, m1x + 8.5 * zoom, m1y - 8 * zoom, 13 * zoom);
+        drawCanvasIcon(ctx, CANVAS_ASSETS.alignment, m2x + 7.5 * zoom, m2y - 8 * zoom, 13 * zoom);
+
+        ctx.fillStyle = '#7dd3fc';
+        ctx.font = `600 ${Math.max(7, Math.floor(8 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('GOV MONITOR', pos.x + 5 * zoom, pos.y + 16 * zoom);
+        ctx.restore();
+      },
+    },
+
+    // 2. Agent Permission-Control Terminal (Left Wing)
+    {
+      depth: cx - 1.7 + (cy + 0.85),
+      draw: () => {
+        const pos = gridToScreen(cx - 1.7, cy + 0.85, originX, originY, zoom);
+        ctx.save();
+
+        // Base plinth
+        traceIsoDiamond(ctx, pos.x, pos.y, 18 * zoom, 9 * zoom);
+        ctx.fillStyle = '#121c2e';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(139, 92, 246, 0.7)';
+        ctx.lineWidth = 1.2 * zoom;
+        ctx.stroke();
+
+        // Pedestal column + vertical permission screen
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(pos.x - 9 * zoom, pos.y - 24 * zoom, 18 * zoom, 16 * zoom);
+        ctx.strokeStyle = '#8b5cf6';
+        ctx.lineWidth = 1.1 * zoom;
+        ctx.strokeRect(pos.x - 9 * zoom, pos.y - 24 * zoom, 18 * zoom, 16 * zoom);
+
+        // Permission check rows + animated verification scan bar
+        for (let r = 0; r < 3; r++) {
+          ctx.fillStyle = r === 2 ? 'rgba(56, 189, 248, 0.45)' : 'rgba(167, 139, 250, 0.45)';
+          ctx.fillRect(pos.x - 6 * zoom, pos.y - (21 - r * 4) * zoom, 12 * zoom, 2 * zoom);
+        }
+        const scanProgress = (t * 0.7) % 1;
+        const scanY = pos.y - 23 * zoom + scanProgress * 14 * zoom;
+        ctx.strokeStyle = '#00f0ff';
+        ctx.lineWidth = 1.3 * zoom;
+        ctx.beginPath();
+        ctx.moveTo(pos.x - 8 * zoom, scanY);
+        ctx.lineTo(pos.x + 8 * zoom, scanY);
+        ctx.stroke();
+
+        drawCanvasIcon(ctx, CANVAS_ASSETS.permissions, pos.x, pos.y - 32 * zoom, 14 * zoom);
+
+        ctx.fillStyle = '#c4b5fd';
+        ctx.font = `600 ${Math.max(7, Math.floor(7.5 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('PERMISSIONS', pos.x, pos.y + 15 * zoom);
+        ctx.restore();
+      },
+    },
+
+    // 3. Central Holographic Cybersecurity Shield (Department Core)
+    {
+      depth: cx + cy,
+      draw: () => {
+        const pos = gridToScreen(cx, cy, originX, originY, zoom);
+        ctx.save();
+
+        // Pulsing isometric base rings
+        const ringPulse1 = (t * 0.55) % 1;
+        const ringPulse2 = (t * 0.55 + 0.5) % 1;
+        [ringPulse1, ringPulse2].forEach((p, idx) => {
+          const rx = (20 + p * 22) * zoom;
+          const ry = (10 + p * 11) * zoom;
+          ctx.beginPath();
+          ctx.ellipse(pos.x, pos.y, rx, ry, 0, 0, Math.PI * 2);
+          ctx.strokeStyle =
+            idx === 0
+              ? `rgba(0, 240, 255, ${(1 - p) * 0.65})`
+              : `rgba(139, 92, 246, ${(1 - p) * 0.6})`;
+          ctx.lineWidth = 1.4 * zoom;
+          ctx.stroke();
+        });
+
+        // Illuminated pedestal emitter
+        traceIsoDiamond(ctx, pos.x, pos.y, 20 * zoom, 10 * zoom);
+        ctx.fillStyle = '#0b1324';
+        ctx.fill();
+        ctx.strokeStyle = '#00f0ff';
+        ctx.lineWidth = 1.5 * zoom;
+        ctx.stroke();
+
+        // Vertical holographic projection cone
+        const bob = Math.sin(t * 2) * 3 * zoom;
+        const shieldY = pos.y - 32 * zoom + bob;
+        const coneGrad = ctx.createLinearGradient(pos.x, pos.y, pos.x, shieldY - 12 * zoom);
+        coneGrad.addColorStop(0, 'rgba(0, 240, 255, 0.25)');
+        coneGrad.addColorStop(0.6, 'rgba(139, 92, 246, 0.14)');
+        coneGrad.addColorStop(1, 'rgba(0, 240, 255, 0.02)');
+        ctx.beginPath();
+        ctx.moveTo(pos.x - 14 * zoom, pos.y);
+        ctx.lineTo(pos.x + 14 * zoom, pos.y);
+        ctx.lineTo(pos.x + 22 * zoom, shieldY - 10 * zoom);
+        ctx.lineTo(pos.x - 22 * zoom, shieldY - 10 * zoom);
+        ctx.closePath();
+        ctx.fillStyle = coneGrad;
+        ctx.fill();
+
+        // Rotating holographic rings around shield
+        ctx.beginPath();
+        ctx.ellipse(pos.x, shieldY, 24 * zoom, 10 * zoom, t * 0.9, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.75)';
+        ctx.lineWidth = 1.4 * zoom;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.ellipse(pos.x, shieldY, 19 * zoom, 8 * zoom, -t * 1.2, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(139, 92, 246, 0.75)';
+        ctx.lineWidth = 1.2 * zoom;
+        ctx.stroke();
+
+        // Rotating orbit node
+        const orbitAngle = t * 1.4;
+        const ox = pos.x + Math.cos(orbitAngle) * 23 * zoom;
+        const oy = shieldY + Math.sin(orbitAngle) * 9 * zoom;
+        ctx.beginPath();
+        ctx.arc(ox, oy, 2.3 * zoom, 0, Math.PI * 2);
+        ctx.fillStyle = '#00f0ff';
+        ctx.fill();
+
+        // Central Cybersecurity Shield Hologram Shape
+        const sw = 13 * zoom;
+        const sh = 16 * zoom;
+        ctx.beginPath();
+        ctx.moveTo(pos.x, shieldY - sh);
+        ctx.lineTo(pos.x + sw, shieldY - sh * 0.55);
+        ctx.lineTo(pos.x + sw * 0.85, shieldY + sh * 0.35);
+        ctx.lineTo(pos.x, shieldY + sh);
+        ctx.lineTo(pos.x - sw * 0.85, shieldY + sh * 0.35);
+        ctx.lineTo(pos.x - sw, shieldY - sh * 0.55);
+        ctx.closePath();
+
+        const shieldGrad = ctx.createLinearGradient(pos.x - sw, shieldY - sh, pos.x + sw, shieldY + sh);
+        shieldGrad.addColorStop(0, 'rgba(0, 240, 255, 0.45)');
+        shieldGrad.addColorStop(1, 'rgba(139, 92, 246, 0.45)');
+        ctx.fillStyle = shieldGrad;
+        ctx.fill();
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1.8 * zoom;
+        ctx.stroke();
+
+        // Trust evaluation & safety seal inside holographic crest
+        drawCanvasIcon(ctx, CANVAS_ASSETS.evaluation, pos.x, shieldY - 1 * zoom, 13 * zoom);
+
+        ctx.fillStyle = '#67e8f9';
+        ctx.font = `700 ${Math.max(7.5, Math.floor(8.5 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('TRUST SHIELD', pos.x, pos.y + 17 * zoom);
+        ctx.restore();
+      },
+    },
+
+    // 4. Human Approval Console (Right Wing)
+    {
+      depth: cx + 1.45 + (cy - 1.25),
+      draw: () => {
+        const pos = gridToScreen(cx + 1.45, cy - 1.25, originX, originY, zoom);
+        ctx.save();
+
+        traceIsoDiamond(ctx, pos.x, pos.y, 19 * zoom, 9.5 * zoom);
+        ctx.fillStyle = '#162032';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(245, 158, 11, 0.65)';
+        ctx.lineWidth = 1.2 * zoom;
+        ctx.stroke();
+
+        // Console display unit
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(pos.x - 9 * zoom, pos.y - 22 * zoom, 18 * zoom, 14 * zoom);
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 1.1 * zoom;
+        ctx.strokeRect(pos.x - 9 * zoom, pos.y - 22 * zoom, 18 * zoom, 14 * zoom);
+
+        // Pulsing HITL approval ring indicator on screen
+        const gatePulse = 0.55 + 0.45 * Math.sin(t * 3);
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y - 15 * zoom, 3.5 * zoom, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(245, 158, 11, ${gatePulse})`;
+        ctx.fill();
+
+        drawCanvasIcon(ctx, CANVAS_ASSETS.humanApproval, pos.x, pos.y - 31 * zoom, 14 * zoom);
+
+        ctx.fillStyle = '#fcd34d';
+        ctx.font = `600 ${Math.max(7, Math.floor(7.5 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('HITL GATE', pos.x, pos.y + 15 * zoom);
+        ctx.restore();
+      },
+    },
+
+    // 5. Isolation / Sandbox Containment Bay Display (Front-Left)
+    {
+      depth: cx - 0.35 + (cy + 1.25),
+      draw: () => {
+        const pos = gridToScreen(cx - 0.35, cy + 1.25, originX, originY, zoom);
+        ctx.save();
+
+        traceIsoDiamond(ctx, pos.x, pos.y, 17 * zoom, 8.5 * zoom);
+        ctx.fillStyle = '#11192a';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.6)';
+        ctx.lineWidth = 1.1 * zoom;
+        ctx.stroke();
+
+        // Containment wireframe arc
+        ctx.beginPath();
+        ctx.ellipse(pos.x, pos.y - 7 * zoom, 11 * zoom, 5.5 * zoom, 0, 0, Math.PI * 2);
+        ctx.setLineDash([3 * zoom, 2.5 * zoom]);
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.75)';
+        ctx.lineWidth = 1.1 * zoom;
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        drawCanvasIcon(ctx, CANVAS_ASSETS.sandbox, pos.x, pos.y - 16 * zoom, 13 * zoom);
+
+        ctx.fillStyle = '#6ee7b7';
+        ctx.font = `600 ${Math.max(7, Math.floor(7.5 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('SANDBOX', pos.x, pos.y + 14 * zoom);
+        ctx.restore();
+      },
+    },
+
+    // 6. Small Holographic Audit & Verification Display (Front-Right)
+    {
+      depth: cx + 1.45 + (cy + 0.65),
+      draw: () => {
+        const pos = gridToScreen(cx + 1.45, cy + 0.65, originX, originY, zoom);
+        ctx.save();
+
+        traceIsoDiamond(ctx, pos.x, pos.y, 17 * zoom, 8.5 * zoom);
+        ctx.fillStyle = '#11192a';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.55)';
+        ctx.lineWidth = 1.1 * zoom;
+        ctx.stroke();
+
+        // Floating translucent holographic audit panel
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+        ctx.fillRect(pos.x - 10 * zoom, pos.y - 21 * zoom, 20 * zoom, 13 * zoom);
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.8)';
+        ctx.lineWidth = 1 * zoom;
+        ctx.strokeRect(pos.x - 10 * zoom, pos.y - 21 * zoom, 20 * zoom, 13 * zoom);
+
+        // Scrolling audit hash verification bars
+        for (let line = 0; line < 3; line++) {
+          const pulse = 0.4 + 0.6 * ((Math.sin(t * 2.5 + line * 1.1) + 1) / 2);
+          ctx.fillStyle = `rgba(56, 189, 248, ${pulse})`;
+          ctx.fillRect(pos.x - 7 * zoom, pos.y - (18 - line * 3.5) * zoom, (11 + (line % 2) * 3) * zoom, 1.5 * zoom);
+        }
+
+        drawCanvasIcon(ctx, CANVAS_ASSETS.citations, pos.x, pos.y - 29 * zoom, 13 * zoom);
+
+        ctx.fillStyle = '#a5f3fc';
+        ctx.font = `600 ${Math.max(7, Math.floor(7.5 * zoom))}px Inter, system-ui, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText('AUDIT CHAIN', pos.x, pos.y + 14 * zoom);
+        ctx.restore();
+      },
+    },
+  ];
+
+  // Strict painter's algorithm ordering inside the control room
+  stationItems.sort((a, b) => a.depth - b.depth);
+  stationItems.forEach((item) => item.draw());
 }
 
 export const IsometricOfficeCanvas: React.FC<IsometricOfficeCanvasProps> = ({
@@ -243,7 +643,8 @@ export const IsometricOfficeCanvas: React.FC<IsometricOfficeCanvasProps> = ({
     let lastTimestamp = performance.now();
 
     const render = (now: number) => {
-      const dt = (now - lastTimestamp) / 1000;
+      if (document.hidden) return;
+      const dt = Math.min(Math.max((now - lastTimestamp) / 1000, 0), 0.1);
       lastTimestamp = now;
       animTimeRef.current += dt;
 
@@ -302,26 +703,48 @@ export const IsometricOfficeCanvas: React.FC<IsometricOfficeCanvasProps> = ({
 
         // Floor gradient
         const isCommand = dept.id === 'command_center';
+        const isGovernance = dept.id === 'governance_trust';
+        const centerX = (pTop.x + pBottom.x) / 2;
+        const centerY = (pTop.y + pBottom.y) / 2;
         if (isCommand) {
           const grad = ctx.createRadialGradient(
-            (pTop.x + pBottom.x) / 2,
-            (pTop.y + pBottom.y) / 2,
+            centerX,
+            centerY,
             10 * zoom,
-            (pTop.x + pBottom.x) / 2,
-            (pTop.y + pBottom.y) / 2,
+            centerX,
+            centerY,
             90 * zoom
           );
           grad.addColorStop(0, 'rgba(14, 165, 233, 0.25)');
           grad.addColorStop(1, 'rgba(8, 14, 28, 0.85)');
           ctx.fillStyle = grad;
+        } else if (isGovernance) {
+          const govGrad = ctx.createRadialGradient(
+            centerX,
+            centerY,
+            8 * zoom,
+            centerX,
+            centerY,
+            115 * zoom
+          );
+          govGrad.addColorStop(0, isHovered ? 'rgba(34, 211, 238, 0.18)' : 'rgba(14, 165, 233, 0.14)');
+          govGrad.addColorStop(0.55, isHovered ? 'rgba(139, 92, 246, 0.16)' : 'rgba(99, 102, 241, 0.12)');
+          govGrad.addColorStop(1, 'rgba(10, 18, 36, 0.86)');
+          ctx.fillStyle = govGrad;
         } else {
           ctx.fillStyle = isHovered ? 'rgba(30, 41, 59, 0.7)' : 'rgba(15, 23, 42, 0.75)';
         }
         ctx.fill();
 
         // Department perimeter border
-        ctx.strokeStyle = isHovered ? dept.color : isCommand ? '#00f0ff' : 'rgba(71, 85, 105, 0.4)';
-        ctx.lineWidth = isHovered || isCommand ? 2 * zoom : 1 * zoom;
+        ctx.strokeStyle = isHovered
+          ? dept.color
+          : isCommand
+          ? '#00f0ff'
+          : isGovernance
+          ? 'rgba(56, 189, 248, 0.55)'
+          : 'rgba(71, 85, 105, 0.4)';
+        ctx.lineWidth = isHovered || isCommand ? 2 * zoom : isGovernance ? 1.5 * zoom : 1 * zoom;
         ctx.stroke();
 
         // Department Header Label in isometric floor
@@ -359,26 +782,81 @@ export const IsometricOfficeCanvas: React.FC<IsometricOfficeCanvasProps> = ({
             zoom
           );
 
-          // Conduit cable line
-          ctx.beginPath();
-          ctx.moveTo(deptPos.x, deptPos.y);
-          ctx.lineTo(cmdPos.x, cmdPos.y);
-          ctx.strokeStyle = 'rgba(14, 165, 233, 0.2)';
-          ctx.lineWidth = 2 * zoom;
-          ctx.stroke();
+          const dx = cmdPos.x - deptPos.x;
+          const dy = cmdPos.y - deptPos.y;
+          const len = Math.hypot(dx, dy) || 1;
+          const nx = -dy / len;
+          const ny = dx / len;
 
-          // Animated data pulse packet traveling along the line
-          const pulseProgress = (animTimeRef.current * 0.4 + (dept.gridX % 3) * 0.3) % 1.0;
-          const pulseX = deptPos.x + (cmdPos.x - deptPos.x) * pulseProgress;
-          const pulseY = deptPos.y + (cmdPos.y - deptPos.y) * pulseProgress;
+          const conduitTracks =
+            dept.id === 'governance_trust'
+              ? [
+                  {
+                    offset: -4.5 * zoom,
+                    lineColor: 'rgba(0, 240, 255, 0.34)',
+                    pulseColor: '#00f0ff',
+                    phase: 0,
+                    speed: 0.48,
+                    radius: 3.6,
+                    width: 2.2,
+                  },
+                  {
+                    offset: 4.5 * zoom,
+                    lineColor: 'rgba(139, 92, 246, 0.34)',
+                    pulseColor: '#8b5cf6',
+                    phase: 0.45,
+                    speed: 0.48,
+                    radius: 3.6,
+                    width: 2.2,
+                  },
+                ]
+              : [
+                  {
+                    offset: 0,
+                    lineColor: 'rgba(14, 165, 233, 0.2)',
+                    pulseColor: dept.color,
+                    phase: (dept.gridX % 3) * 0.3,
+                    speed: 0.4,
+                    radius: 3.5,
+                    width: 2,
+                  },
+                ];
 
-          ctx.beginPath();
-          ctx.arc(pulseX, pulseY, 3.5 * zoom, 0, Math.PI * 2);
-          ctx.fillStyle = dept.color;
-          ctx.shadowColor = dept.color;
-          ctx.shadowBlur = 8 * zoom;
-          ctx.fill();
-          ctx.shadowBlur = 0; // reset
+          conduitTracks.forEach((track) => {
+            const ox = nx * track.offset;
+            const oy = ny * track.offset;
+            const startX = deptPos.x + ox;
+            const startY = deptPos.y + oy;
+            const endX = cmdPos.x + ox;
+            const endY = cmdPos.y + oy;
+
+            // Conduit cable line
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = track.lineColor;
+            ctx.lineWidth = track.width * zoom;
+            if (dept.id === 'governance_trust') {
+              ctx.shadowColor = track.pulseColor;
+              ctx.shadowBlur = 6 * zoom;
+            }
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+
+            // Animated data pulse packet traveling along the conduit
+            const pulseProgress =
+              (((animTimeRef.current * track.speed + track.phase) % 1.0) + 1.0) % 1.0;
+            const pulseX = startX + (endX - startX) * pulseProgress;
+            const pulseY = startY + (endY - startY) * pulseProgress;
+
+            ctx.beginPath();
+            ctx.arc(pulseX, pulseY, track.radius * zoom, 0, Math.PI * 2);
+            ctx.fillStyle = track.pulseColor;
+            ctx.shadowColor = track.pulseColor;
+            ctx.shadowBlur = 8 * zoom;
+            ctx.fill();
+            ctx.shadowBlur = 0; // reset
+          });
         });
       }
 
@@ -489,6 +967,23 @@ export const IsometricOfficeCanvas: React.FC<IsometricOfficeCanvasProps> = ({
         }
       });
       ctx.restore();
+
+      // 4c. AI Trust & Governance Security Station
+      const govDept = departments.find((d) => d.id === 'governance_trust');
+      if (govDept) {
+        const hasRegisteredGovAgent = agents.some(
+          (ag) => ag.departmentId === 'governance_trust'
+        );
+        drawGovernanceSecurityStation(
+          ctx,
+          govDept,
+          hasRegisteredGovAgent,
+          pan.x,
+          pan.y,
+          zoom,
+          animTimeRef.current
+        );
+      }
 
       // 5. Draw Furniture (Desks, Dual Monitors, Server Racks)
       agents.forEach((ag) => {

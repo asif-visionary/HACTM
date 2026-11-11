@@ -267,6 +267,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
   // Communications & Timeline states
   const [messages, setMessages] = useState<AgentMessageItem[]>([]);
   const [timeline, setTimeline] = useState<TimelineEntry[]>([]);
+  const [workspaceEvents, setWorkspaceEvents] = useState<WorkspaceEvent[]>([]);
 
   // Load Passports and Pending Approvals on Mount
   const refreshPassports = useCallback(async () => {
@@ -303,13 +304,13 @@ export const CyberOperationsWorkspace: React.FC = () => {
       const res = await api.getApprovalRequests('PENDING_APPROVAL');
       const items = res?.data || [];
       setPendingApprovalsCount(items.length);
-      if (items.length > 0 && !activeApprovalRequest) {
-        setActiveApprovalRequest(items[0]);
+      if (items.length > 0) {
+        setActiveApprovalRequest((prev) => prev || items[0]);
       }
     } catch (err) {
       console.warn('Could not fetch approval requests:', err);
     }
-  }, [activeApprovalRequest]);
+  }, []);
 
   // Connect SSE Stream & Handle Real Events
   useEffect(() => {
@@ -335,6 +336,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
 
   // Handle incoming real-time backend event
   const handleRealEvent = (evt: WorkspaceEvent) => {
+    setWorkspaceEvents((prev) => [...prev.slice(-199), evt]);
     if (evt.incident_id) {
       setCurrentIncidentId(evt.incident_id);
     }
@@ -628,12 +630,12 @@ export const CyberOperationsWorkspace: React.FC = () => {
         </div>
 
         {/* Right Collapsible Interactive Operations Panel */}
-        <div className={`flex-shrink-0 flex flex-col h-full bg-slate-950 border-slate-800 overflow-hidden transition-all duration-300 ${activeTab === 'supervisor' ? 'w-full lg:w-[620px]' : 'w-full lg:w-[420px]'}`}>
+        <div className={`flex-shrink-0 flex flex-col h-full min-h-0 bg-slate-950 border-slate-800 overflow-hidden transition-all duration-300 ${activeTab === 'supervisor' ? 'w-full lg:w-[620px]' : 'w-full lg:w-[420px]'}`}>
           {/* Panel Tab Navigation */}
-          <div className="flex border-b border-slate-800 bg-slate-900/60 p-1 gap-1">
+          <div className="flex flex-shrink-0 border-b border-slate-800 bg-slate-900/60 p-1 gap-1 overflow-x-auto">
             <button
               onClick={() => setActiveTab('supervisor')}
-              className={`flex-1 py-1.5 text-xs font-semibold rounded transition flex items-center justify-center space-x-1.5 ${
+              className={`flex-1 min-w-[92px] py-1.5 px-2 text-xs font-semibold rounded transition flex items-center justify-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'supervisor'
                   ? 'bg-amber-950/80 text-amber-300 border border-amber-500/50 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -644,7 +646,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('office')}
-              className={`flex-1 py-1.5 text-xs font-medium rounded transition flex items-center justify-center space-x-1.5 ${
+              className={`flex-1 min-w-[82px] py-1.5 px-2 text-xs font-medium rounded transition flex items-center justify-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'office'
                   ? 'bg-slate-800 text-cyan-400 border border-slate-700 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -655,7 +657,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('timeline')}
-              className={`flex-1 py-1.5 text-xs font-medium rounded transition flex items-center justify-center space-x-1.5 ${
+              className={`flex-1 min-w-[88px] py-1.5 px-2 text-xs font-medium rounded transition flex items-center justify-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'timeline'
                   ? 'bg-slate-800 text-cyan-400 border border-slate-700 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -666,7 +668,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('comms')}
-              className={`flex-1 py-1.5 text-xs font-medium rounded transition flex items-center justify-center space-x-1.5 ${
+              className={`flex-1 min-w-[86px] py-1.5 px-2 text-xs font-medium rounded transition flex items-center justify-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'comms'
                   ? 'bg-slate-800 text-cyan-400 border border-slate-700 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -677,7 +679,7 @@ export const CyberOperationsWorkspace: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('governance')}
-              className={`flex-1 py-1.5 text-xs font-medium rounded transition flex items-center justify-center space-x-1.5 ${
+              className={`flex-1 min-w-[86px] py-1.5 px-2 text-xs font-medium rounded transition flex items-center justify-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'governance'
                   ? 'bg-slate-800 text-cyan-400 border border-slate-700 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -689,9 +691,9 @@ export const CyberOperationsWorkspace: React.FC = () => {
           </div>
 
           {/* Panel Content Display */}
-          <div className="flex-1 overflow-hidden p-3">
+          <div className="flex-1 min-h-0 overflow-hidden p-3">
             {activeTab === 'supervisor' && (
-              <div className="h-full overflow-y-auto pr-1">
+              <div className="h-full overflow-y-auto overflow-x-hidden pr-1">
                 <CentralAgentSupervisorPanel
                   onSelectAgent={handleSelectAgent}
                   onRefreshWorkspace={refreshPassports}
@@ -756,7 +758,11 @@ export const CyberOperationsWorkspace: React.FC = () => {
             {activeTab === 'timeline' && (
               <InvestigationTimelinePanel
                 timeline={timeline}
+                workspaceEvents={workspaceEvents}
+                streamStatus={streamStatus}
                 currentIncidentId={currentIncidentId}
+                agents={agents}
+                messages={messages}
                 onSelectEvidence={(evId) => {
                   console.log('Selected evidence:', evId);
                 }}

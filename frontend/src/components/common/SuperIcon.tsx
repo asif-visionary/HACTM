@@ -31,6 +31,8 @@ export const SuperIcon: React.FC<SuperIconProps> = ({
   const iconName = name.endsWith('.svg') ? name : `${name}.svg`;
   const src = `/assets/superintelligence/${style}/${iconName}`;
 
+  const dim = typeof size === 'number' ? `${size}px` : size;
+
   return (
     <img
       src={src}
@@ -38,11 +40,13 @@ export const SuperIcon: React.FC<SuperIconProps> = ({
       height={size}
       alt={alt || (ariaHidden ? '' : `${name} icon`)}
       aria-hidden={ariaHidden}
-      loading="lazy"
-      className={`inline-block select-none ai-icon-motion ${className}`}
+      loading="eager"
+      className={`block flex-shrink-0 select-none ai-icon-motion ${className}`}
       style={{
-        width: typeof size === 'number' ? `${size}px` : size,
-        height: typeof size === 'number' ? `${size}px` : size,
+        width: dim,
+        height: dim,
+        minWidth: dim,
+        minHeight: dim,
         objectFit: 'contain',
       }}
     />
